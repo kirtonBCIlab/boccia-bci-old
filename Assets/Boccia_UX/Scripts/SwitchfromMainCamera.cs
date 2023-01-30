@@ -39,4 +39,10 @@ public class SwitchfromMainCamera : MonoBehaviour
     {
         go.SetActive(true);
     }
+
+    public void DisableCanvas(CanvasGroup co)
+    {
+        co.GetComponent<CanvasGroup>().enabled = false;
+    }
+
 }
