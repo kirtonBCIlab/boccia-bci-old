@@ -8,6 +8,7 @@ public class SwitchfromMainCamera : MonoBehaviour
     public Camera inclineCamera;
     public Camera elevationCamera;
     public Camera rotationCamera;
+    public Camera topView;
 
     public void ElevationView() {
         mainCamera.enabled = false;
@@ -18,8 +19,16 @@ public class SwitchfromMainCamera : MonoBehaviour
         mainCamera.enabled = false;
         inclineCamera.enabled = true;
     }
-    public void RotationView() {
+    public void RotationView()
+    {
         rotationCamera.enabled = true;
+        topView.enabled = true;
+        mainCamera.enabled = false;
+    }
+    public void BirdEyeView()
+    {
+        rotationCamera.enabled = true;
+        topView.enabled = true;
         mainCamera.enabled = false;
     }
     public void MainScreen() {
@@ -27,6 +36,7 @@ public class SwitchfromMainCamera : MonoBehaviour
         elevationCamera.enabled = false;
         inclineCamera.enabled = false;
         rotationCamera.enabled = false;
+        topView.enabled = false;
     }
 
     //Change GameObject to Canvas Object - so we can turnOn/Off Canvas.
