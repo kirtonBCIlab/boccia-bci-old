@@ -7,8 +7,12 @@ public class GameController : MonoBehaviour
     public Vector3 myPos;
     public Quaternion startPos;
     public GameObject mainShaft;
+    public Vector3 myHeight;
+    public Vector3 startHeight;
+    public GameObject elevationPlate;
 
     public float rotZ;
+    public float heightZ;
     
     
     
@@ -18,9 +22,11 @@ public class GameController : MonoBehaviour
     {
         //record starting position
         startPos=mainShaft.transform.rotation;
-
         //mainShaft = GameObject.Find("MainShaft");
         rotZ = mainShaft.transform.localEulerAngles.y;
+
+        startHeight = elevationPlate.transform.position;
+        heightZ = elevationPlate.transform.position.z;
         
     }
 

@@ -8,6 +8,7 @@ public class RampRotation : MonoBehaviour
     public GameObject mainShaft; 
     float targetAngle = 90.0f;
     float currentAngle; 
+
     public void RotateLeftS() {
         changeAngle(-2.0f);
     }

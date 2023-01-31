@@ -18,6 +18,15 @@ public class MainSPO : SPO
 
     [SerializeField]
     private BarController barController;
+
+    [SerializeField]
+    private ElevationAdjuster elevAdj;
+
+    [SerializeField]
+    private RampRotation rampRot;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,24 +52,41 @@ public class MainSPO : SPO
 
     public override void OnSelection()
     {
-        switch (myObjectId) 
+        switch (myObjectId)
         {
             case 0:
                 //Todo - change to display or camera
-                camScript.RotationView();
+                camScript.SwitchToRotationView();
                 break;
             case 1:
                 //Todo
-                camScript.InclineView();
+                camScript.SwitchToMainDisplay();
                 break;
             case 2:
                 //Todo
-                camScript.ElevationView();
+                camScript.SwitchToElevationView();
                 break;
             case 3:
                 //Todo
                 barController.DropButtonPressed();
                 break;
+            case 4:
+                //Todo
+                rampRot.RotateLeftS();
+                break;
+            case 5:
+                //Todo
+                rampRot.RotateRightS();
+                break;
+            case 6:
+                //Todo
+                elevAdj.MoveUp();
+                break;
+            case 7:
+                //Todo
+                elevAdj.MoveDown();
+                break;
+
         }
     }
 
