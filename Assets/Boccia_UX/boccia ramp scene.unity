@@ -546,7 +546,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1076903025}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 2, y: 0, z: 0}
 --- !u!1 &297224043
 GameObject:
@@ -2935,6 +2935,7 @@ Transform:
   - {fileID: 1665727254}
   - {fileID: 1856379660}
   - {fileID: 1390050443}
+  - {fileID: 1840096034}
   - {fileID: 260353107}
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -3568,8 +3569,7 @@ Transform:
   m_LocalPosition: {x: -506.19888, y: -393.07977, z: -5.0651855}
   m_LocalScale: {x: 1, y: 1, z: 0.84974}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1840096034}
+  m_Children: []
   m_Father: {fileID: 1076903025}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 8.143, y: 90.088, z: -0.374}
@@ -5042,7 +5042,7 @@ MonoBehaviour:
   inclineCamera: {fileID: 260353106}
   elevationCamera: {fileID: 1856379659}
   rotationCamera: {fileID: 1390050442}
-  topView: {fileID: 1840096036}
+  topCamera: {fileID: 1840096036}
 --- !u!4 &1741339028
 Transform:
   m_ObjectHideFlags: 0
@@ -5613,11 +5613,11 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1741339027}
         m_TargetAssemblyTypeName: SwitchfromMainCamera, Assembly-CSharp
-        m_MethodName: BirdEyeView
-        m_Mode: 1
+        m_MethodName: TurnOnGameObject
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1840096033}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5724,7 +5724,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1840096034
 Transform:
   m_ObjectHideFlags: 0
@@ -5732,13 +5732,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1840096033}
-  m_LocalRotation: {x: 0.5568903, y: 0.0123946965, z: -0.0077992156, w: 0.830457}
-  m_LocalPosition: {x: 0.081194825, y: 3.963942, z: 5.3468657}
-  m_LocalScale: {x: 1.0001287, y: 1.1474439, z: 1.0221119}
+  m_LocalRotation: {x: 0.42728856, y: 0.5661682, z: -0.44171503, w: 0.5493323}
+  m_LocalPosition: {x: -501.14, y: -389.8, z: -5.18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1390050443}
-  m_RootOrder: 0
+  m_Father: {fileID: 1076903025}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 75.84, y: 91.463, z: -0.342}
 --- !u!81 &1840096035
 AudioListener:
@@ -5755,7 +5755,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1840096033}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}

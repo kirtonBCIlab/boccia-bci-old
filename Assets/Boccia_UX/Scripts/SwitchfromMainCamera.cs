@@ -8,7 +8,7 @@ public class SwitchfromMainCamera : MonoBehaviour
     public Camera inclineCamera;
     public Camera elevationCamera;
     public Camera rotationCamera;
-    public Camera topView;
+    public Camera topCamera;
 
     public void ElevationView() {
         mainCamera.enabled = false;
@@ -22,21 +22,21 @@ public class SwitchfromMainCamera : MonoBehaviour
     public void RotationView()
     {
         rotationCamera.enabled = true;
-        topView.enabled = true;
+        topCamera.enabled = true;
         mainCamera.enabled = false;
     }
-    public void BirdEyeView()
-    {
-        rotationCamera.enabled = true;
-        topView.enabled = true;
-        mainCamera.enabled = false;
-    }
+    //public void BirdEyeView()
+    //{
+    //    rotationCamera.enabled = true;
+    //    topCamera.enabled = true;
+    //    mainCamera.enabled = false;
+    //}
     public void MainScreen() {
         mainCamera.enabled = true;
         elevationCamera.enabled = false;
         inclineCamera.enabled = false;
         rotationCamera.enabled = false;
-        topView.enabled = false;
+        topCamera.enabled = false;
     }
 
     //Change GameObject to Canvas Object - so we can turnOn/Off Canvas.
@@ -50,9 +50,9 @@ public class SwitchfromMainCamera : MonoBehaviour
         go.SetActive(true);
     }
 
-    public void DisableCanvas(CanvasGroup co)
-    {
-        co.GetComponent<CanvasGroup>().enabled = false;
-    }
+    //public void DisableCanvas(CanvasGroup co)
+    //{
+    //    co.GetComponent<CanvasGroup>().enabled = false;
+    //}
 
 }
