@@ -37,28 +37,6 @@ public class ElevationAdjuster : MonoBehaviour
     {
         currentHeight = elevatorPlate.transform.position.z;
         //Debug.Log(targetHeight + ":" + currentHeight);
-        if ((currentHeight - target) < 0.001)
-        {
-            target = 0.044f;
-        }
-        if ((currentHeight - target) > -0.001)
-        {
-
-            target = -0.03243253f;
-        }
-
-        if (target > currentHeight) //move up
-        {
-            //elevatorPlate.transform.Translate(0, 0, target);
-            elevatorPlate.transform.Translate(Vector3.back * 0.1f); //working to move but it is not stopping at the max
-        }
-
-        if (target < currentHeight) //move down
-        {
-            //elevatorPlate.transform.Translate(0, 0, target);
-            elevatorPlate.transform.Translate(Vector3.back * -0.1f); //moving in the wrong direction
-        }
-
         //if ((currentHeight - target) < 0.001)
         //{
         //    target = 0.044f;
@@ -69,17 +47,17 @@ public class ElevationAdjuster : MonoBehaviour
         //    target = -0.03243253f;
         //}
 
-        //if (target > currentHeight) //move up
-        //{
-        //    //elevatorPlate.transform.Translate(0, 0, target);
-        //    elevatorPlate.transform.Translate(Vector3.back * 0.1f); //working to move but it is not stopping at the max
-        //}
+        if (target > currentHeight) //move up
+        {
+            //elevatorPlate.transform.Translate(0, 0, target);
+            elevatorPlate.transform.Translate(Vector3.forward * 0.1f); //working to move but it is not stopping at the max
+        }
 
-        //if (target < currentHeight) //move down
-        //{
-        //    //elevatorPlate.transform.Translate(0, 0, target);
-        //    elevatorPlate.transform.Translate(Vector3.back * -0.1f); //moving in the wrong direction
-        //}
+        if (target < currentHeight) //move down
+        {
+            //elevatorPlate.transform.Translate(0, 0, target);
+            elevatorPlate.transform.Translate(Vector3.back * -0.5f); //moving in the wrong direction
+        }
 
         yield return null;
     }

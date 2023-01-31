@@ -4850,7 +4850,7 @@ Canvas:
   m_GameObject: {fileID: 1693876278}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1390050442}
   m_PlaneDistance: 1
   m_PixelPerfect: 0
@@ -5744,14 +5744,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1840096033}
-  m_LocalRotation: {x: 0.5568903, y: 0.0123946965, z: -0.0077992156, w: 0.830457}
-  m_LocalPosition: {x: 0.081194825, y: 3.963942, z: 5.3468657}
+  m_LocalRotation: {x: 0.5709036, y: 0.0025331972, z: -0.014292752, w: 0.82088876}
+  m_LocalPosition: {x: 0.009999655, y: 2.4399996, z: 6.5200157}
   m_LocalScale: {x: 1.0001287, y: 1.1474439, z: 1.0221119}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1390050443}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 75.84, y: 91.463, z: -0.342}
+  m_LocalEulerAnglesHint: {x: 69.614, y: -2.001, z: -3.386}
 --- !u!81 &1840096035
 AudioListener:
   m_ObjectHideFlags: 0
@@ -5781,8 +5781,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0.3
-    height: 0.4
+    width: 0.4
+    height: 0.45
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
