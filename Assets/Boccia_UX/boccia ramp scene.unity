@@ -546,7 +546,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1076903025}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 2, y: 0, z: 0}
 --- !u!1 &297224043
 GameObject:
@@ -1595,6 +1595,18 @@ MonoBehaviour:
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1693876278}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1741339027}
+        m_TargetAssemblyTypeName: SwitchfromMainCamera, Assembly-CSharp
+        m_MethodName: TurnOffGameObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1840096033}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -2935,7 +2947,6 @@ Transform:
   - {fileID: 1665727254}
   - {fileID: 1856379660}
   - {fileID: 1390050443}
-  - {fileID: 1840096034}
   - {fileID: 260353107}
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -3569,7 +3580,8 @@ Transform:
   m_LocalPosition: {x: -506.19888, y: -393.07977, z: -5.0651855}
   m_LocalScale: {x: 1, y: 1, z: 0.84974}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1840096034}
   m_Father: {fileID: 1076903025}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 8.143, y: 90.088, z: -0.374}
@@ -5732,13 +5744,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1840096033}
-  m_LocalRotation: {x: 0.42728856, y: 0.5661682, z: -0.44171503, w: 0.5493323}
-  m_LocalPosition: {x: -501.14, y: -389.8, z: -5.18}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.5568903, y: 0.0123946965, z: -0.0077992156, w: 0.830457}
+  m_LocalPosition: {x: 0.081194825, y: 3.963942, z: 5.3468657}
+  m_LocalScale: {x: 1.0001287, y: 1.1474439, z: 1.0221119}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1076903025}
-  m_RootOrder: 3
+  m_Father: {fileID: 1390050443}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 75.84, y: 91.463, z: -0.342}
 --- !u!81 &1840096035
 AudioListener:

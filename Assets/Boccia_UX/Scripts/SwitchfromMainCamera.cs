@@ -36,7 +36,7 @@ public class SwitchfromMainCamera : MonoBehaviour
         elevationCamera.enabled = false;
         inclineCamera.enabled = false;
         rotationCamera.enabled = false;
-        topCamera.enabled = false;
+        //topCamera.enabled = false;
     }
 
     //Change GameObject to Canvas Object - so we can turnOn/Off Canvas.
