@@ -1590,6 +1590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad21122022b5c44483217818b41475e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ball: {fileID: 9084875175627811280}
 --- !u!4 &609098863
 Transform:
   m_ObjectHideFlags: 0
@@ -6585,18 +6586,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 609098862}
-        m_TargetAssemblyTypeName: BarController, Assembly-CSharp
-        m_MethodName: DropButtonPressed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 9084875175627811281}
         m_TargetAssemblyTypeName: BallReset, Assembly-CSharp
         m_MethodName: GetBallDropPosition
@@ -6607,6 +6596,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: GetLocation
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 609098862}
+        m_TargetAssemblyTypeName: BarController, Assembly-CSharp
+        m_MethodName: DropButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1865728570
@@ -19798,9 +19799,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 400955202356301130}
-  m_LocalRotation: {x: -0.8654151, y: 0.005563602, z: -0.0035959014, w: -0.5010117}
-  m_LocalPosition: {x: -0.00027648572, y: -0.0033493035, z: -0.0016989914}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.86541504, y: 0.0055633923, z: -0.0035959056, w: -0.5010119}
+  m_LocalPosition: {x: -0.00027649934, y: -0.003349316, z: -0.0016989541}
+  m_LocalScale: {x: 1.0000004, y: 1.0000002, z: 0.9999998}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2580091184809946593}
@@ -19854,7 +19855,7 @@ MonoBehaviour:
   ballDropPos: {x: 0, y: 0, z: 0}
   plateOrigRot: {x: 0, y: 0, z: 0, w: 0}
   initialRotation: {x: 0, y: 0, z: 0, w: 0}
-  maxX: 2
+  maxX: 5
   ballPit: []
 --- !u!4 &9085893512870128820
 Transform:

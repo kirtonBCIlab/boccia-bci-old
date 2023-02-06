@@ -70,7 +70,7 @@ public class ElevationAdjuster : MonoBehaviour
     void Update()
     {
         currentHeight = elevatorPlate.transform.position.z;
-        Debug.Log(targetHeight + ":" + currentHeight);
+        //Debug.Log(targetHeight + ":" + currentHeight);
 
         ////currentHeight = elevatorPlate.transform.position.z;
 

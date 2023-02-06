@@ -37,7 +37,7 @@ public class BallReset : MonoBehaviour
     {
         currentPos = ball.transform.position;
 
-        Debug.Log(originalPos + ":" + currentPos);
+        //Debug.Log(originalPos + ":" + currentPos);
 
         // When the ball goes out of frame
         if (currentPos.x >= (originalPos.x + maxX))
