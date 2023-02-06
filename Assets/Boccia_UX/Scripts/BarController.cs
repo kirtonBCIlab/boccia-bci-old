@@ -8,7 +8,7 @@ public class BarController : MonoBehaviour
 
     public void DropButtonPressed() {
         barAnim.SetBool("isOpening", true);
-        Invoke("Close", 3);
+        Invoke("Close", 1f);
     }
     void Close() {
         barAnim.SetBool("isOpening", false);
@@ -22,6 +22,6 @@ public class BarController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
