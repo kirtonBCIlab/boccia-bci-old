@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity;
+using static UnityEngine.GraphicsBuffer;
 
 public class ElevationAdjuster : MonoBehaviour
 {
@@ -23,8 +24,10 @@ public class ElevationAdjuster : MonoBehaviour
 
     public void changeHeight(float change)
     {
-        targetHeight += change;
-        if (targetHeight < -0.05204198f)
+        currentHeight = elevatorPlate.transform.position.z; //new
+        targetHeight = currentHeight += change; //new and old
+
+        if (targetHeight < -0.051f)
         {
             targetHeight = -0.05204198f;
         }
@@ -39,35 +42,23 @@ public class ElevationAdjuster : MonoBehaviour
     {
         currentHeight = elevatorPlate.transform.position.z;
 
-        //if (target < currentHeight) //(target more negative than current) move up
-        //{
-        //    //elevatorPlate.transform.Translate(0, 0, -target);
-        //    //elevatorPlate.transform.Translate(Vector3.forward * 0.1f); //working to move but it is not stopping at the max
-        //}
-
-        //else if (target > currentHeight) //(target less negative than current) move down
-        //{
-        //    //elevatorPlate.transform.Translate(0, 0, target);
-        //    //elevatorPlate.transform.Translate(Vector3.back * -0.1f); //moving in the wrong direction
-        //}
-
         float speed = heightSpeed;
-        if ((currentHeight - targetHeight) < 0.00015 & (currentHeight - targetHeight) > -0.15)
+        if ((currentHeight - targetHeight) < -0.0015 & (currentHeight - targetHeight) > 0.00015)
         {
             speed = 0;
         }
         if (target < currentHeight)
         {
-            elevatorPlate.transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            elevatorPlate.transform.Translate(Vector3.forward *speed* Time.deltaTime);
             //elevatorPlate.transform.position.z = currentHeight;
         }
         if (target > currentHeight)
         {
-            elevatorPlate.transform.Translate(Vector3.back * speed * Time.deltaTime);
+            elevatorPlate.transform.Translate(Vector3.back * speed*Time.deltaTime);
         }
 
         yield return null;
-    } 
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -78,22 +69,24 @@ public class ElevationAdjuster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //currentHeight = elevatorPlate.transform.position.z;
+        currentHeight = elevatorPlate.transform.position.z;
         Debug.Log(targetHeight + ":" + currentHeight);
-        //float x = 2.0f;
-        //if ((currentHeight - targetHeight) < 0.001 & (currentHeight - targetHeight) > -0.001)
+
+        ////currentHeight = elevatorPlate.transform.position.z;
+
+        //float speed = heightSpeed;
+        ////if ((currentHeight - targetHeight) < -0.0015 & (currentHeight - targetHeight) > 0.15)
+        ////{
+        ////    speed = 0;
+        ////}
+        //if (targetHeight < currentHeight)
         //{
-        //    x = 0;
+        //    elevatorPlate.transform.Translate(Vector3.forward * Time.deltaTime);
+        //    //elevatorPlate.transform.position.z = currentHeight;
         //}
-        //else if (targetHeight < currentHeight)
+        //if (targetHeight > currentHeight)
         //{
-        //    //elevatorPlate.transform.Translate(0, 0, -x * Time.deltaTime);
-        //    elevatorPlate.transform.Translate(Vector3.back* -x * Time.deltaTime);
-        //}
-        //else if (targetHeight > currentHeight)
-        //{
-        //    //elevatorPlate.transform.Translate(0, 0, x * Time.deltaTime);
-        //    elevatorPlate.transform.Translate(Vector3.forward* x * Time.deltaTime);
+        //    elevatorPlate.transform.Translate(Vector3.forward * -Time.deltaTime);
         //}
 
     }
