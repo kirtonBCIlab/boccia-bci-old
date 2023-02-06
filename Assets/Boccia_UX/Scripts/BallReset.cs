@@ -12,6 +12,7 @@ public class BallReset : MonoBehaviour
     private Vector3 currentPos;
     public Quaternion initialRotation;
     public float maxX = 2f;
+    public List <GameObject> ballPit; 
     //public float maxY = 2f;
 
 

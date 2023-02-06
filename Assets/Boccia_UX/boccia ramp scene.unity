@@ -1358,6 +1358,13 @@ MonoBehaviour:
   plateOrigRot: {x: 0, y: 0, z: 0, w: 0}
   initialRotation: {x: 0, y: 0, z: 0, w: 0}
   maxX: 7
+  ballPit:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &603768849
 GameObject:
   m_ObjectHideFlags: 0
@@ -6393,7 +6400,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
