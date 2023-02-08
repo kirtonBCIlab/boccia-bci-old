@@ -1292,6 +1292,7 @@ MonoBehaviour:
   elevationPlate: {fileID: 28725063460419423}
   rotZ: 0
   heightZ: 0
+  trainingPanel: {fileID: 0}
 --- !u!4 &514755698
 Transform:
   m_ObjectHideFlags: 0
@@ -1590,7 +1591,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad21122022b5c44483217818b41475e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 9084875175627811280}
 --- !u!4 &609098863
 Transform:
   m_ObjectHideFlags: 0
@@ -6586,7 +6586,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9084875175627811281}
+      - m_Target: {fileID: 514755701}
         m_TargetAssemblyTypeName: BallReset, Assembly-CSharp
         m_MethodName: GetBallDropPosition
         m_Mode: 1
@@ -19845,18 +19845,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 400955202356301130}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bb21a734fa5a46b3af0c108ae3fa3ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 93b97f03397e41946825dba0956f1543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 400955202356301130}
-  elevationPlate: {fileID: 28725063460419423}
-  originalPos: {x: 0, y: 0, z: 0}
-  plateOrigPos: {x: 0, y: 0, z: 0}
-  ballDropPos: {x: 0, y: 0, z: 0}
-  plateOrigRot: {x: 0, y: 0, z: 0, w: 0}
-  initialRotation: {x: 0, y: 0, z: 0, w: 0}
-  maxX: 5
-  ballPit: []
 --- !u!4 &9085893512870128820
 Transform:
   m_ObjectHideFlags: 0
