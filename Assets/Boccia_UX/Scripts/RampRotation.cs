@@ -5,33 +5,37 @@ using UnityEngine;
 public class RampRotation : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject mainShaft; 
+    public GameObject mainShaft;
+    public float rotInc = 6.0f;
+    public float maxRot = 125f;
+    public float minRot = 62.5f;
+    public float rotSpeed = 10.0f;
     float targetAngle = 90.0f;
     float currentAngle; 
 
     public void RotateLeftS() {
-        changeAngle(-2.0f);
+        changeAngle(-rotInc);
     }
-    public void RotateLeftM() {
-        changeAngle(-4.0f);
-        //currentAngle= mainShaft.transform.Rotation.z; 
-    }
+    //public void RotateLeftM() {
+    //    changeAngle(-8.0f);
+    //    //currentAngle= mainShaft.transform.Rotation.z; 
+    //}
     public void RotateRightS() {
-        changeAngle(2.0f);
+        changeAngle(rotInc);
         //currentAngle= mainShaft.transform.rotation.z;  
     }
-    public void RotateRightM() {
-        changeAngle(4.0f);
-        //currentAngle= mainShaft.transform.rotation.z;
-    }
+    //public void RotateRightM() {
+    //    changeAngle(8.0f);
+    //    //currentAngle= mainShaft.transform.rotation.z;
+    //}
 
     void changeAngle(float change){
         targetAngle += change;
-        if (targetAngle>180f){
-            targetAngle = 180f;
+        if (targetAngle>maxRot){
+            targetAngle = maxRot;
         } 
-        else if (targetAngle < 0.0f){
-            targetAngle = 0.0f;
+        else if (targetAngle < minRot){
+            targetAngle = minRot;
         }
     }
 
@@ -44,8 +48,8 @@ public class RampRotation : MonoBehaviour
     void Update()
     {
         currentAngle = mainShaft.transform.localEulerAngles.y; 
-        Debug.Log(targetAngle + ":" + currentAngle);
-        float x = 10.0f;
+        //Debug.Log(targetAngle + ":" + currentAngle);
+        float x = rotSpeed;
         if ((currentAngle-targetAngle) < 0.15 & (currentAngle-targetAngle) > -0.15) {
             x=0;
         }
