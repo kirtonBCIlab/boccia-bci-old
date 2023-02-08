@@ -1775,8 +1775,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   elevatorPlate: {fileID: 28725063460419423}
-  heightInc: 0.0005
+  heightInc: 0.005
   heightSpeed: 6
+  targetHeight: {x: 0, y: 0, z: 0}
+  currentHeight: {x: 0, y: 0, z: 0}
 --- !u!114 &514755701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1793,6 +1795,8 @@ MonoBehaviour:
   elevationPlate: {fileID: 28725063460419423}
   originalPos: {x: 0, y: 0, z: 0}
   plateOrigPos: {x: 0, y: 0, z: 0}
+  shaftOrigPos: {x: 0, y: 0, z: 0}
+  ballDropPos: {x: 0, y: 0, z: 0}
   plateOrigRot: {x: 0, y: 0, z: 0, w: 0}
   initialRotation: {x: 0, y: 0, z: 0, w: 0}
   shaftOrigRot: {x: 0, y: 0, z: 0, w: 0}
@@ -11655,7 +11659,7 @@ Transform:
   m_Children:
   - {fileID: 4916664264215524805}
   - {fileID: 8081005307359602732}
-  - {fileID: 9084875175627811278}
+  - {fileID: 6064968554892954656}
   - {fileID: 178798418}
   - {fileID: 1100007401}
   - {fileID: 447819087}
@@ -20757,29 +20761,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &9084875175627811281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 400955202356301130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bb21a734fa5a46b3af0c108ae3fa3ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ball: {fileID: 400955202356301130}
-  elevationPlate: {fileID: 28725063460419423}
-  originalPos: {x: 0, y: 0, z: 0}
-  plateOrigPos: {x: 0, y: 0, z: 0}
-  shaftOrigPos: {x: 0, y: 0, z: 0}
-  ballDropPos: {x: 0, y: 0, z: 0}
-  plateOrigRot: {x: 0, y: 0, z: 0, w: 0}
-  initialRotation: {x: 0, y: 0, z: 0, w: 0}
-  shaftOrigRot: {x: 0, y: 0, z: 0, w: 0}
-  maxX: 5
-  ballPit: []
 --- !u!4 &9085893512870128820
 Transform:
   m_ObjectHideFlags: 0
