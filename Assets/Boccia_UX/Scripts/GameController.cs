@@ -16,7 +16,6 @@ public class GameController : MonoBehaviour
 
     public GameObject trainingPanel;
     
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +28,8 @@ public class GameController : MonoBehaviour
         heightZ = elevationPlate.transform.position.z;
         
     }
+
+
 
     // Update is called once per frame
     void Update()
