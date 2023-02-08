@@ -6,10 +6,23 @@ public class BarController : MonoBehaviour
 {
     Animator barAnim;
 
-    public void DropButtonPressed() {
-        barAnim.SetBool("isOpening", true);
-        Invoke("Close", 1f);
+    public void DropButtonPressed()
+    {  
+        StartCoroutine(BallDrop());
     }
+
+    private IEnumerator BallDrop()
+    {
+        // Open lever
+        barAnim.SetBool("isOpening", true);
+
+        yield return new WaitForSecondsRealtime(1f);
+
+        // Close lever
+        barAnim.SetBool("isOpening", false);
+        yield return null;
+    }
+
     void Close() {
         barAnim.SetBool("isOpening", false);
     }

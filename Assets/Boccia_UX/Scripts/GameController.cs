@@ -13,8 +13,8 @@ public class GameController : MonoBehaviour
 
     public float rotZ;
     public float heightZ;
-    
-    
+
+    public GameObject trainingPanel;
     
     
     // Start is called before the first frame update
@@ -33,6 +33,11 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            //Close the panel
+            trainingPanel.SetActive(false);
+
+        }
     }
 }

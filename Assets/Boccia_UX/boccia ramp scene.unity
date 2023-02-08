@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4511695, g: 0.49982995, b: 0.56787866, a: 1}
+  m_IndirectSpecularColor: {r: 0.4511702, g: 0.49983096, b: 0.56788063, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1730,6 +1730,7 @@ MonoBehaviour:
   elevationPlate: {fileID: 28725063460419423}
   rotZ: 0
   heightZ: 0
+  trainingPanel: {fileID: 0}
 --- !u!4 &514755698
 Transform:
   m_ObjectHideFlags: 0
@@ -1795,7 +1796,6 @@ MonoBehaviour:
   elevationPlate: {fileID: 28725063460419423}
   originalPos: {x: 0, y: 0, z: 0}
   plateOrigPos: {x: 0, y: 0, z: 0}
-  shaftOrigPos: {x: 0, y: 0, z: 0}
   ballDropPos: {x: 0, y: 0, z: 0}
   plateOrigRot: {x: 0, y: 0, z: 0, w: 0}
   initialRotation: {x: 0, y: 0, z: 0, w: 0}
@@ -7350,6 +7350,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 514755701}
+        m_TargetAssemblyTypeName: BallReset, Assembly-CSharp
+        m_MethodName: GetBallDropPosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: GetLocation
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 609098862}
         m_TargetAssemblyTypeName: BarController, Assembly-CSharp
         m_MethodName: DropButtonPressed
@@ -8585,8 +8597,9 @@ GameObject:
   - component: {fileID: 1891486210131300858}
   - component: {fileID: 9084875175627811280}
   - component: {fileID: 9084875175627811279}
+  - component: {fileID: 9084875175627811281}
   m_Layer: 0
-  m_Name: LargeBall 1
+  m_Name: LargeBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9517,22 +9530,6 @@ Transform:
   m_Father: {fileID: 4288586350781266382}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &995992325910384803
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6064968554892954656}
-  m_Layer: 0
-  m_Name: LARGE Ball
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!33 &1003588839120752209
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11659,12 +11656,7 @@ Transform:
   m_Children:
   - {fileID: 4916664264215524805}
   - {fileID: 8081005307359602732}
-  - {fileID: 6064968554892954656}
-  - {fileID: 178798418}
-  - {fileID: 1100007401}
-  - {fileID: 447819087}
-  - {fileID: 413080176}
-  - {fileID: 766765171}
+  - {fileID: 9084875175627811278}
   m_Father: {fileID: 443234230}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16708,22 +16700,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3395326005641288853}
   m_Mesh: {fileID: 4529524283109666172, guid: 273d35dbb63ca8349956c656d0ebeb14, type: 3}
---- !u!4 &6064968554892954656
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 995992325910384803}
-  m_LocalRotation: {x: -0.86541516, y: 0.005563602, z: -0.0035959433, w: -0.50101167}
-  m_LocalPosition: {x: -0.00027648977, y: -0.0033493054, z: -0.0016990156}
-  m_LocalScale: {x: 0.09999999, y: 0.09999993, z: 0.09999997}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 9084875175627811278}
-  m_Father: {fileID: 2580091184809946593}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6067968348742877762
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -20724,13 +20700,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 400955202356301130}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalRotation: {x: -0.86541504, y: 0.0055633923, z: -0.0035959056, w: -0.5010119}
+  m_LocalPosition: {x: -0.00027649934, y: -0.003349316, z: -0.0016989541}
+  m_LocalScale: {x: 1.0000004, y: 1.0000002, z: 0.9999998}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6064968554892954656}
-  m_RootOrder: 0
+  m_Father: {fileID: 2580091184809946593}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &9084875175627811279
 SphereCollider:
@@ -20761,6 +20737,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &9084875175627811281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400955202356301130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93b97f03397e41946825dba0956f1543, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &9085893512870128820
 Transform:
   m_ObjectHideFlags: 0

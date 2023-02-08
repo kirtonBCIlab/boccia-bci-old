@@ -48,7 +48,7 @@ public class RampRotation : MonoBehaviour
     void Update()
     {
         currentAngle = mainShaft.transform.localEulerAngles.y; 
-        Debug.Log(targetAngle + ":" + currentAngle);
+        //Debug.Log(targetAngle + ":" + currentAngle);
         float x = rotSpeed;
         if ((currentAngle-targetAngle) < 0.15 & (currentAngle-targetAngle) > -0.15) {
             x=0;
