@@ -11,10 +11,13 @@ public class GameController : MonoBehaviour
     public Vector3 startHeight;
     public GameObject elevationPlate;
 
+    [SerializeField]
+    private NetworkController network;
+
     public float rotZ;
     public float heightZ;
 
-    public GameObject trainingPanel;
+    //public GameObject trainingPanel;
     
     // Start is called before the first frame update
     void Start()
@@ -25,20 +28,18 @@ public class GameController : MonoBehaviour
         rotZ = mainShaft.transform.localEulerAngles.y;
 
         startHeight = elevationPlate.transform.position;
-        heightZ = elevationPlate.transform.position.z;
-        
+        heightZ = elevationPlate.transform.position.z;        
     }
-
 
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            //Close the panel
-            trainingPanel.SetActive(false);
+        //if(Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    //Close the panel
+        //    trainingPanel.SetActive(false);
 
-        }
+        //}
     }
 }
