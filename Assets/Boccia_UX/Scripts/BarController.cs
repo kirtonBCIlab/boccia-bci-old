@@ -5,7 +5,6 @@ using UnityEngine;
 public class BarController : MonoBehaviour
 {
     Animator barAnim;
-    public Rigidbody ball;
 
     public void DropButtonPressed()
     {  
@@ -31,7 +30,6 @@ public class BarController : MonoBehaviour
     void Start()
     {
         barAnim = this.transform.parent.GetComponent<Animator>();
-        ball.sleepThreshold = 0.0f;
     }
 
     // Update is called once per frame
