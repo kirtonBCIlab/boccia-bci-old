@@ -152,7 +152,7 @@ public class ElevationAdjuster : MonoBehaviour
     void Update()
     {
         currentHeight = elevatorPlate.transform.localPosition;
-        Debug.Log(targetHeight + ":" + currentHeight);
+        //Debug.Log(targetHeight + ":" + currentHeight);
 
         elevatorPlate.transform.localPosition = Vector3.Lerp(currentHeight, targetHeight, heightSpeed * Time.deltaTime);
 

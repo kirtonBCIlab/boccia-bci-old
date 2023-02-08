@@ -1294,6 +1294,7 @@ GameObject:
   - component: {fileID: 514755699}
   - component: {fileID: 514755700}
   - component: {fileID: 514755701}
+  - component: {fileID: 514755702}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1319,6 +1320,7 @@ MonoBehaviour:
   myHeight: {x: 0, y: 0, z: 0}
   startHeight: {x: 0, y: 0, z: 0}
   elevationPlate: {fileID: 28725063460419423}
+  network: {fileID: 514755702}
   rotZ: 0
   heightZ: 0
   trainingPanel: {fileID: 0}
@@ -1400,6 +1402,27 @@ MonoBehaviour:
   - {fileID: 32767544}
   - {fileID: 32767544}
   - {fileID: 32767544}
+--- !u!114 &514755702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514755696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c82928ddc236d314bad5f3701046982c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  markers: {fileID: 775542166}
+  eventStartTime:
+  - 0
+  - 1
+  - 2
+  eventUpdateTime:
+  - 0
+  - 1
+  - 2
 --- !u!1 &603768849
 GameObject:
   m_ObjectHideFlags: 0
@@ -1962,6 +1985,17 @@ Transform:
   m_Father: {fileID: 2093591259}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 25.175, y: 13.682, z: 22.556}
+--- !u!114 &775542166 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4280385885900106479, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
+  m_PrefabInstance: {fileID: 119411028}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d58921158b87bfe4c8dc3c8b3d999291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &824254636
 GameObject:
   m_ObjectHideFlags: 0
@@ -6744,6 +6778,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: BarController, Assembly-CSharp
         m_MethodName: DropButtonPressed
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 514755702}
+        m_TargetAssemblyTypeName: NetworkController, Assembly-CSharp
+        m_MethodName: SendMessageTimeSinceStartExperiment
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

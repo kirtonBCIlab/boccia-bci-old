@@ -11,6 +11,9 @@ public class GameController : MonoBehaviour
     public Vector3 startHeight;
     public GameObject elevationPlate;
 
+    [SerializeField]
+    private NetworkController network;
+
     public float rotZ;
     public float heightZ;
 
@@ -26,9 +29,10 @@ public class GameController : MonoBehaviour
 
         startHeight = elevationPlate.transform.position;
         heightZ = elevationPlate.transform.position.z;
+
+        network.SendMessageStartExperiment();
         
     }
-
 
 
     // Update is called once per frame
