@@ -138,12 +138,5 @@ public class SwitchfromMainCamera : MonoBehaviour
         go.SetActive(true);
     }
 
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.V))
-        {
-            SwitchToElevationView();
-        }
-    }
 
 }
