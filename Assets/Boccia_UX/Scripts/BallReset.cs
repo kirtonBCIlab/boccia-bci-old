@@ -6,12 +6,15 @@ public class BallReset : MonoBehaviour
 {
     public GameObject ball;
     public GameObject elevationPlate;
+    //public GameObject mainShaft;
     public Vector3 originalPos;
     public Vector3 plateOrigPos;
+    public Vector3 shaftOrigPos;
     public Vector3 ballDropPos;
     public Quaternion plateOrigRot;
     private Vector3 currentPos;
     public Quaternion initialRotation;
+    public Quaternion shaftOrigRot;
     public float maxX = 2f;
     public List <GameObject> ballPit; 
     //public float maxY = 2f;
