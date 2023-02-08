@@ -23,7 +23,7 @@ public class SPO : MonoBehaviour
     public virtual float TurnOn()
     {
         //This is just for an object renderer (e.g. 3D object). Use <SpriteRenderer> for 2D
-        { this.GetComponent<Renderer>().material.color = onColour; }
+        { this.GetComponent<Image>().color = onColour; }
 
 
         //Return time since stim
@@ -36,7 +36,7 @@ public class SPO : MonoBehaviour
     public virtual void TurnOff()
     {
         //This is just for an object renderer (e.g. 3D object). Use <SpriteRenderer> for 2D
-        { this.GetComponent<Renderer>().material.color = offColour; }
+        { this.GetComponent<Image>().color = offColour; }
     }
 
     // What to do on selection
