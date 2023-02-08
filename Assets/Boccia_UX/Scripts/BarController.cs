@@ -7,14 +7,21 @@ public class BarController : MonoBehaviour
     Animator barAnim;
     public Rigidbody ball;
 
-    public void DropButtonPressed() {       
-        barAnim.SetBool("isOpening", true);        
-        Invoke("Close", 1f);
+    public void DropButtonPressed()
+    {  
+        StartCoroutine(BallDrop());
+    }
 
-        Vector3 pushForce = new(0, -1, 0);
-        ball.WakeUp();
-        ball.AddForce(pushForce, ForceMode.Impulse);
-        Debug.Log("You have pushed");
+    private IEnumerator BallDrop()
+    {
+        // Open lever
+        barAnim.SetBool("isOpening", true);
+
+        yield return new WaitForSecondsRealtime(1f);
+
+        // Close lever
+        barAnim.SetBool("isOpening", false);
+        yield return null;
     }
 
     void Close() {
@@ -24,6 +31,7 @@ public class BarController : MonoBehaviour
     void Start()
     {
         barAnim = this.transform.parent.GetComponent<Animator>();
+        ball.sleepThreshold = 0.0f;
     }
 
     // Update is called once per frame
