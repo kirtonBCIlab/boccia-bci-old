@@ -15,6 +15,9 @@ public class GameController : MonoBehaviour
     public float heightZ;
 
     public GameObject trainingPanel;
+
+    [SerializeField]
+    private Controller selectBCI;
     
     
     // Start is called before the first frame update
@@ -30,14 +33,27 @@ public class GameController : MonoBehaviour
         
     }
 
+    public void P300Train()
+    {
+        selectBCI.GetComponent<P300Controller>().enabled = true;
+        selectBCI.GetComponent<SSVEPController>().enabled = false;
+
+    }
+
+    public void SSVEPTrain()
+    {
+        selectBCI.GetComponent<SSVEPController>().enabled = true;
+        selectBCI.GetComponent<P300Controller>().enabled=false;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            //Close the panel
-            trainingPanel.SetActive(false);
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    //Close the panel
+        //    trainingPanel.SetActive(false);
 
-        }
+        //}
     }
 }
