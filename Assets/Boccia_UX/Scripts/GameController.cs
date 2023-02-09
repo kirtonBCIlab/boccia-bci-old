@@ -11,6 +11,9 @@ public class GameController : MonoBehaviour
     public Vector3 startHeight;
     public GameObject elevationPlate;
 
+    [SerializeField]
+    private NetworkController network;
+
     public float rotZ;
     public float heightZ;
 
@@ -25,10 +28,8 @@ public class GameController : MonoBehaviour
         rotZ = mainShaft.transform.localEulerAngles.y;
 
         startHeight = elevationPlate.transform.position;
-        heightZ = elevationPlate.transform.position.z;
-        
+        heightZ = elevationPlate.transform.position.z;        
     }
-
 
 
     // Update is called once per frame
@@ -37,6 +38,6 @@ public class GameController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             instructionsText.StartChangeText();
-        }
+        }   
     }
 }
