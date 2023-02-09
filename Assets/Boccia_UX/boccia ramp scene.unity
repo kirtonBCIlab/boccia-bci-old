@@ -332,6 +332,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4280385885900106478, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
+      propertyPath: InstructionsText
+      value: 
+      objectReference: {fileID: 514755702}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
 --- !u!1 &205974784
@@ -1293,7 +1297,7 @@ MonoBehaviour:
   elevationPlate: {fileID: 28725063460419423}
   rotZ: 0
   heightZ: 0
-  trainingPanel: {fileID: 0}
+  instructionsText: {fileID: 514755702}
 --- !u!4 &514755698
 Transform:
   m_ObjectHideFlags: 0
@@ -1341,6 +1345,8 @@ MonoBehaviour:
   elevatorPlate: {fileID: 28725063460419423}
   heightInc: 0.005
   heightSpeed: 10
+  targetHeight: {x: 0, y: 0, z: 0}
+  currentHeight: {x: 0, y: 0, z: 0}
 --- !u!114 &514755701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1357,9 +1363,11 @@ MonoBehaviour:
   elevationPlate: {fileID: 28725063460419423}
   originalPos: {x: 0, y: 0, z: 0}
   plateOrigPos: {x: 0, y: 0, z: 0}
+  shaftOrigPos: {x: 0, y: 0, z: 0}
   ballDropPos: {x: 0, y: 0, z: 0}
   plateOrigRot: {x: 0, y: 0, z: 0, w: 0}
   initialRotation: {x: 0, y: 0, z: 0, w: 0}
+  shaftOrigRot: {x: 0, y: 0, z: 0, w: 0}
   maxX: 7
   ballPit:
   - {fileID: 0}
@@ -1380,7 +1388,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aad2ee31e4bdf74882517ac382f5a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TitleText: {fileID: 1089267389}
+  canvasText: {fileID: 1844100034}
+  titleText: {fileID: 1089267389}
   background: {fileID: 1341281339}
   focusTimeSec: 3
   countFrom: 3
@@ -2882,12 +2891,12 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1089267387}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1844100031}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2947,7 +2956,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -3966,7 +3975,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1844100031}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3986,7 +3995,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.19607843}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.39215687}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6677,8 +6686,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1089267388}
   - {fileID: 1341281338}
+  - {fileID: 1089267388}
   m_Father: {fileID: 1779152508}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6734,7 +6743,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844100030}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}

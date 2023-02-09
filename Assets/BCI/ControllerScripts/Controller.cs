@@ -68,7 +68,6 @@ public class Controller : MonoBehaviour
     [HideInInspector] public LSLResponseStream response;
 
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -143,7 +142,6 @@ public class Controller : MonoBehaviour
         {
             StartCoroutine(DoUserTraining());
         }
-
 
         // Check for a selection if stim is on
         if (stimOn)
