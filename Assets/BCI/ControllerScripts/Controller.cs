@@ -660,7 +660,7 @@ public class Controller : MonoBehaviour
         }
     }
     // Coroutine to continuously receive markers
-    public IEnumerator ReceiveMarkers()
+    public virtual IEnumerator ReceiveMarkers()
     {
         if (receivingMarkers == false)
         {
@@ -680,6 +680,7 @@ public class Controller : MonoBehaviour
         int pingCount = 0;
 
         // Receive markers continuously
+        //The voting mechanism is done separately in the SSVEPController.cs script.
         while (receivingMarkers)
         {
             // Receive markers
