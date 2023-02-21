@@ -69,11 +69,21 @@ public class AutomatedSelectInstructions : MonoBehaviour
 
     public void SetInstructionTarget()
     {
-        //todo - Grab last element, set this as current target
-        nextTarget = selectionTargets.First();
+        //Handle case when there are no more selection targets
+        if (selectionTargets.Count == 0)
+        {
+            print("You have cleared the selection target list! To reset prese 'R' ".Color("orange"));
+            print("Setting default target to Drop".Color("orange"));
+            nextTarget = "DropButton";
+        }
+        else
+        {
+            nextTarget = selectionTargets.First();
+        }
         UnityEngine.Debug.Log("Next target is: " + nextTarget);
         nextTargetGO = FindGOWithName(nextTarget);
         
+
         //Handle storing logic if the next action is a scene swap action. This is hardcoded for now
         if(nextTarget == "ElevationButton" || nextTarget == "RotationButton" || nextTarget == "Back")
         {
@@ -121,6 +131,8 @@ public class AutomatedSelectInstructions : MonoBehaviour
     /// <returns></returns>
     public IEnumerator FlashSequenceTarget()
     {
+        //Putting in a half-second buffer from starting the IEnumerator to hopefully fix a display bug. 
+        yield return new WaitForSeconds(0.5f);
         OnTargetButton(currentTargetGO);
         yield return new WaitForSeconds(nextSelectTargetOnTime);
         //change color back to off color state
@@ -167,7 +179,11 @@ public class AutomatedSelectInstructions : MonoBehaviour
         {
             needToCleanList = true;
             CleanUpInstructionTargets();
+        }
 
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ResetTargetList();
         }
     }
 
