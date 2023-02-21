@@ -72,7 +72,7 @@ public class AutomatedSelectInstructions : MonoBehaviour
         //Handle case when there are no more selection targets
         if (selectionTargets.Count == 0)
         {
-            print("You have cleared the selection target list! To reset prese 'R' ".Color("orange"));
+            print("You have cleared the selection target list! To reset press 'R' ".Color("orange"));
             print("Setting default target to Drop".Color("orange"));
             nextTarget = "DropButton";
         }
@@ -185,6 +185,7 @@ public class AutomatedSelectInstructions : MonoBehaviour
         {
             ResetTargetList();
         }
+
     }
 
     //Highlighting the Button to Select
@@ -222,6 +223,11 @@ public class AutomatedSelectInstructions : MonoBehaviour
     }
 
 
+    public int GetNumSelecitonTargetsLeft()
+    {
+        print("Asked for number of target selections left: " + selectionTargets.Count);
 
+        return selectionTargets.Count;
+    }
 
 }

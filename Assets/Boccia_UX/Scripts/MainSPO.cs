@@ -28,6 +28,9 @@ public class MainSPO : SPO
     [SerializeField]
     private AutomatedSelectInstructions autoInstructions;
 
+    [SerializeField]
+    private RestTime restTime;
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,8 +42,10 @@ public class MainSPO : SPO
         Debug.Log(GetMyId());
 
         //Get the Game Controller object, and set the Automated Training Component to this object.
-
         autoInstructions = GameObject.FindGameObjectWithTag("GameController").GetComponent<AutomatedSelectInstructions>();
+
+        //Get the Rest time component from the GameController object;
+        restTime = GameObject.FindGameObjectWithTag("GameController").GetComponent<RestTime>();
 
     }
 
@@ -77,6 +82,7 @@ public class MainSPO : SPO
                 }
                 autoInstructions.ToggleMainDisplay(false);
                 camScript.SwitchToRotationView();
+                camScript.EnableBirdEyeView();
                 autoInstructions.SetInstructionTarget();
                 break;
             case 1:
@@ -130,7 +136,16 @@ public class MainSPO : SPO
                     Debug.Log("Wrong target was selected, not cleaning the list".Color("red"));
                 }
                 barController.DropButtonPressed();
-                autoInstructions.SetInstructionTarget();
+                if (autoInstructions.GetNumSelecitonTargetsLeft() == 0)
+                {
+                    //Call the rest time now
+                    print("Time for rest, as there are no instructions left!".Color("orange"));
+                    restTime.StartChangeText();
+                }
+                else
+                {
+                    autoInstructions.SetInstructionTarget();
+                }
                 break;
             case 4:
                 //Todo
