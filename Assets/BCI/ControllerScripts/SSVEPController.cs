@@ -15,6 +15,7 @@ public class SSVEPController : Controller
     private int[] frame_off_count = new int[99];
     private int[] frame_on_count = new int[99];
 
+    public bool voteOnWindows = true;
 
     public override void PopulateObjectList(string popMethod)
     {

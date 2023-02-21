@@ -109,7 +109,6 @@ public class AutomatedSelectInstructions : MonoBehaviour
             //Object found - setting it as our current object
             prevTargetGO = currentTargetGO;
             currentTargetGO = FindGOWithName(nextTarget);
-            UnityEngine.Debug.Log("Does this ever run?");
         }
 
         //Now apply changes to that target
@@ -123,7 +122,7 @@ public class AutomatedSelectInstructions : MonoBehaviour
     public IEnumerator FlashSequenceTarget()
     {
         OnTargetButton(currentTargetGO);
-        yield return new WaitForSecondsRealtime(nextSelectTargetOnTime);
+        yield return new WaitForSeconds(nextSelectTargetOnTime);
         //change color back to off color state
         OffTargetButton(currentTargetGO);
         yield return null;

@@ -25,6 +25,8 @@ public class MainSPO : SPO
     [SerializeField]
     private RampRotation rampRot;
 
+    [SerializeField]
+    private AutomatedSelectInstructions autoInstructions;
 
 
     // Start is called before the first frame update
@@ -35,6 +37,11 @@ public class MainSPO : SPO
             Debug.Log("Yooooo you forgot to edit the object in the editor!");
         }
         Debug.Log(GetMyId());
+
+        //Get the Game Controller object, and set the Automated Training Component to this object.
+
+        autoInstructions = GameObject.FindGameObjectWithTag("GameController").GetComponent<AutomatedSelectInstructions>();
+
     }
 
     public override float TurnOn()
@@ -56,35 +63,142 @@ public class MainSPO : SPO
         {
             case 0:
                 //Todo - change to display or camera
+                //If statement to check what is happening is what is intended
+                if(autoInstructions.currentTargetGO.Equals(this.gameObject))
+                {
+                    Debug.Log("You selected the correct one!".Color("green"));
+                    Debug.Log("Cleaning the selection targets...");
+                    autoInstructions.needToCleanList = true;
+                    autoInstructions.CleanUpInstructionTargets();
+                }
+                else
+                {
+                    Debug.Log("Wrong target was selected, not cleaning the list".Color("red"));
+                }
+                autoInstructions.ToggleMainDisplay(false);
                 camScript.SwitchToRotationView();
+                autoInstructions.SetInstructionTarget();
                 break;
             case 1:
                 //Todo
+                //If statement to check what is happening is what is intended
+                if (autoInstructions.currentTargetGO.Equals(this.gameObject))
+                {
+                    Debug.Log("You selected the correct one!".Color("green"));
+                    Debug.Log("Cleaning the selection targets...");
+                    autoInstructions.needToCleanList = true;
+                    autoInstructions.CleanUpInstructionTargets();
+                }
+                else
+                {
+                    Debug.Log("Wrong target was selected, not cleaning the list".Color("red"));
+                }
+                autoInstructions.ToggleMainDisplay(true);
                 camScript.SwitchToMainDisplay();
+                autoInstructions.SetInstructionTarget();
                 break;
             case 2:
                 //Todo
+                //If statement to check what is happening is what is intended
+                if (autoInstructions.currentTargetGO.Equals(this.gameObject))
+                {
+                    Debug.Log("You selected the correct one!".Color("green"));
+                    Debug.Log("Cleaning the selection targets...");
+                    autoInstructions.needToCleanList = true;
+                    autoInstructions.CleanUpInstructionTargets();
+                }
+                else
+                {
+                    Debug.Log("Wrong target was selected, not cleaning the list".Color("red"));
+                }
+                autoInstructions.ToggleMainDisplay(false);
                 camScript.SwitchToElevationView();
+                autoInstructions.SetInstructionTarget();
                 break;
             case 3:
                 //Todo
+                //If statement to check what is happening is what is intended
+                if (autoInstructions.currentTargetGO.Equals(this.gameObject))
+                {
+                    Debug.Log("You selected the correct one!".Color("green"));
+                    Debug.Log("Cleaning the selection targets...");
+                    autoInstructions.needToCleanList = true;
+                    autoInstructions.CleanUpInstructionTargets();
+                }
+                else
+                {
+                    Debug.Log("Wrong target was selected, not cleaning the list".Color("red"));
+                }
                 barController.DropButtonPressed();
+                autoInstructions.SetInstructionTarget();
                 break;
             case 4:
                 //Todo
+                //If statement to check what is happening is what is intended
+                if (autoInstructions.currentTargetGO.Equals(this.gameObject))
+                {
+                    Debug.Log("You selected the correct one!".Color("green"));
+                    Debug.Log("Cleaning the selection targets...");
+                    autoInstructions.needToCleanList = true;
+                    autoInstructions.CleanUpInstructionTargets();
+                }
+                else
+                {
+                    Debug.Log("Wrong target was selected, not cleaning the list".Color("red"));
+                }
                 rampRot.RotateLeftS();
+                autoInstructions.SetInstructionTarget();
                 break;
             case 5:
                 //Todo
+                //If statement to check what is happening is what is intended
+                if (autoInstructions.currentTargetGO.Equals(this.gameObject))
+                {
+                    Debug.Log("You selected the correct one!".Color("green"));
+                    Debug.Log("Cleaning the selection targets...");
+                    autoInstructions.needToCleanList = true;
+                    autoInstructions.CleanUpInstructionTargets();
+                }
+                else
+                {
+                    Debug.Log("Wrong target was selected, not cleaning the list".Color("red"));
+                }
                 rampRot.RotateRightS();
+                autoInstructions.SetInstructionTarget();
                 break;
             case 6:
                 //Todo
+                //If statement to check what is happening is what is intended
+                if (autoInstructions.currentTargetGO.Equals(this.gameObject))
+                {
+                    Debug.Log("You selected the correct one!".Color("green"));
+                    Debug.Log("Cleaning the selection targets...");
+                    autoInstructions.needToCleanList = true;
+                    autoInstructions.CleanUpInstructionTargets();
+                }
+                else
+                {
+                    Debug.Log("Wrong target was selected, not cleaning the list".Color("red"));
+                }
                 elevAdj.MoveUp();
+                autoInstructions.SetInstructionTarget();
                 break;
             case 7:
                 //Todo
+                //If statement to check what is happening is what is intended
+                if (autoInstructions.currentTargetGO.Equals(this.gameObject))
+                {
+                    Debug.Log("You selected the correct one!".Color("green"));
+                    Debug.Log("Cleaning the selection targets...");
+                    autoInstructions.needToCleanList = true;
+                    autoInstructions.CleanUpInstructionTargets();
+                }
+                else
+                {
+                    Debug.Log("Wrong target was selected, not cleaning the list".Color("red"));
+                }
                 elevAdj.MoveDown();
+                autoInstructions.SetInstructionTarget();
                 break;
 
         }

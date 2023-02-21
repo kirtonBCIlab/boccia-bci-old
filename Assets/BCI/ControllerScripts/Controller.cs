@@ -60,7 +60,7 @@ public class Controller : MonoBehaviour
     }
 
     // Receive markers
-    private bool receivingMarkers = false;
+    public bool receivingMarkers = false;
 
     // Scripts
     [HideInInspector] public Matrix_Setup setup;
