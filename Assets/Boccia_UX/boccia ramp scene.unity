@@ -1334,7 +1334,7 @@ MonoBehaviour:
   network: {fileID: 514755702}
   rotZ: 0
   heightZ: 0
-  instructionsText: {fileID: 0}
+  instructionsText: {fileID: 514755703}
 --- !u!4 &514755698
 Transform:
   m_ObjectHideFlags: 0
@@ -1447,7 +1447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aad2ee31e4bdf74882517ac382f5a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasText: {fileID: 0}
+  canvasText: {fileID: 1844100034}
   titleText: {fileID: 1089267389}
   background: {fileID: 1556422130}
   focusTimeSec: 3
@@ -1468,7 +1468,7 @@ MonoBehaviour:
   restText: {fileID: 1653223450}
   timerText: {fileID: 1908999754}
   background: {fileID: 1556422130}
-  timeLeft: 120
+  timeLeft: 12
 --- !u!114 &514755705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1703,6 +1703,7 @@ MonoBehaviour:
   elevAdj: {fileID: 514755700}
   rampRot: {fileID: 514755699}
   autoInstructions: {fileID: 0}
+  restTime: {fileID: 0}
 --- !u!1 &609098861
 GameObject:
   m_ObjectHideFlags: 0
@@ -2309,6 +2310,7 @@ MonoBehaviour:
   elevAdj: {fileID: 514755700}
   rampRot: {fileID: 514755699}
   autoInstructions: {fileID: 0}
+  restTime: {fileID: 0}
 --- !u!1 &965194627
 GameObject:
   m_ObjectHideFlags: 0
@@ -2825,6 +2827,7 @@ MonoBehaviour:
   elevAdj: {fileID: 514755700}
   rampRot: {fileID: 514755699}
   autoInstructions: {fileID: 0}
+  restTime: {fileID: 0}
 --- !u!1 &1069331300
 GameObject:
   m_ObjectHideFlags: 0
@@ -3192,6 +3195,7 @@ MonoBehaviour:
   elevAdj: {fileID: 514755700}
   rampRot: {fileID: 514755699}
   autoInstructions: {fileID: 0}
+  restTime: {fileID: 0}
 --- !u!1 &1142486440
 GameObject:
   m_ObjectHideFlags: 0
@@ -5507,6 +5511,7 @@ MonoBehaviour:
   elevAdj: {fileID: 514755700}
   rampRot: {fileID: 514755699}
   autoInstructions: {fileID: 0}
+  restTime: {fileID: 0}
 --- !u!1 &1653223448
 GameObject:
   m_ObjectHideFlags: 0
@@ -6391,7 +6396,7 @@ GameObject:
   - component: {fileID: 1741339027}
   m_Layer: 0
   m_Name: CameraController
-  m_TagString: Untagged
+  m_TagString: CameraController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6678,6 +6683,7 @@ MonoBehaviour:
   elevAdj: {fileID: 514755700}
   rampRot: {fileID: 514755699}
   autoInstructions: {fileID: 0}
+  restTime: {fileID: 0}
 --- !u!1 &1779152507
 GameObject:
   m_ObjectHideFlags: 0
@@ -7008,6 +7014,7 @@ MonoBehaviour:
   elevAdj: {fileID: 514755700}
   rampRot: {fileID: 514755699}
   autoInstructions: {fileID: 0}
+  restTime: {fileID: 0}
 --- !u!1 &1837847127
 GameObject:
   m_ObjectHideFlags: 0
@@ -7216,6 +7223,7 @@ MonoBehaviour:
   elevAdj: {fileID: 514755700}
   rampRot: {fileID: 514755699}
   autoInstructions: {fileID: 0}
+  restTime: {fileID: 0}
 --- !u!1 &1840096033
 GameObject:
   m_ObjectHideFlags: 0
@@ -7660,6 +7668,7 @@ MonoBehaviour:
   elevAdj: {fileID: 514755700}
   rampRot: {fileID: 514755699}
   autoInstructions: {fileID: 0}
+  restTime: {fileID: 0}
 --- !u!1 &1908999752
 GameObject:
   m_ObjectHideFlags: 0
