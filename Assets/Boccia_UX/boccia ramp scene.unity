@@ -1304,7 +1304,7 @@ GameObject:
   - component: {fileID: 514755705}
   m_Layer: 0
   m_Name: GameController
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1488,7 +1488,7 @@ MonoBehaviour:
   prevTargetGO: {fileID: 0}
   needToCleanList: 0
   inMainDisplay: 1
-  nextSelectTargetOnTime: 2
+  nextSelectTargetOnTime: 5
   selectionTargets: []
   listLoc: 0
 --- !u!1 &603768849
@@ -1698,6 +1698,7 @@ MonoBehaviour:
   barController: {fileID: 609098862}
   elevAdj: {fileID: 514755700}
   rampRot: {fileID: 514755699}
+  autoInstructions: {fileID: 0}
 --- !u!1 &609098861
 GameObject:
   m_ObjectHideFlags: 0
@@ -2303,6 +2304,7 @@ MonoBehaviour:
   barController: {fileID: 609098862}
   elevAdj: {fileID: 514755700}
   rampRot: {fileID: 514755699}
+  autoInstructions: {fileID: 0}
 --- !u!1 &965194627
 GameObject:
   m_ObjectHideFlags: 0
@@ -2818,6 +2820,7 @@ MonoBehaviour:
   barController: {fileID: 609098862}
   elevAdj: {fileID: 514755700}
   rampRot: {fileID: 514755699}
+  autoInstructions: {fileID: 0}
 --- !u!1 &1069331300
 GameObject:
   m_ObjectHideFlags: 0
@@ -3184,6 +3187,7 @@ MonoBehaviour:
   barController: {fileID: 609098862}
   elevAdj: {fileID: 514755700}
   rampRot: {fileID: 514755699}
+  autoInstructions: {fileID: 0}
 --- !u!1 &1142486440
 GameObject:
   m_ObjectHideFlags: 0
@@ -5213,7 +5217,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1606370541}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -5498,6 +5502,7 @@ MonoBehaviour:
   barController: {fileID: 609098862}
   elevAdj: {fileID: 514755700}
   rampRot: {fileID: 514755699}
+  autoInstructions: {fileID: 0}
 --- !u!1 &1653223448
 GameObject:
   m_ObjectHideFlags: 0
@@ -6668,6 +6673,7 @@ MonoBehaviour:
   barController: {fileID: 609098862}
   elevAdj: {fileID: 514755700}
   rampRot: {fileID: 514755699}
+  autoInstructions: {fileID: 0}
 --- !u!1 &1779152507
 GameObject:
   m_ObjectHideFlags: 0
@@ -6997,6 +7003,7 @@ MonoBehaviour:
   barController: {fileID: 609098862}
   elevAdj: {fileID: 514755700}
   rampRot: {fileID: 514755699}
+  autoInstructions: {fileID: 0}
 --- !u!1 &1837847127
 GameObject:
   m_ObjectHideFlags: 0
@@ -7204,6 +7211,7 @@ MonoBehaviour:
   barController: {fileID: 609098862}
   elevAdj: {fileID: 514755700}
   rampRot: {fileID: 514755699}
+  autoInstructions: {fileID: 0}
 --- !u!1 &1840096033
 GameObject:
   m_ObjectHideFlags: 0
@@ -7647,6 +7655,7 @@ MonoBehaviour:
   barController: {fileID: 609098862}
   elevAdj: {fileID: 514755700}
   rampRot: {fileID: 514755699}
+  autoInstructions: {fileID: 0}
 --- !u!1 &1908999752
 GameObject:
   m_ObjectHideFlags: 0
