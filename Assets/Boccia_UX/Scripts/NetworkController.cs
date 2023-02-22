@@ -2,6 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Going to use the following default ids for now (arbitrarily chosen):
+/* Marker ID 0 - Training Start Time
+ * Marker ID 100 - Experiment Start Time
+ * Marker ID 300 - Time On "Main" Display page
+ * Marker ID 500 - Time on "Elevation" Display page
+ * Marker ID 700 - Time on "Rotation" Display page
+ * Marker ID 42 - Experiment Ended (Ball is Dropped at the end of the list)
+ */
 public class NetworkController : MonoBehaviour
 {
     [SerializeField]
