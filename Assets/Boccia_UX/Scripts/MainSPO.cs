@@ -57,9 +57,11 @@ public class MainSPO : SPO
          * Marker ID 300 - Time On "Main" Display page
          * Marker ID 500 - Time on "Elevation" Display page
          * Marker ID 700 - Time on "Rotation" Display page
-         * Marker ID 42 - Experiment End (Ball is dropped)
+         * Marker ID 1041 - Experiment End (Ball is dropped)
+         * Marker ID Case number (0-7) + 41 = Success on that case. E.g. 041 = Success on Case 0 (switch to rotation view).
+         * Marker ID Case number (0-7) + 42 = Failure on that case. E.g. 042 = Fail on Case 0 (switch to rotation view).
          */
-         networkController = GameObject.FindGameObjectWithTag("GameController").GetComponent<NetworkController>();
+        networkController = GameObject.FindGameObjectWithTag("GameController").GetComponent<NetworkController>();
     }
 
     public override float TurnOn()
@@ -85,6 +87,7 @@ public class MainSPO : SPO
                 if(autoInstructions.currentTargetGO.Equals(this.gameObject))
                 {
                     Debug.Log("You selected the correct one!".Color("green"));
+                    networkController.SendMessageTimeSinceStartExperiment("041, Correctly chose going to Rotation View! Time since experiment start: ");
                     Debug.Log("Cleaning the selection targets...");
                     autoInstructions.needToCleanList = true;
                     autoInstructions.CleanUpInstructionTargets();
@@ -92,6 +95,7 @@ public class MainSPO : SPO
                 else
                 {
                     Debug.Log("Wrong target was selected, not cleaning the list".Color("red"));
+                    networkController.SendMessageTimeSinceStartExperiment("042, Wrongly chose going to Rotation View! Time since experiment start: ");
                 }
                 autoInstructions.ToggleMainDisplay(false);
                 camScript.SwitchToRotationView();
@@ -104,6 +108,7 @@ public class MainSPO : SPO
                 if (autoInstructions.currentTargetGO.Equals(this.gameObject))
                 {
                     Debug.Log("You selected the correct one!".Color("green"));
+                    networkController.SendMessageTimeSinceStartExperiment("141, Correctly chose to return to Main Menu! Time since experiment start: ");
                     Debug.Log("Cleaning the selection targets...");
                     autoInstructions.needToCleanList = true;
                     autoInstructions.CleanUpInstructionTargets();
@@ -111,6 +116,7 @@ public class MainSPO : SPO
                 else
                 {
                     Debug.Log("Wrong target was selected, not cleaning the list".Color("red"));
+                    networkController.SendMessageTimeSinceStartExperiment("142, Wrongly chose to return to Main Menu. Time since experiment start: ");
                 }
                 autoInstructions.ToggleMainDisplay(true);
                 camScript.SwitchToMainDisplay();
@@ -122,6 +128,7 @@ public class MainSPO : SPO
                 if (autoInstructions.currentTargetGO.Equals(this.gameObject))
                 {
                     Debug.Log("You selected the correct one!".Color("green"));
+                    networkController.SendMessageTimeSinceStartExperiment("241, Correctly chose switching to Elevation View! Time since experiment start: ");
                     Debug.Log("Cleaning the selection targets...");
                     autoInstructions.needToCleanList = true;
                     autoInstructions.CleanUpInstructionTargets();
@@ -129,6 +136,7 @@ public class MainSPO : SPO
                 else
                 {
                     Debug.Log("Wrong target was selected, not cleaning the list".Color("red"));
+                    networkController.SendMessageTimeSinceStartExperiment("242, Wrongly chose switching to Elevation View! Time since experiment start: ");
                 }
                 autoInstructions.ToggleMainDisplay(false);
                 camScript.SwitchToElevationView();
@@ -140,6 +148,7 @@ public class MainSPO : SPO
                 if (autoInstructions.currentTargetGO.Equals(this.gameObject))
                 {
                     Debug.Log("You selected the correct one!".Color("green"));
+                    networkController.SendMessageTimeSinceStartExperiment("341, Correctly dropped the ball! Time since experiment start: ");
                     Debug.Log("Cleaning the selection targets...");
                     autoInstructions.needToCleanList = true;
                     autoInstructions.CleanUpInstructionTargets();
@@ -147,18 +156,18 @@ public class MainSPO : SPO
                 else
                 {
                     Debug.Log("Wrong target was selected, not cleaning the list".Color("red"));
+                    networkController.SendMessageTimeSinceStartExperiment("342, Wrongly dropped the ball! Time since experiment start: ");
                 }
                 barController.DropButtonPressed();
                 if (autoInstructions.GetNumSelecitonTargetsLeft() == 0)
                 {
                     //Call the rest time now
                     print("Time for rest, as there are no instructions left!".Color("orange"));
-                    networkController.SendMessageTimeSinceStartExperiment("42,Ball dropped end of experiment");
+                    networkController.SendMessageTimeSinceStartExperiment("1041, Ball dropped end of experiment: ");
                     restTime.StartChangeText();
                 }
                 else
                 {
-                    
                     autoInstructions.SetInstructionTarget();
                 }
                 break;
@@ -168,6 +177,7 @@ public class MainSPO : SPO
                 if (autoInstructions.currentTargetGO.Equals(this.gameObject))
                 {
                     Debug.Log("You selected the correct one!".Color("green"));
+                    networkController.SendMessageTimeSinceStartExperiment("441, Correctly rotated left (s)! Time since experiment start: ");
                     Debug.Log("Cleaning the selection targets...");
                     autoInstructions.needToCleanList = true;
                     autoInstructions.CleanUpInstructionTargets();
@@ -175,6 +185,7 @@ public class MainSPO : SPO
                 else
                 {
                     Debug.Log("Wrong target was selected, not cleaning the list".Color("red"));
+                    networkController.SendMessageTimeSinceStartExperiment("442, Wrongly chose to rotate left (s). Time since experiment start: ");
                 }
                 rampRot.RotateLeftS();
                 autoInstructions.SetInstructionTarget();
@@ -185,6 +196,7 @@ public class MainSPO : SPO
                 if (autoInstructions.currentTargetGO.Equals(this.gameObject))
                 {
                     Debug.Log("You selected the correct one!".Color("green"));
+                    networkController.SendMessageTimeSinceStartExperiment("541, Correctly rotated right (s)! Time since experiment start: ");
                     Debug.Log("Cleaning the selection targets...");
                     autoInstructions.needToCleanList = true;
                     autoInstructions.CleanUpInstructionTargets();
@@ -192,6 +204,7 @@ public class MainSPO : SPO
                 else
                 {
                     Debug.Log("Wrong target was selected, not cleaning the list".Color("red"));
+                    networkController.SendMessageTimeSinceStartExperiment("542, Wrongly chose to rotate right (s). Time since experiment start: ");
                 }
                 rampRot.RotateRightS();
                 autoInstructions.SetInstructionTarget();
@@ -202,6 +215,7 @@ public class MainSPO : SPO
                 if (autoInstructions.currentTargetGO.Equals(this.gameObject))
                 {
                     Debug.Log("You selected the correct one!".Color("green"));
+                    networkController.SendMessageTimeSinceStartExperiment("641, Correctly moved up! Time since experiment start: ");
                     Debug.Log("Cleaning the selection targets...");
                     autoInstructions.needToCleanList = true;
                     autoInstructions.CleanUpInstructionTargets();
@@ -209,6 +223,7 @@ public class MainSPO : SPO
                 else
                 {
                     Debug.Log("Wrong target was selected, not cleaning the list".Color("red"));
+                    networkController.SendMessageTimeSinceStartExperiment("642, Wrongly chose to move up. Time since experiment start: ");
                 }
                 elevAdj.MoveUp();
                 autoInstructions.SetInstructionTarget();
@@ -219,6 +234,7 @@ public class MainSPO : SPO
                 if (autoInstructions.currentTargetGO.Equals(this.gameObject))
                 {
                     Debug.Log("You selected the correct one!".Color("green"));
+                    networkController.SendMessageTimeSinceStartExperiment("741, Correctly moved down! Time since experiment start: ");
                     Debug.Log("Cleaning the selection targets...");
                     autoInstructions.needToCleanList = true;
                     autoInstructions.CleanUpInstructionTargets();
@@ -226,6 +242,7 @@ public class MainSPO : SPO
                 else
                 {
                     Debug.Log("Wrong target was selected, not cleaning the list".Color("red"));
+                    networkController.SendMessageTimeSinceStartExperiment("742, Wrongly moved down! Time since experiment start: ");
                 }
                 elevAdj.MoveDown();
                 autoInstructions.SetInstructionTarget();

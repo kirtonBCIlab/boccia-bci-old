@@ -52,7 +52,7 @@ public class GameController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.B))
         {
             print("Starting the experiment".Color("yellow"));
-            networkController.SetExperimentTimeStart();
+            networkController.SendMessageStartExperiment();
             autoInstructions.SetInstructionTarget();
 
         }
