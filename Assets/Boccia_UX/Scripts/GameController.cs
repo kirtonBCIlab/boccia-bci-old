@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(NetworkController),typeof(AutomatedSelectInstructions))]
 public class GameController : MonoBehaviour
 {
     public Vector3 myPos;
@@ -12,7 +13,10 @@ public class GameController : MonoBehaviour
     public GameObject elevationPlate;
 
     [SerializeField]
-    private NetworkController network;
+    private NetworkController networkController;
+
+    [SerializeField]
+    private AutomatedSelectInstructions autoInstructions;
 
     public float rotZ;
     public float heightZ;
@@ -28,7 +32,11 @@ public class GameController : MonoBehaviour
         rotZ = mainShaft.transform.localEulerAngles.y;
 
         startHeight = elevationPlate.transform.position;
-        heightZ = elevationPlate.transform.position.z;        
+        heightZ = elevationPlate.transform.position.z;
+
+        //Initialize our components
+        networkController = this.GetComponent<NetworkController>();
+        autoInstructions = this.GetComponent<AutomatedSelectInstructions>();
     }
 
 
@@ -39,6 +47,15 @@ public class GameController : MonoBehaviour
         {
             instructionsText.StartChangeText();
         }   
+
+        //Use "B" to begin experiment
+        if(Input.GetKeyDown(KeyCode.B))
+        {
+            print("Starting the experiment".Color("yellow"));
+            networkController.SetExperimentTimeStart();
+            autoInstructions.SetInstructionTarget();
+
+        }
     }
 
 }

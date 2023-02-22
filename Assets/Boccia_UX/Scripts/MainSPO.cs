@@ -31,6 +31,9 @@ public class MainSPO : SPO
     [SerializeField]
     private RestTime restTime;
 
+    [SerializeField]
+    private NetworkController networkController;
+
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +50,16 @@ public class MainSPO : SPO
         //Get the Rest time component from the GameController object;
         restTime = GameObject.FindGameObjectWithTag("GameController").GetComponent<RestTime>();
 
+        //Get the network object so we can write messages on selection. 
+        //Going to use the following default ids for now (arbitrarily chosen):
+        /* Marker ID 0 - Training Start Time
+         * Marker ID 100 - Experiment Start Time
+         * Marker ID 300 - Time On "Main" Display page
+         * Marker ID 500 - Time on "Elevation" Display page
+         * Marker ID 700 - Time on "Rotation" Display page
+         * Marker ID 42 - Experiment End (Ball is dropped)
+         */
+         networkController = GameObject.FindGameObjectWithTag("GameController").GetComponent<NetworkController>();
     }
 
     public override float TurnOn()
@@ -140,10 +153,12 @@ public class MainSPO : SPO
                 {
                     //Call the rest time now
                     print("Time for rest, as there are no instructions left!".Color("orange"));
+                    networkController.SendMessageTimeSinceStartExperiment("42,Ball dropped end of experiment");
                     restTime.StartChangeText();
                 }
                 else
                 {
+                    
                     autoInstructions.SetInstructionTarget();
                 }
                 break;
