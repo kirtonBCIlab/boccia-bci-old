@@ -289,6 +289,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Controller
       objectReference: {fileID: 0}
+    - target: {fileID: 4280385885900106474, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
+      propertyPath: m_TagString
+      value: BCIController
+      objectReference: {fileID: 0}
     - target: {fileID: 4280385885900106476, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1331,7 +1335,8 @@ MonoBehaviour:
   myHeight: {x: 0, y: 0, z: 0}
   startHeight: {x: 0, y: 0, z: 0}
   elevationPlate: {fileID: 28725063460419423}
-  network: {fileID: 514755702}
+  networkController: {fileID: 0}
+  autoInstructions: {fileID: 0}
   rotZ: 0
   heightZ: 0
   instructionsText: {fileID: 514755703}
@@ -1468,7 +1473,7 @@ MonoBehaviour:
   restText: {fileID: 1653223450}
   timerText: {fileID: 1908999754}
   background: {fileID: 1556422130}
-  timeLeft: 12
+  timeLeft: 120
 --- !u!114 &514755705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1704,6 +1709,7 @@ MonoBehaviour:
   rampRot: {fileID: 514755699}
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
+  networkController: {fileID: 0}
 --- !u!1 &609098861
 GameObject:
   m_ObjectHideFlags: 0
@@ -2311,6 +2317,7 @@ MonoBehaviour:
   rampRot: {fileID: 514755699}
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
+  networkController: {fileID: 0}
 --- !u!1 &965194627
 GameObject:
   m_ObjectHideFlags: 0
@@ -2828,6 +2835,7 @@ MonoBehaviour:
   rampRot: {fileID: 514755699}
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
+  networkController: {fileID: 0}
 --- !u!1 &1069331300
 GameObject:
   m_ObjectHideFlags: 0
@@ -3196,6 +3204,7 @@ MonoBehaviour:
   rampRot: {fileID: 514755699}
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
+  networkController: {fileID: 0}
 --- !u!1 &1142486440
 GameObject:
   m_ObjectHideFlags: 0
@@ -5512,6 +5521,7 @@ MonoBehaviour:
   rampRot: {fileID: 514755699}
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
+  networkController: {fileID: 0}
 --- !u!1 &1653223448
 GameObject:
   m_ObjectHideFlags: 0
@@ -6684,6 +6694,7 @@ MonoBehaviour:
   rampRot: {fileID: 514755699}
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
+  networkController: {fileID: 0}
 --- !u!1 &1779152507
 GameObject:
   m_ObjectHideFlags: 0
@@ -7015,6 +7026,7 @@ MonoBehaviour:
   rampRot: {fileID: 514755699}
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
+  networkController: {fileID: 0}
 --- !u!1 &1837847127
 GameObject:
   m_ObjectHideFlags: 0
@@ -7224,6 +7236,7 @@ MonoBehaviour:
   rampRot: {fileID: 514755699}
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
+  networkController: {fileID: 0}
 --- !u!1 &1840096033
 GameObject:
   m_ObjectHideFlags: 0
@@ -7669,6 +7682,7 @@ MonoBehaviour:
   rampRot: {fileID: 514755699}
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
+  networkController: {fileID: 0}
 --- !u!1 &1908999752
 GameObject:
   m_ObjectHideFlags: 0

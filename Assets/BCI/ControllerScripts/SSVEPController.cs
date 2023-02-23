@@ -173,7 +173,7 @@ public class SSVEPController : Controller
             // Pull the python response and add it to the responseStrings array
             responseStrings = response.PullResponse(defaultResponseStrings, responseTimeout);
 
-            // Check if there is 
+            // Check if there is
             bool newResponse = !responseStrings[0].Equals(defaultResponseStrings[0]);
 
 
@@ -212,7 +212,7 @@ public class SSVEPController : Controller
 
                     if (voteOnWindows == true)
                     {
-                        // Otherwise split 
+                        // Otherwise split
                         string[] responses = responseString.Split(" ");
                         Debug.Log("!!!!!!!!!!!!!!! responseString: " + responseString);
                         Debug.Log("!!!!!!!!!!!!!!! responses: " + responses);
