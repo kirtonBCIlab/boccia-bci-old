@@ -34,6 +34,8 @@ public class MainSPO : SPO
     [SerializeField]
     private NetworkController networkController;
 
+    private BallReset ballReset;
+
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +64,8 @@ public class MainSPO : SPO
          * Marker ID Case number (0-7) + 42 = Failure on that case. E.g. 042 = Fail on Case 0 (switch to rotation view).
          */
         networkController = GameObject.FindGameObjectWithTag("GameController").GetComponent<NetworkController>();
+
+        ballReset = GameObject.FindGameObjectWithTag("GameController").GetComponent<BallReset>();
     }
 
     public override float TurnOn()
@@ -150,7 +154,7 @@ public class MainSPO : SPO
                 {
                     Debug.Log("You selected the correct one!".Color("green"));
                     networkController.SendMessageTimeSinceStartExperiment("341, Correctly dropped the ball! Time since experiment start: ");
-                    Debug.Log("Cleaning the selection targets...");
+                    Debug.Log("Cleaning the selection targets...");                    
                     autoInstructions.needToCleanList = true;
                     autoInstructions.CleanUpInstructionTargets();
                 }
@@ -159,7 +163,9 @@ public class MainSPO : SPO
                     Debug.Log("Wrong target was selected, not cleaning the list".Color("red"));
                     networkController.SendMessageTimeSinceStartExperiment("342, Wrongly dropped the ball! Time since experiment start: ");
                 }
+                ballReset.GetBallDropPosition();
                 barController.DropButtonPressed();
+
                 if (autoInstructions.GetNumSelecitonTargetsLeft() == 0)
                 {
                     //Call the rest time now

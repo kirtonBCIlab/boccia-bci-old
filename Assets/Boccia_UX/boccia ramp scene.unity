@@ -1339,7 +1339,6 @@ MonoBehaviour:
   autoInstructions: {fileID: 0}
   rotZ: 0
   heightZ: 0
-  instructionsText: {fileID: 514755703}
 --- !u!4 &514755698
 Transform:
   m_ObjectHideFlags: 0
@@ -1403,13 +1402,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 32767544}
   elevationPlate: {fileID: 28725063460419423}
-  originalPos: {x: 0, y: 0, z: 0}
-  plateOrigPos: {x: 0, y: 0, z: 0}
-  shaftOrigPos: {x: 0, y: 0, z: 0}
-  ballDropPos: {x: 0, y: 0, z: 0}
-  plateOrigRot: {x: 0, y: 0, z: 0, w: 0}
-  initialRotation: {x: 0, y: 0, z: 0, w: 0}
-  shaftOrigRot: {x: 0, y: 0, z: 0, w: 0}
   maxX: 7
   ballPit:
   - {fileID: 32767544}
@@ -1498,6 +1490,8 @@ MonoBehaviour:
   needToCleanList: 0
   inMainDisplay: 1
   nextSelectTargetOnTime: 5
+  pathToFollow: 3
+  experimentPath: 01000000050000000400000002000000
   selectionTargets: []
   listLoc: 0
 --- !u!1 &603768849
@@ -1722,7 +1716,7 @@ GameObject:
   - component: {fileID: 609098862}
   m_Layer: 0
   m_Name: BarController
-  m_TagString: Untagged
+  m_TagString: BarController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5688,7 +5682,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 30
+  m_CookingOptions: -1
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1660413392
 MeshRenderer:
@@ -11826,7 +11820,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28725063460419423}
   m_LocalRotation: {x: -0.00000011920926, y: 0.000000089406946, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.022}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

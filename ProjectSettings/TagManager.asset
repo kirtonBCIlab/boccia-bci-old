@@ -6,7 +6,7 @@ TagManager:
   tags:
   - BCI
   - CameraController
-  - BCIController
+  - BarController
   layers:
   - Default
   - TransparentFX
