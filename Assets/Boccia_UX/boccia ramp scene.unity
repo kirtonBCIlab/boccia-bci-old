@@ -1335,7 +1335,6 @@ MonoBehaviour:
   autoInstructions: {fileID: 0}
   rotZ: 0
   heightZ: 0
-  instructionsText: {fileID: 514755703}
 --- !u!4 &514755698
 Transform:
   m_ObjectHideFlags: 0
@@ -1494,7 +1493,7 @@ MonoBehaviour:
   needToCleanList: 0
   inMainDisplay: 1
   nextSelectTargetOnTime: 5
-  pathToFollow: 4
+  pathToFollow: 3
   selectionTargets: []
   listLoc: 0
 --- !u!1 &603768849
@@ -5685,7 +5684,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 30
+  m_CookingOptions: -1
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1660413392
 MeshRenderer:
