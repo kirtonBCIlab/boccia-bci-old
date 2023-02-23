@@ -21,6 +21,13 @@ public class AutomatedSelectInstructions : MonoBehaviour
     public string sceneTarget = "Back";
     public string defaultTarget;
 
+    [SerializeField]
+    public GameObject ramp;
+    private Vector3 rampPos;
+    private Vector3 rampOrgPos;
+    private Quaternion rampRot;
+    private Quaternion rampOrgRot;
+
     //EKL Edits
     public GameObject currentTargetGO;
     public GameObject nextTargetGO;
@@ -65,6 +72,9 @@ public class AutomatedSelectInstructions : MonoBehaviour
 
         //put the previous target as the first on in the list
         prevTargetGO = FindGOWithName(selectionTargets.First());
+
+        rampOrgPos = ramp.transform.position;
+        rampOrgRot = ramp.transform.rotation;
 
     }
 
@@ -182,6 +192,8 @@ public class AutomatedSelectInstructions : MonoBehaviour
     public void ResetTargetList()
     {
         selectionTargets.Clear();
+        ramp.transform.position = rampOrgPos;
+        ramp.transform.rotation = rampOrgRot;
         pathDict[pathToFollow]();
         selectionTargets = startingList;
         SetInstructionTarget();

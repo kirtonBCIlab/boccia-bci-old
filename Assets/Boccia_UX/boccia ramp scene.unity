@@ -262,6 +262,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4280385885900106467, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
+      propertyPath: refreshRate
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280385885900106467, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
+      propertyPath: numTrainWindows
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280385885900106467, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
       propertyPath: numTrainingSelections
       value: 12
       objectReference: {fileID: 0}
@@ -283,7 +291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4280385885900106467, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
       propertyPath: setFreqFlash.Array.data[3]
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4280385885900106474, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
       propertyPath: m_Name
@@ -1485,6 +1493,7 @@ MonoBehaviour:
   nextTarget: 
   sceneTarget: Back
   defaultTarget: Back
+  ramp: {fileID: 8050235336674831645}
   currentTargetGO: {fileID: 0}
   nextTargetGO: {fileID: 0}
   prevTargetGO: {fileID: 0}
