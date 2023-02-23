@@ -31,6 +31,7 @@ public class AutomatedSelectInstructions : MonoBehaviour
     private float nextSelectTargetOnTime = 2f;
 
     public int pathToFollow;
+    private Dictionary<int, Action> pathDict = new Dictionary<int, Action>();
 
     [SerializeField]
     private List<string> selectionTargets = new List<string>();
@@ -43,7 +44,6 @@ public class AutomatedSelectInstructions : MonoBehaviour
     void Start()
     {
         // Create a dictionary with int keys and Action values
-        Dictionary<int, Action> pathDict = new Dictionary<int, Action>();
         pathDict.Add(1, SetTargetPath1);
         pathDict.Add(2, SetTargetPath2);
         pathDict.Add(3, SetTargetPath3);
@@ -51,8 +51,10 @@ public class AutomatedSelectInstructions : MonoBehaviour
         pathDict.Add(5, SetTargetPath5);
         pathDict.Add(6, SetTargetPath6);
 
-        // Select path for experiment run
         pathDict[pathToFollow]();
+
+        // Select path for experiment run
+        //pathDict[pathToFollow]();
 
         //SetTargetPath1();
         //Save the starting order above as our starting list
@@ -179,7 +181,10 @@ public class AutomatedSelectInstructions : MonoBehaviour
     /// </summary>
     public void ResetTargetList()
     {
+        selectionTargets.Clear();
+        pathDict[pathToFollow]();
         selectionTargets = startingList;
+        SetInstructionTarget();
     }
 
     // Update is called once per frame

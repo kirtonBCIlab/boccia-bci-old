@@ -1306,7 +1306,6 @@ GameObject:
   - component: {fileID: 514755703}
   - component: {fileID: 514755704}
   - component: {fileID: 514755705}
-  - component: {fileID: 514755706}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -1488,24 +1487,9 @@ MonoBehaviour:
   inMainDisplay: 1
   nextSelectTargetOnTime: 5
   pathToFollow: 3
+  experimentPath: 01000000050000000400000002000000
   selectionTargets: []
   listLoc: 0
---- !u!114 &514755706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 514755696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bb21a734fa5a46b3af0c108ae3fa3ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ball: {fileID: 32767544}
-  elevationPlate: {fileID: 8834598285185604775}
-  maxX: 2
-  ballPit: []
 --- !u!1 &603768849
 GameObject:
   m_ObjectHideFlags: 0
