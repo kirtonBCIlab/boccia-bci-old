@@ -21,7 +21,7 @@ public class GameController : MonoBehaviour
     public float rotZ;
     public float heightZ;
 
-    public InstructionsText instructionsText;
+    private InstructionsText instructionsText;
     
     // Start is called before the first frame update
     void Start()
@@ -37,6 +37,7 @@ public class GameController : MonoBehaviour
         //Initialize our components
         networkController = this.GetComponent<NetworkController>();
         autoInstructions = this.GetComponent<AutomatedSelectInstructions>();
+        instructionsText = this.GetComponent<InstructionsText>();
     }
 
 
@@ -52,6 +53,7 @@ public class GameController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.B))
         {
             instructionsText.StartChangeText();
+
             print("Starting the experiment".Color("yellow"));
             networkController.SendMessageStartExperiment();
             autoInstructions.SetInstructionTarget();
