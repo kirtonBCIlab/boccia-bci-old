@@ -105,7 +105,7 @@ public class MainSPO : SPO
                 camScript.SwitchToRotationView();
                 camScript.EnableBirdEyeView();
                 autoInstructions.SetInstructionTarget();
-                autoInstructions.StartCoroutine("WaitToStartStim");
+                // autoInstructions.StartCoroutine("WaitToStartStim");
                 break;
             case 1:
                 //Todo

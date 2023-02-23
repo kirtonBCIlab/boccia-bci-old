@@ -324,11 +324,11 @@ public class AutomatedSelectInstructions : MonoBehaviour
         return selectionTargets.Count;
     }
 
-    public IEnumerator WaitToStartStim()
-    {
-        yield return new WaitForSecondsRealtime(3);
+    // public IEnumerator WaitToStartStim()
+    // {
+    //     yield return new WaitForSecondsRealtime(3);
         
-        bciController.StartStopStimulus();
-    }
+    //     bciController.StartStopStimulus();
+    // }
 
 }
