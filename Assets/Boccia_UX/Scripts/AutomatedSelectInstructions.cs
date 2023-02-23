@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
+using System;
 
 public class AutomatedSelectInstructions : MonoBehaviour
 {
@@ -29,6 +30,9 @@ public class AutomatedSelectInstructions : MonoBehaviour
     [SerializeField]
     private float nextSelectTargetOnTime = 2f;
 
+    public int pathToFollow;
+    private Dictionary<int, Action> pathDict = new Dictionary<int, Action>();
+
     [SerializeField]
     private List<string> selectionTargets = new List<string>();
     private List<string> startingList;
@@ -39,7 +43,20 @@ public class AutomatedSelectInstructions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetTargetPath1();
+        // Create a dictionary with int keys and Action values
+        pathDict.Add(1, SetTargetPath1);
+        pathDict.Add(2, SetTargetPath2);
+        pathDict.Add(3, SetTargetPath3);
+        pathDict.Add(4, SetTargetPath4);
+        pathDict.Add(5, SetTargetPath5);
+        pathDict.Add(6, SetTargetPath6);
+
+        pathDict[pathToFollow]();
+
+        // Select path for experiment run
+        //pathDict[pathToFollow]();
+
+        //SetTargetPath1();
         //Save the starting order above as our starting list
         startingList = selectionTargets;
 
@@ -164,7 +181,10 @@ public class AutomatedSelectInstructions : MonoBehaviour
     /// </summary>
     public void ResetTargetList()
     {
+        selectionTargets.Clear();
+        pathDict[pathToFollow]();
         selectionTargets = startingList;
+        SetInstructionTarget();
     }
 
     // Update is called once per frame
@@ -213,11 +233,85 @@ public class AutomatedSelectInstructions : MonoBehaviour
         selectionTargets.Add("ElevationButton");
         selectionTargets.Add("UpButton");
         selectionTargets.Add("UpButton");
+        selectionTargets.Add("UpButton");
+        selectionTargets.Add("Back");
+        selectionTargets.Add("RotationButton");
+        selectionTargets.Add("SRight");
+        selectionTargets.Add("SRight");
+        selectionTargets.Add("Back");
+        selectionTargets.Add("DropButton");
+    }
+
+    public virtual void SetTargetPath2()
+    {
+        selectionTargets.Add("ElevationButton");
+        selectionTargets.Add("DownButton");
+        selectionTargets.Add("DownButton");
+        selectionTargets.Add("DownButton");
         selectionTargets.Add("Back");
         selectionTargets.Add("RotationButton");
         selectionTargets.Add("SLeft");
         selectionTargets.Add("SLeft");
+        selectionTargets.Add("Back");
+        selectionTargets.Add("DropButton");
+    }
+
+    public virtual void SetTargetPath3()
+    {
+        selectionTargets.Add("RotationButton");
+        selectionTargets.Add("SRight");
+        selectionTargets.Add("SRight");
+        selectionTargets.Add("SRight");
+        selectionTargets.Add("Back");
+        selectionTargets.Add("ElevationButton");
+        selectionTargets.Add("UpButton");
+        selectionTargets.Add("UpButton");
+        selectionTargets.Add("Back");
+        selectionTargets.Add("DropButton");
+    }
+
+    public virtual void SetTargetPath4()
+    {
+        selectionTargets.Add("RotationButton");
         selectionTargets.Add("SLeft");
+        selectionTargets.Add("SLeft");
+        selectionTargets.Add("SLeft");
+        selectionTargets.Add("Back");
+        selectionTargets.Add("ElevationButton");
+        selectionTargets.Add("DownButton");
+        selectionTargets.Add("DownButton");
+        selectionTargets.Add("Back");
+        selectionTargets.Add("DropButton");
+    }
+
+    public virtual void SetTargetPath5()
+    {
+        selectionTargets.Add("ElevationButton");
+        selectionTargets.Add("UpButton");
+        selectionTargets.Add("UpButton");
+        selectionTargets.Add("UpButton");
+        selectionTargets.Add("DownButton");
+        selectionTargets.Add("Back");
+        selectionTargets.Add("RotationButton");
+        selectionTargets.Add("SRight");
+        selectionTargets.Add("SRight");
+        selectionTargets.Add("SRight");
+        selectionTargets.Add("Back");
+        selectionTargets.Add("DropButton");
+    }
+
+    public virtual void SetTargetPath6()
+    {
+        selectionTargets.Add("RotationButton");
+        selectionTargets.Add("SRight");
+        selectionTargets.Add("SRight");
+        selectionTargets.Add("SRight");
+        selectionTargets.Add("SLeft");
+        selectionTargets.Add("Back");
+        selectionTargets.Add("ElevationButton");
+        selectionTargets.Add("DownButton");
+        selectionTargets.Add("DownButton");
+        selectionTargets.Add("DownButton");
         selectionTargets.Add("Back");
         selectionTargets.Add("DropButton");
     }
