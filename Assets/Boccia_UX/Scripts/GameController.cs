@@ -51,6 +51,7 @@ public class GameController : MonoBehaviour
         //Use "B" to begin experiment
         if(Input.GetKeyDown(KeyCode.B))
         {
+            instructionsText.StartChangeText();
             print("Starting the experiment".Color("yellow"));
             networkController.SendMessageStartExperiment();
             autoInstructions.SetInstructionTarget();

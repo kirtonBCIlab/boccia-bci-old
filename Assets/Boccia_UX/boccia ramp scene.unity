@@ -1331,7 +1331,8 @@ MonoBehaviour:
   myHeight: {x: 0, y: 0, z: 0}
   startHeight: {x: 0, y: 0, z: 0}
   elevationPlate: {fileID: 28725063460419423}
-  network: {fileID: 514755702}
+  networkController: {fileID: 0}
+  autoInstructions: {fileID: 0}
   rotZ: 0
   heightZ: 0
   instructionsText: {fileID: 514755703}
@@ -1493,6 +1494,7 @@ MonoBehaviour:
   needToCleanList: 0
   inMainDisplay: 1
   nextSelectTargetOnTime: 5
+  pathToFollow: 4
   selectionTargets: []
   listLoc: 0
 --- !u!1 &603768849
@@ -1704,6 +1706,7 @@ MonoBehaviour:
   rampRot: {fileID: 514755699}
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
+  networkController: {fileID: 0}
 --- !u!1 &609098861
 GameObject:
   m_ObjectHideFlags: 0
@@ -2311,6 +2314,7 @@ MonoBehaviour:
   rampRot: {fileID: 514755699}
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
+  networkController: {fileID: 0}
 --- !u!1 &965194627
 GameObject:
   m_ObjectHideFlags: 0
@@ -2828,6 +2832,7 @@ MonoBehaviour:
   rampRot: {fileID: 514755699}
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
+  networkController: {fileID: 0}
 --- !u!1 &1069331300
 GameObject:
   m_ObjectHideFlags: 0
@@ -3196,6 +3201,7 @@ MonoBehaviour:
   rampRot: {fileID: 514755699}
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
+  networkController: {fileID: 0}
 --- !u!1 &1142486440
 GameObject:
   m_ObjectHideFlags: 0
@@ -5512,6 +5518,7 @@ MonoBehaviour:
   rampRot: {fileID: 514755699}
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
+  networkController: {fileID: 0}
 --- !u!1 &1653223448
 GameObject:
   m_ObjectHideFlags: 0
@@ -6684,6 +6691,7 @@ MonoBehaviour:
   rampRot: {fileID: 514755699}
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
+  networkController: {fileID: 0}
 --- !u!1 &1779152507
 GameObject:
   m_ObjectHideFlags: 0
@@ -7015,6 +7023,7 @@ MonoBehaviour:
   rampRot: {fileID: 514755699}
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
+  networkController: {fileID: 0}
 --- !u!1 &1837847127
 GameObject:
   m_ObjectHideFlags: 0
@@ -7224,6 +7233,7 @@ MonoBehaviour:
   rampRot: {fileID: 514755699}
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
+  networkController: {fileID: 0}
 --- !u!1 &1840096033
 GameObject:
   m_ObjectHideFlags: 0
@@ -7669,6 +7679,7 @@ MonoBehaviour:
   rampRot: {fileID: 514755699}
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
+  networkController: {fileID: 0}
 --- !u!1 &1908999752
 GameObject:
   m_ObjectHideFlags: 0
@@ -11812,7 +11823,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28725063460419423}
   m_LocalRotation: {x: -0.00000011920926, y: 0.000000089406946, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.022}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
