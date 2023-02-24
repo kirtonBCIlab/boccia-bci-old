@@ -7,6 +7,7 @@ using System.Linq;
 using UnityEngine.UI;
 using System;
 
+[RequireComponent(typeof(ElevationAdjuster),typeof(RampRotation))]
 public class AutomatedSelectInstructions : MonoBehaviour
 {
     [SerializeField]
@@ -20,6 +21,16 @@ public class AutomatedSelectInstructions : MonoBehaviour
     public string nextTarget;
     public string sceneTarget = "Back";
     public string defaultTarget;
+
+    [SerializeField]
+    public GameObject rampShaft;
+    public GameObject rampPlate;
+
+    //Reseting Position Info
+    [SerializeField]
+    private ElevationAdjuster elevationScript;
+    [SerializeField]
+    private RampRotation rotationScript;
 
     //EKL Edits
     public GameObject currentTargetGO;
@@ -66,6 +77,9 @@ public class AutomatedSelectInstructions : MonoBehaviour
         //put the previous target as the first on in the list
         prevTargetGO = FindGOWithName(selectionTargets.First());
 
+        //Set the objects
+        elevationScript = this.GetComponent<ElevationAdjuster>();
+        rotationScript = this.GetComponent<RampRotation>();
     }
 
     public GameObject FindGOWithName(string targetName)
@@ -181,7 +195,14 @@ public class AutomatedSelectInstructions : MonoBehaviour
     /// </summary>
     public void ResetTargetList()
     {
+        //Clear selection targets
         selectionTargets.Clear();
+        //Stop all coroutines
+        StopAllCoroutines();
+
+        //Reset positions
+        elevationScript.ResetHeight();
+        rotationScript.ResetAngle();
         pathDict[pathToFollow]();
         selectionTargets = startingList;
         SetInstructionTarget();
@@ -323,5 +344,12 @@ public class AutomatedSelectInstructions : MonoBehaviour
 
         return selectionTargets.Count;
     }
+
+    // public IEnumerator WaitToStartStim()
+    // {
+    //     yield return new WaitForSecondsRealtime(3);
+        
+    //     bciController.StartStopStimulus();
+    // }
 
 }

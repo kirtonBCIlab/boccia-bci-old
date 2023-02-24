@@ -62,6 +62,10 @@ public class Controller : MonoBehaviour
     // Receive markers
     public bool receivingMarkers = false;
 
+    //SSVEP Windows
+    public int maxSSVEPWindows = 5;
+    public float ssvepWindowCount = 0;
+
     // Scripts
     [HideInInspector] public Matrix_Setup setup;
     [HideInInspector] public LSLMarkerStream marker;
@@ -98,7 +102,7 @@ public class Controller : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         // Check the average framerate every second
         currentRefreshRate = 1 / Time.deltaTime;
@@ -141,6 +145,18 @@ public class Controller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.U))
         {
             StartCoroutine(DoUserTraining());
+        }
+
+        
+        if(stimOn && this.GetComponent<SSVEPController>().isActiveAndEnabled)
+        {
+            ssvepWindowCount = ssvepWindowCount + Time.deltaTime;
+            print("Num windows right now: ".Color("red") + ssvepWindowCount);
+
+            if(ssvepWindowCount>=maxSSVEPWindows)
+            {
+                MaxWindowSelection();
+            }
         }
 
         // Check for a selection if stim is on
@@ -728,7 +744,16 @@ public class Controller : MonoBehaviour
 
         Debug.Log("Done receiving markers");
     }
-
+    // When this is run, you have hit max windows for SSVEP selection, so we will turn off stimulus
+    public void MaxWindowSelection()
+    {
+        if(stimOn)
+        {
+            marker.Write("Max windows collected for SSVEP");
+            StartStopStimulus();
+            ssvepWindowCount=0;
+        }
+    }
 
 
 }

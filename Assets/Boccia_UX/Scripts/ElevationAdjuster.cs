@@ -110,11 +110,13 @@ public class ElevationAdjuster : MonoBehaviour
     public Vector3 targetHeight;
     //float targetHeight = -0.03243253f;
     public Vector3 currentHeight;
+    public Vector3 origHeight;
 
     // Start is called before the first frame update
     void Start()
     {
         targetHeight = elevatorPlate.transform.localPosition;
+        origHeight = elevatorPlate.transform.localPosition;
     }
 
     public void MoveUp()
@@ -144,6 +146,11 @@ public class ElevationAdjuster : MonoBehaviour
             targetHeight.z = 0.0f;
         }
 
+    }
+
+    public void ResetHeight()
+    {
+        targetHeight = origHeight;
     }
 
 
