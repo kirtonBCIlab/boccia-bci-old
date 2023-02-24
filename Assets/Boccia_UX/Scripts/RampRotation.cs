@@ -10,9 +10,10 @@ public class RampRotation : MonoBehaviour
     public float maxRot = 125f;
     public float minRot = 62.5f;
     public float rotSpeed = 10.0f;
-    float targetAngle = 90.0f;
-    float currentAngle; 
-
+    public float targetAngle = 90.0f;
+    public float currentAngle;
+    public float origAngle;
+    
     public void RotateLeftS() {
         changeAngle(-rotInc);
     }
@@ -29,7 +30,7 @@ public class RampRotation : MonoBehaviour
     //    //currentAngle= mainShaft.transform.rotation.z;
     //}
 
-    void changeAngle(float change){
+    public void changeAngle(float change){
         targetAngle += change;
         if (targetAngle>maxRot){
             targetAngle = maxRot;
@@ -41,7 +42,7 @@ public class RampRotation : MonoBehaviour
 
     void Start()
     {
-        
+        origAngle = mainShaft.transform.localEulerAngles.y;
     }
 
     // Update is called once per frame
@@ -60,4 +61,11 @@ public class RampRotation : MonoBehaviour
             mainShaft.transform.Rotate(Vector3.forward, x*Time.deltaTime);
         }
     }
+
+
+    public void ResetAngle()
+    {
+        targetAngle = origAngle;
+    }
+
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using UnityEngine.UI;
 using System;
 
+[RequireComponent(typeof(ElevationAdjuster),typeof(RampRotation))]
 public class AutomatedSelectInstructions : MonoBehaviour
 {
     [SerializeField]
@@ -24,14 +25,12 @@ public class AutomatedSelectInstructions : MonoBehaviour
     [SerializeField]
     public GameObject rampShaft;
     public GameObject rampPlate;
-    public Vector3 shaftPos;
-    public Vector3 shaftOrgPos;
-    public Vector3 platePos;
-    public Vector3 plateOrgPos;
-    public Quaternion shaftRot;
-    public Quaternion shaftOrgRot;
-    public Quaternion plateRot;
-    public Quaternion plateOrgRot;
+
+    //Reseting Position Info
+    [SerializeField]
+    private ElevationAdjuster elevationScript;
+    [SerializeField]
+    private RampRotation rotationScript;
 
     //EKL Edits
     public GameObject currentTargetGO;
@@ -78,11 +77,9 @@ public class AutomatedSelectInstructions : MonoBehaviour
         //put the previous target as the first on in the list
         prevTargetGO = FindGOWithName(selectionTargets.First());
 
-        shaftOrgPos = rampShaft.transform.position;
-        shaftOrgRot = rampShaft.transform.rotation;
-        plateOrgPos = rampPlate.transform.position;
-        plateOrgRot = rampPlate.transform.rotation;
-
+        //Set the objects
+        elevationScript = this.GetComponent<ElevationAdjuster>();
+        rotationScript = this.GetComponent<RampRotation>();
     }
 
     public GameObject FindGOWithName(string targetName)
@@ -198,15 +195,17 @@ public class AutomatedSelectInstructions : MonoBehaviour
     /// </summary>
     public void ResetTargetList()
     {
+        //Clear selection targets
         selectionTargets.Clear();
+        //Stop all coroutines
         StopAllCoroutines();
+
+        //Reset positions
+        elevationScript.ResetHeight();
+        rotationScript.ResetAngle();
         pathDict[pathToFollow]();
         selectionTargets = startingList;
         SetInstructionTarget();
-        rampShaft.transform.position = shaftOrgPos;
-        rampShaft.transform.rotation = shaftOrgRot;
-        rampPlate.transform.position = plateOrgPos;
-        rampPlate.transform.rotation = plateOrgRot;
     }
 
     // Update is called once per frame
