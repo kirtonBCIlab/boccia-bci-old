@@ -22,11 +22,16 @@ public class AutomatedSelectInstructions : MonoBehaviour
     public string defaultTarget;
 
     [SerializeField]
-    public GameObject ramp;
-    private Vector3 rampPos;
-    private Vector3 rampOrgPos;
-    private Quaternion rampRot;
-    private Quaternion rampOrgRot;
+    public GameObject rampShaft;
+    public GameObject rampPlate;
+    public Vector3 shaftPos;
+    public Vector3 shaftOrgPos;
+    public Vector3 platePos;
+    public Vector3 plateOrgPos;
+    public Quaternion shaftRot;
+    public Quaternion shaftOrgRot;
+    public Quaternion plateRot;
+    public Quaternion plateOrgRot;
 
     //EKL Edits
     public GameObject currentTargetGO;
@@ -73,8 +78,10 @@ public class AutomatedSelectInstructions : MonoBehaviour
         //put the previous target as the first on in the list
         prevTargetGO = FindGOWithName(selectionTargets.First());
 
-        rampOrgPos = ramp.transform.position;
-        rampOrgRot = ramp.transform.rotation;
+        shaftOrgPos = rampShaft.transform.position;
+        shaftOrgRot = rampShaft.transform.rotation;
+        plateOrgPos = rampPlate.transform.position;
+        plateOrgRot = rampPlate.transform.rotation;
 
     }
 
@@ -192,11 +199,14 @@ public class AutomatedSelectInstructions : MonoBehaviour
     public void ResetTargetList()
     {
         selectionTargets.Clear();
-        ramp.transform.position = rampOrgPos;
-        ramp.transform.rotation = rampOrgRot;
+        StopAllCoroutines();
         pathDict[pathToFollow]();
         selectionTargets = startingList;
         SetInstructionTarget();
+        rampShaft.transform.position = shaftOrgPos;
+        rampShaft.transform.rotation = shaftOrgRot;
+        rampPlate.transform.position = plateOrgPos;
+        rampPlate.transform.rotation = plateOrgRot;
     }
 
     // Update is called once per frame

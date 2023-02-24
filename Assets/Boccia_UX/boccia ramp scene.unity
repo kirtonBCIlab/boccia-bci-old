@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4511702, g: 0.49983096, b: 0.56788063, a: 1}
+  m_IndirectSpecularColor: {r: 0.4511695, g: 0.49982995, b: 0.56787866, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1493,7 +1493,8 @@ MonoBehaviour:
   nextTarget: 
   sceneTarget: Back
   defaultTarget: Back
-  ramp: {fileID: 8050235336674831645}
+  rampShaft: {fileID: 2016671996303512379}
+  rampPlate: {fileID: 28725063460419423}
   currentTargetGO: {fileID: 0}
   nextTargetGO: {fileID: 0}
   prevTargetGO: {fileID: 0}
