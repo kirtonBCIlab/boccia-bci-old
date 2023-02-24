@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4511695, g: 0.49982995, b: 0.56787866, a: 1}
+  m_IndirectSpecularColor: {r: 0.4511702, g: 0.49983096, b: 0.56788063, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -235,11 +235,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4280385885900106466, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
       propertyPath: onTime
-      value: 0.05
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4280385885900106466, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
       propertyPath: offTime
-      value: 0.1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4280385885900106466, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
       propertyPath: m_Enabled
@@ -248,6 +248,10 @@ PrefabInstance:
     - target: {fileID: 4280385885900106466, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
       propertyPath: checkerboard
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280385885900106466, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
+      propertyPath: windowLength
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4280385885900106466, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
       propertyPath: numTrainingSelections
@@ -266,6 +270,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4280385885900106467, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
+      propertyPath: maxSSVEPWindows
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280385885900106467, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
       propertyPath: numTrainWindows
       value: 5
       objectReference: {fileID: 0}
@@ -279,7 +287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4280385885900106467, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
       propertyPath: setFreqFlash.Array.data[0]
-      value: 8
+      value: 8.333333
       objectReference: {fileID: 0}
     - target: {fileID: 4280385885900106467, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
       propertyPath: setFreqFlash.Array.data[1]
@@ -287,7 +295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4280385885900106467, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
       propertyPath: setFreqFlash.Array.data[2]
-      value: 12
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 4280385885900106467, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
       propertyPath: setFreqFlash.Array.data[3]
@@ -352,6 +360,10 @@ PrefabInstance:
     - target: {fileID: 4280385885900106478, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280385885900106478, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
+      propertyPath: maxSSVEPWindows
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4280385885900106478, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
       propertyPath: InstructionsText
@@ -1380,6 +1392,9 @@ MonoBehaviour:
   maxRot: 125
   minRot: 62.5
   rotSpeed: 10
+  targetAngle: 90
+  currentAngle: 0
+  origAngle: 0
 --- !u!114 &514755700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1397,6 +1412,7 @@ MonoBehaviour:
   heightSpeed: 10
   targetHeight: {x: 0, y: 0, z: 0}
   currentHeight: {x: 0, y: 0, z: 0}
+  origHeight: {x: 0, y: 0, z: 0}
 --- !u!114 &514755701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1495,15 +1511,16 @@ MonoBehaviour:
   defaultTarget: Back
   rampShaft: {fileID: 2016671996303512379}
   rampPlate: {fileID: 28725063460419423}
+  elevationScript: {fileID: 0}
+  rotationScript: {fileID: 0}
   currentTargetGO: {fileID: 0}
   nextTargetGO: {fileID: 0}
   prevTargetGO: {fileID: 0}
   needToCleanList: 0
   inMainDisplay: 1
   nextSelectTargetOnTime: 5
-  pathToFollow: 3
+  pathToFollow: 1
   selectionTargets: []
-  listLoc: 0
 --- !u!114 &514755706
 MonoBehaviour:
   m_ObjectHideFlags: 0
