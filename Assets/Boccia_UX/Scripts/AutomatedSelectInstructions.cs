@@ -48,9 +48,6 @@ public class AutomatedSelectInstructions : MonoBehaviour
     private List<string> selectionTargets = new List<string>();
     private List<string> startingList;
 
-    [SerializeField]
-    int listLoc = 0;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -100,6 +97,9 @@ public class AutomatedSelectInstructions : MonoBehaviour
 
     public void SetInstructionTarget()
     {
+
+        //Handle if there are any items in the temp list.
+
         //Handle case when there are no more selection targets
         if (selectionTargets.Count == 0)
         {
@@ -116,42 +116,41 @@ public class AutomatedSelectInstructions : MonoBehaviour
         
 
         //Handle storing logic if the next action is a scene swap action. This is hardcoded for now
-        if(nextTarget == "ElevationButton" || nextTarget == "RotationButton" || nextTarget == "Back")
+        if(nextTarget == "ElevationButton" || nextTarget == "RotationButton")
         {
             sceneTarget = nextTarget;
             print("Target scene is: " + sceneTarget);
         }
-
         //Handle null case
-        if(nextTargetGO == null)
+        if (nextTargetGO == null)
         {
             UnityEngine.Debug.Log("Couldn't find that object - setting it to a default");
+            
 
-            //if (sceneTarget == "ElevationButton" || sceneTarget == "RotationButton")
-            //{ }
-            currentTargetGO = FindGOWithName(defaultTarget);
-            UnityEngine.Debug.Log("The new target is: " + currentTargetGO.name);
+            if(inMainDisplay)
+            {
+                //Set the previous scene target as the new target in temp list
+                selectionTargets.Insert(0, sceneTarget);
+                UnityEngine.Debug.Log("Oops - looks like you're in the main display when you shouldn't be. Let's move you back to the last target scene.");
+                UnityEngine.Debug.Log("The new target will be: " + sceneTarget);
+                nextTarget = selectionTargets.First();
+                UnityEngine.Debug.Log("Next target is: " + nextTarget);
+                nextTargetGO = FindGOWithName(nextTarget);
+            }
+            else
+            {
+                selectionTargets.Insert(0, defaultTarget);
+                UnityEngine.Debug.Log("The new target will be: " + defaultTarget);
+                nextTarget = selectionTargets.First();
+                UnityEngine.Debug.Log("Next target is: " + nextTarget);
+                nextTargetGO = FindGOWithName(nextTarget);
+            }
 
-            //Handle edge case - when we rae in the main display.
-            if (inMainDisplay)
-                {
-                    //set the scene target as the new current target
-                    UnityEngine.Debug.Log("Oops - looks like you're in the main display when you shouldn't be. Let's move you back to the last target scene.");
-                    currentTargetGO = FindGOWithName(sceneTarget);
-                }
-
-            //Now apply changes to that target
-            StartCoroutine("FlashSequenceTarget");
-
-            return;
-        }
-        else
-        {
-            //Object found - setting it as our current object
-            prevTargetGO = currentTargetGO;
-            currentTargetGO = FindGOWithName(nextTarget);
         }
 
+
+        prevTargetGO = currentTargetGO;
+        currentTargetGO = FindGOWithName(nextTarget);
         //Now apply changes to that target
         StartCoroutine("FlashSequenceTarget");
     }
@@ -173,6 +172,8 @@ public class AutomatedSelectInstructions : MonoBehaviour
 
     public void CleanUpInstructionTargets()
     {
+        
+    
         if (needToCleanList)
         {
             print("Cleaning our list up....");
@@ -183,6 +184,7 @@ public class AutomatedSelectInstructions : MonoBehaviour
             selectionTargets.RemoveAt(0);
             needToCleanList = false;
         }
+        
     }
 
     public void ToggleMainDisplay(bool toggle)

@@ -151,7 +151,6 @@ public class Controller : MonoBehaviour
         if(stimOn && this.GetComponent<SSVEPController>().isActiveAndEnabled)
         {
             ssvepWindowCount = ssvepWindowCount + Time.deltaTime;
-            print("Num windows right now: ".Color("red") + ssvepWindowCount);
 
             if(ssvepWindowCount>=maxSSVEPWindows)
             {
