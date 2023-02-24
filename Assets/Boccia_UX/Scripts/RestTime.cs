@@ -45,6 +45,7 @@ public class RestTime : MonoBehaviour
         yield return new WaitForSeconds(3f); //show the text for 3 seconds
         //turn of Canvas
         restCanvas.enabled = false;
+        timeLeft = 120f;
     }
 
 }
