@@ -16,7 +16,10 @@ public class serialCommandController : MonoBehaviour
     private List<string> _ports;
     public Text ConnectionText;
     private SerialPort _serial;
+    public string rotation_point;
+    public string elevation_point;
 
+    
 
     // Start is called before the first frame update
     void Start()
