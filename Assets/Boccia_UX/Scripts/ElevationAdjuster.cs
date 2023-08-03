@@ -111,7 +111,7 @@ public class ElevationAdjuster : MonoBehaviour
     //float targetHeight = -0.03243253f;
     public Vector3 currentHeight;
     public Vector3 origHeight;
-    public float maxHeight = 0.045;
+    public float maxHeight = 0.045f;
     public float minHeight = 0;
 
     // Start is called before the first frame update
