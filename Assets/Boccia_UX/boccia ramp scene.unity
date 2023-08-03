@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4511695, g: 0.49982995, b: 0.56787866, a: 1}
+  m_IndirectSpecularColor: {r: 0.4511702, g: 0.49983096, b: 0.56788063, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1319,6 +1319,7 @@ GameObject:
   - component: {fileID: 514755704}
   - component: {fileID: 514755705}
   - component: {fileID: 514755706}
+  - component: {fileID: 514755707}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -1380,6 +1381,9 @@ MonoBehaviour:
   maxRot: 125
   minRot: 62.5
   rotSpeed: 10
+  targetAngle: 90
+  currentAngle: 0
+  origAngle: 0
 --- !u!114 &514755700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1397,6 +1401,9 @@ MonoBehaviour:
   heightSpeed: 10
   targetHeight: {x: 0, y: 0, z: 0}
   currentHeight: {x: 0, y: 0, z: 0}
+  origHeight: {x: 0, y: 0, z: 0}
+  maxHeight: 0.045
+  minHeight: 0
 --- !u!114 &514755701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1495,6 +1502,8 @@ MonoBehaviour:
   defaultTarget: Back
   rampShaft: {fileID: 2016671996303512379}
   rampPlate: {fileID: 28725063460419423}
+  elevationScript: {fileID: 0}
+  rotationScript: {fileID: 0}
   currentTargetGO: {fileID: 0}
   nextTargetGO: {fileID: 0}
   prevTargetGO: {fileID: 0}
@@ -1503,7 +1512,6 @@ MonoBehaviour:
   nextSelectTargetOnTime: 5
   pathToFollow: 3
   selectionTargets: []
-  listLoc: 0
 --- !u!114 &514755706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1519,6 +1527,27 @@ MonoBehaviour:
   StreamName: UnityEvents
   StreamType: LSL_Event_Strings
   StreamId: MyStreamID-Unity4321
+--- !u!114 &514755707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514755696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f17a8898d639ae745a88431b3019ac83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Automated: {fileID: 0}
+  Elevation: {fileID: 0}
+  Incline: {fileID: 0}
+  Rotation: {fileID: 0}
+  Main: {fileID: 0}
+  PortsDropDown: {fileID: 0}
+  ConnectionText: {fileID: 0}
+  rotation_point: 
+  elevation_point: 
 --- !u!1 &603768849
 GameObject:
   m_ObjectHideFlags: 0
