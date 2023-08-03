@@ -12,6 +12,7 @@ public class serialCommandController : MonoBehaviour
     public ElevationAdjuster Elevation;
     public InclineAdjustment Incline; 
     public RampRotation Rotation; 
+    public MainSPO Main;
     public TMPro.TMP_Dropdown PortsDropDown;
     private List<string> _ports;
     public Text ConnectionText;
@@ -19,7 +20,7 @@ public class serialCommandController : MonoBehaviour
     public string rotation_point;
     public string elevation_point;
 
-
+    
 
     // Start is called before the first frame update
     void Start()
@@ -42,39 +43,32 @@ public class serialCommandController : MonoBehaviour
     {
         while (Input.GetKeyDown(KeyCode.M))
             {
-
-                if (Automated.nextTarget == "ElevationButton")
+ 
+                if (Main.myObjectId ==6)
                 {
-                    ElevationAdjuster Elevation = ElevationAdjuster();
-                    if (Elevation.MoveUp())
-                    {
-                        _serial.Write("300"+elevation_point);
-                        Debug.Log("300"+elevation_point);
-                    }
-                    else if (Elevation.MoveDown())
-                    {
-                        _serial.Write("-300"+elevation_point);
-                        Debug.Log("300"+elevation_point);
-                    }
+                    _serial.Write("300"+elevation_point);
+                    Debug.Log("300"+elevation_point);
                 }
-
-                
-                else if (Automated.nextTarget == "RotationButton")
+                else if (Main.myObjectId==7)
                 {
-                   RampRotation Rotation = RampRotation();
-                   if (Rotation.RotateLeftS())
-                    {
-                        _serial.Write("-200"+rotation_point);
-                        Debug.Log("-200"+rotation_point);
-                    }
-                    else if (Rotation.RotateRightS())
-                    {
-                        _serial.Write("200"+rotation_point);
-                        Debug.Log("200"+rotation_point);
-                    }
+                    _serial.Write("-300"+elevation_point);
+                    Debug.Log("300"+elevation_point);
+                }
+                
+                else if (Main.myObjectId ==4)
+                {
+                    _serial.Write("-200"+rotation_point);
+                    Debug.Log("-200"+rotation_point);
+                }
+                
+                else if (Main.myObjectId ==5)
+                {
+                    _serial.Write("200"+rotation_point);
+                    Debug.Log("200"+rotation_point);
                 }
             }
     }
+    
  
     public void ConnectToPort()
     {
