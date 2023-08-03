@@ -19,7 +19,7 @@ public class serialCommandController : MonoBehaviour
     public string rotation_point;
     public string elevation_point;
 
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +45,7 @@ public class serialCommandController : MonoBehaviour
 
                 if (Automated.nextTarget == "ElevationButton")
                 {
+                    ElevationAdjuster Elevation = ElevationAdjuster();
                     if (Elevation.MoveUp())
                     {
                         _serial.Write("300"+elevation_point);
@@ -60,6 +61,7 @@ public class serialCommandController : MonoBehaviour
                 
                 else if (Automated.nextTarget == "RotationButton")
                 {
+                   RampRotation Rotation = RampRotation();
                    if (Rotation.RotateLeftS())
                     {
                         _serial.Write("-200"+rotation_point);
