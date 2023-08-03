@@ -1540,14 +1540,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Automated: {fileID: 0}
-  Elevation: {fileID: 0}
+  Elevation: {fileID: 514755700}
   Incline: {fileID: 0}
-  Rotation: {fileID: 0}
+  Rotation: {fileID: 514755699}
   Main: {fileID: 0}
   PortsDropDown: {fileID: 0}
   ConnectionText: {fileID: 0}
   rotation_point: 
   elevation_point: 
+  rotation_value: 0
+  elevation_value: 0
 --- !u!1 &603768849
 GameObject:
   m_ObjectHideFlags: 0
@@ -1758,6 +1760,7 @@ MonoBehaviour:
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
   networkController: {fileID: 0}
+  serialCommandController: {fileID: 0}
 --- !u!1 &609098861
 GameObject:
   m_ObjectHideFlags: 0
@@ -2355,6 +2358,7 @@ MonoBehaviour:
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
   networkController: {fileID: 0}
+  serialCommandController: {fileID: 514755707}
 --- !u!1 &965194627
 GameObject:
   m_ObjectHideFlags: 0
@@ -2873,6 +2877,7 @@ MonoBehaviour:
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
   networkController: {fileID: 0}
+  serialCommandController: {fileID: 514755707}
 --- !u!1 &1069331300
 GameObject:
   m_ObjectHideFlags: 0
@@ -3242,6 +3247,7 @@ MonoBehaviour:
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
   networkController: {fileID: 0}
+  serialCommandController: {fileID: 514755707}
 --- !u!1 &1142486440
 GameObject:
   m_ObjectHideFlags: 0
@@ -5559,6 +5565,7 @@ MonoBehaviour:
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
   networkController: {fileID: 0}
+  serialCommandController: {fileID: 514755707}
 --- !u!1 &1653223448
 GameObject:
   m_ObjectHideFlags: 0
@@ -6732,6 +6739,7 @@ MonoBehaviour:
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
   networkController: {fileID: 0}
+  serialCommandController: {fileID: 514755707}
 --- !u!1 &1779152507
 GameObject:
   m_ObjectHideFlags: 0
@@ -7064,6 +7072,7 @@ MonoBehaviour:
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
   networkController: {fileID: 0}
+  serialCommandController: {fileID: 0}
 --- !u!1 &1837847127
 GameObject:
   m_ObjectHideFlags: 0
@@ -7274,6 +7283,7 @@ MonoBehaviour:
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
   networkController: {fileID: 0}
+  serialCommandController: {fileID: 514755707}
 --- !u!1 &1840096033
 GameObject:
   m_ObjectHideFlags: 0
@@ -7720,6 +7730,7 @@ MonoBehaviour:
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
   networkController: {fileID: 0}
+  serialCommandController: {fileID: 514755707}
 --- !u!1 &1908999752
 GameObject:
   m_ObjectHideFlags: 0

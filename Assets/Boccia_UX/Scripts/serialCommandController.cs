@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO.Ports;
+using System.Diagnostics;
+using Debug = UnityEngine.Debug;
 
-
-public class serialCommandController : MonoBehaviour
+public class SerialCommandController : MonoBehaviour
 {
+
     public AutomatedSelectInstructions Automated;
     public ElevationAdjuster Elevation;
     public InclineAdjustment Incline; 
@@ -17,8 +19,12 @@ public class serialCommandController : MonoBehaviour
     private List<string> _ports;
     public Text ConnectionText;
     private SerialPort _serial;
-    public string rotation_point;
-    public string elevation_point;
+
+    public String rotation_point;
+    public String elevation_point;
+
+    public float rotation_value;
+    public float elevation_value;
 
     
 
@@ -26,17 +32,18 @@ public class serialCommandController : MonoBehaviour
     void Start()
     {
 
-    ConnectToPort();
+        //ConnectToPort();
         
-    float rotation_value = Rotation.rotInc;
-    string rotation_point = rotation_value.ToString();
+        rotation_value = Rotation.rotInc;
+        rotation_point = rotation_value.ToString();
+        Debug.Log("Rotation point: " +  rotation_point);
     
-    //incline_point = Incline.currentAngle;    No call for incline in other modules
+        //incline_point = Incline.currentAngle;    No call for incline in other modules
     
-    float elevation_value = Elevation.heightInc;
-    string elevation_point = elevation_value.ToString();
+        elevation_value = 1000 * Elevation.heightInc;
+        elevation_point = elevation_value.ToString();
+        Debug.Log("Elevation point: " + elevation_point);
     }
-
 
     // Update is called once per frame
     void Update()
@@ -67,6 +74,19 @@ public class serialCommandController : MonoBehaviour
                     Debug.Log("200"+rotation_point);
                 }
             }
+    }
+
+    public String RotationCommandOut(int direction)
+    {
+        // THIS IS AN EXAMPLE, CHANGE THE STRING TO BE THE RIGHT COMMAND FOR THE MCU
+        String output = (direction * rotation_value).ToString();
+        Debug.Log("Rotation: " + output);
+
+        return output;
+    }
+
+    public String ElevationCommandOut(int percentage)
+    { 
     }
     
  

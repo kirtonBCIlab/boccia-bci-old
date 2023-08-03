@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,6 +34,9 @@ public class MainSPO : SPO
 
     [SerializeField]
     private NetworkController networkController;
+
+    [SerializeField]
+    private SerialCommandController serialCommandController;
 
     private BallReset ballReset;
 
@@ -195,6 +199,7 @@ public class MainSPO : SPO
                 }
                 rampRot.RotateLeftS();
                 autoInstructions.SetInstructionTarget();
+                serialCommandController.RotationCommandOut(-1);
                 break;
             case 5:
                 //Todo
@@ -214,6 +219,7 @@ public class MainSPO : SPO
                 }
                 rampRot.RotateRightS();
                 autoInstructions.SetInstructionTarget();
+                serialCommandController.RotationCommandOut(1);
                 break;
             case 6:
                 //Todo
