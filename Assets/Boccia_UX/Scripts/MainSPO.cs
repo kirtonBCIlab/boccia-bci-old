@@ -10,7 +10,7 @@ public class MainSPO : SPO
     public Color newOffColor;
 
     [SerializeField]
-    private int myObjectId;
+    public int myObjectId;
     private string myMessage;
 
     [SerializeField]
@@ -35,7 +35,6 @@ public class MainSPO : SPO
     private NetworkController networkController;
 
     private BallReset ballReset;
-
 
     // Start is called before the first frame update
     void Start()
