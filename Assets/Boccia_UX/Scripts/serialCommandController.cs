@@ -8,10 +8,10 @@ using System.IO.Ports;
 
 public class serialCommandController : MonoBehaviour
 {
-    public AutomatedSelectInstructions Automated
-    public ElevationAdjuster Elevation
-    public InclineAdjustment Incline 
-    public RampRotation Rotation 
+    public AutomatedSelectInstructions Automated;
+    public ElevationAdjuster Elevation;
+    public InclineAdjustment Incline; 
+    public RampRotation Rotation; 
     public TMPro.TMP_Dropdown PortsDropDown;
     private List<string> _ports;
     public Text ConnectionText;
