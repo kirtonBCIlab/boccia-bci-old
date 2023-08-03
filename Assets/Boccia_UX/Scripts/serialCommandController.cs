@@ -69,58 +69,57 @@ public class serialCommandController : MonoBehaviour
                         Debug.Log("200"+rotation_point);
                     }
                 }
-            
+            }
     }
-}
  
-public void ConnectToPort()
-{
-    // Get the port we want to connect to from the dropdown
-    string port = _ports[PortsDropDown.value];
-
-    try
+    public void ConnectToPort()
     {
-        // Attempt to create our serial port using 9600 as our baud rate which matches the baud rate we set in the Arduino Sketch we created earlier.
-        _serial = new SerialPort(port, 9600)
+        // Get the port we want to connect to from the dropdown
+        string port = _ports[PortsDropDown.value];
+
+        try
         {
-            Encoding = System.Text.Encoding.UTF8,
-            DtrEnable = true
-        };
+            // Attempt to create our serial port using 9600 as our baud rate which matches the baud rate we set in the Arduino Sketch we created earlier.
+            _serial = new SerialPort(port, 9600)
+            {
+                Encoding = System.Text.Encoding.UTF8,
+                DtrEnable = true
+            };
 
-        // Open up our serial connection
-        _serial.Open();
+            // Open up our serial connection
+            _serial.Open();
 
-        // ConnectionText.text = $"Connected to {port}";
-        // Debug.Log(ConnectionText.text);
-        Debug.Log("Connected to port: " + port);
-    }
-    catch (Exception e)
-    {
-        // ConnectionText.text = e.Message;
-        Debug.Log(e.Message);
-    }
-}
-
-public void Disconnect()
-{
-    if (_serial != null)
-    {
-        // Close the connection if it is open
-        if (_serial.IsOpen)
-        {
-            _serial.Close();
+            // ConnectionText.text = $"Connected to {port}";
+            // Debug.Log(ConnectionText.text);
+            Debug.Log("Connected to port: " + port);
         }
-
-        // Release any resources being used
-        _serial.Dispose();
-        _serial = null;
-
-        if (ConnectionText != null)
+        catch (Exception e)
         {
-            ConnectionText.text = "";
+            // ConnectionText.text = e.Message;
+            Debug.Log(e.Message);
         }
-        Debug.Log("Disconnected");
     }
+
+    public void Disconnect()
+    {
+        if (_serial != null)
+        {
+            // Close the connection if it is open
+            if (_serial.IsOpen)
+            {
+                _serial.Close();
+            }
+
+            // Release any resources being used
+            _serial.Dispose();
+            _serial = null;
+
+            if (ConnectionText != null)
+            {
+                ConnectionText.text = "";
+            }
+            Debug.Log("Disconnected");
+        }
+    }
+
 }
-
-
