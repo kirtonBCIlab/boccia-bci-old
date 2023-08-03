@@ -24,11 +24,11 @@ public class serialCommandController : MonoBehaviour
 
     ConnectToPort();
         
-    rotation_point = Rotation.currentAngle;
+    rotation_point = string(Rotation.rotInc);
     
     //incline_point = Incline.currentAngle;    No call for incline in other modules
     
-    elevation_point = Elevation.targetHeight;
+    elevation_point = string(Elevation.heightInc);
     
     }
 
@@ -38,16 +38,38 @@ public class serialCommandController : MonoBehaviour
     {
         while (Automated.Input.GetKeyDown(KeyCode.M))
             {
+
                 if (Automated.nextTarget == "ElevationButton")
                 {
-                _serial.Write(elevation_point);
+                    if (Elevation.moveUp())
+                    {
+                        targetHeight = string(Elevation.targetHeight + Vector3.forward * elevation_point;);
+                        _serial.Write("30"+targetHeight);
+                        Debug.Log("30"+targetHeight);
+                    }
+                    else if (Elevation.MoveDown())
+                    {
+                        targetHeight = string(Elevation.targetHeight + Vector3.backward * elevation_point;);
+                        _serial.Write("30"+targetHeight);
+                        Debug.Log("30"+targetHeight);
+                    }
                 }
+
+                
                 else if (Automated.nextTarget == "RotationButton")
                 {
-                _serial.Write(rotation_point);
+                   if (Rotation.RotateLeftS())
+                    {
+                        _serial.Write("-200"+rotation_point);
+                        Debug.Log("-200"+rotation_point)
+                    }
+                    else if (Rotation.RotateRightS())
+                    {
+                        _serial.Write("200"+rotation_point);
+                        Debug.Log("200"+rotation_point)
+                    }
                 }
-            }
-
+            
     }
 }
  

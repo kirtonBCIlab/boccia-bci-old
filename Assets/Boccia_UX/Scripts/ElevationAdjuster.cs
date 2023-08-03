@@ -105,12 +105,14 @@ using static UnityEngine.GraphicsBuffer;
 public class ElevationAdjuster : MonoBehaviour
 {
     public GameObject elevatorPlate;
-    public float heightInc = 0.005f;
+    public float heightInc = 0.0045f;
     public float heightSpeed = 5.0f; //10
     public Vector3 targetHeight;
     //float targetHeight = -0.03243253f;
     public Vector3 currentHeight;
     public Vector3 origHeight;
+    public float maxHeight = 0.045;
+    public float minHeight = 0;
 
     // Start is called before the first frame update
     void Start()
