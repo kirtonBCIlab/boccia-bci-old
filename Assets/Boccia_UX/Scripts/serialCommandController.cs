@@ -43,15 +43,13 @@ public class serialCommandController : MonoBehaviour
                 {
                     if (Elevation.moveUp())
                     {
-                        string targetHeight = Elevation.targetHeight + Vector3.forward * elevation_point;
-                        _serial.Write("30"+targetHeight);
-                        Debug.Log("30"+targetHeight);
+                        _serial.Write("300"+elevation_point);
+                        Debug.Log("300"+elevation_point);
                     }
                     else if (Elevation.MoveDown())
                     {
-                        string targetHeight = Elevation.targetHeight + Vector3.backward * elevation_point;
-                        _serial.Write("30"+targetHeight);
-                        Debug.Log("30"+targetHeight);
+                        _serial.Write("-300"+elevation_point);
+                        Debug.Log("300"+elevation_point);
                     }
                 }
 
