@@ -123,9 +123,9 @@ public class SerialCommandController : MonoBehaviour
         Debug.Log("Rotation: 200" + rotation_point);
     }
 
-    public void ButtonRotationUp(int direction)
+    public void ButtonElevationUp(int direction)
     {
-        Debug.Log("Rotation: 300" + elevation_point);
+        Debug.Log("Elevation: 300" + elevation_point);
     }
 
     public void ButtonElevationDown(int percentage)
