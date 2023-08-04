@@ -73,7 +73,7 @@ public class SerialCommandController : MonoBehaviour
     // }
 
 
-    
+
     // {
     //     while (Input.GetKeyDown(KeyCode.M))
     //         {
@@ -140,25 +140,29 @@ public class SerialCommandController : MonoBehaviour
     
     public void ButtonRotationLeft()
     {
-        Debug.Log("Rotation: -200" + rotation_point);
+        float output = -2000-rotation_value;
+        Debug.Log(output);
         serialToGoL = true;
     }
 
     public void ButtonRotationRight()
     {
-        Debug.Log("Rotation: 200" + rotation_point);
+        float output = 2000+rotation_value;
+        Debug.Log(output);
         serialToGoR = true;
     }
 
     public void ButtonElevationUp()
     {
-        Debug.Log("Elevation: 300" + elevation_point);
+        float output = 3000+elevation_value;
+        Debug.Log(output);
         serialToGoU = true;
     }
 
     public void ButtonElevationDown()
     {
-        Debug.Log("Elevation: -300" + elevation_point);
+        float output = -3000 -  elevation_value;
+        Debug.Log(output);
         serialToGoD = true;
     
     }
