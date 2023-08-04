@@ -74,69 +74,8 @@ public class SerialCommandController : MonoBehaviour
 
 
 
-    // {
-    //     while (Input.GetKeyDown(KeyCode.M))
-    //         {
- 
-    //             if (Main.myObjectId ==6)
-    //             {
-    //                 _serial.Write("300"+elevation_point);
-    //                 Debug.Log("300"+elevation_point);
-    //             }
-    //             else if (Main.myObjectId==7)
-    //             {
-    //                 _serial.Write("-300"+elevation_point);
-    //                 Debug.Log("300"+elevation_point);
-    //             }
-                
-    //             else if (Main.myObjectId ==4)
-    //             {
-    //                 _serial.Write("-200"+rotation_point);
-    //                 Debug.Log("-200"+rotation_point);
-    //             }
-                
-    //             else if (Main.myObjectId ==5)
-    //             {
-    //                 _serial.Write("200"+rotation_point);
-    //                 Debug.Log("200"+rotation_point);
-    //             }
-    //         }
-    //}
     }
 
-    public void RotationCommandOut(int direction)
-    {
-        String output = rotation_point;
-        
-        if (direction < 0)
-        {
-            Debug.Log("Rotation: -200" + output);
-            _serial.Write("-200"+output);
-        }
-        else
-        {
-            Debug.Log("Rotation: 200" + output);
-            _serial.Write("200"+output);
-        }
-
-    }
-
-    public void ElevationCommandOut(int percentage)
-    {
-        String output = elevation_point;
-        
-        if (percentage < 0)
-            {
-                Debug.Log("Elevation: -300" + output);
-                _serial.Write("-300"+output);
-            }
-        else
-            {
-                Debug.Log("Rotation: 300" + output);
-                _serial.Write("300"+output);
-            }
-    }
-    
     
     public void ButtonRotationLeft()
     {
