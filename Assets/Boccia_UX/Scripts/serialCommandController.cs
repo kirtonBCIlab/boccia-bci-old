@@ -78,7 +78,7 @@ public class SerialCommandController : MonoBehaviour
 
     public void RotationCommandOut(int direction)
     {
-        String output = (rotation_value).ToString();
+        String output = rotation_point;
         
         if (direction < 0)
         {
@@ -95,7 +95,8 @@ public class SerialCommandController : MonoBehaviour
 
     public String ElevationCommandOut(int percentage)
     {
-        String output = (elevation_value).ToString();
+        String output = elevation_point;
+        
         if (percentage < 0)
             {
                 Debug.Log("Elevation: -300" + output);
