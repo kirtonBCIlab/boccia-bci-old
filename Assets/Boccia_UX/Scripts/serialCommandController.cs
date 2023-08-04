@@ -20,11 +20,6 @@ public class SerialCommandController : MonoBehaviour
     public Text ConnectionText;
     private SerialPort _serial;
 
-    public UpButton Up;
-    public DownButton Down;
-    public SLeft Left;
-    public SRight Right;
-
     public String rotation_point;
     public String elevation_point;
 
