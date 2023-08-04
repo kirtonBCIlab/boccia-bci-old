@@ -135,30 +135,29 @@ public class SerialCommandController : MonoBehaviour
     }
     
     
-    public string ButtonRotationLeft()
+    public void ButtonRotationLeft()
     {
         Debug.Log("Rotation: -200" + rotation_point);
         bool serialToGoL = true;
     }
 
-    public string ButtonRotationRight()
+    public void ButtonRotationRight()
     {
         Debug.Log("Rotation: 200" + rotation_point);
         bool serialToGoR = true;
     }
 
-    public string ButtonElevationUp()
+    public void ButtonElevationUp()
     {
         Debug.Log("Elevation: 300" + elevation_point);
         bool serialToGoU = true;
     }
 
-    public string ButtonElevationDown()
+    public void ButtonElevationDown()
     {
         Debug.Log("Elevation: -300" + elevation_point);
         bool serialToGoD = true;
-        
-        return()
+    
     }
 
     
