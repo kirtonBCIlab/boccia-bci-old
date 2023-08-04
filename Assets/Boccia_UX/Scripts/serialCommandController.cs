@@ -26,10 +26,10 @@ public class SerialCommandController : MonoBehaviour
     public float rotation_value;
     public float elevation_value;
 
-    bool serialToGoU = false;
-    bool serialToGoD = false;
-    bool serialToGoL = false;
-    bool serialToGoR = false;
+    public bool serialToGoU = false;
+    public bool serialToGoD = false;
+    public bool serialToGoL = false;
+    public bool serialToGoR = false;
     
 
     // Start is called before the first frame update
@@ -138,34 +138,30 @@ public class SerialCommandController : MonoBehaviour
     public void ButtonRotationLeft()
     {
         Debug.Log("Rotation: -200" + rotation_point);
-        bool serialToGoL = true;
+        serialToGoL = true;
     }
 
     public void ButtonRotationRight()
     {
         Debug.Log("Rotation: 200" + rotation_point);
-        bool serialToGoR = true;
+        serialToGoR = true;
     }
 
     public void ButtonElevationUp()
     {
         Debug.Log("Elevation: 300" + elevation_point);
-        bool serialToGoU = true;
+        serialToGoU = true;
     }
 
     public void ButtonElevationDown()
     {
         Debug.Log("Elevation: -300" + elevation_point);
-        bool serialToGoD = true;
+        serialToGoD = true;
     
     }
 
     
-    public void SendToSerialMonitor(string input)
-    {
-        _serial.Write(input);
-    }
- 
+
     public void ConnectToPort()
     {
         // Get the port we want to connect to from the dropdown
