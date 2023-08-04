@@ -133,7 +133,7 @@ public class SerialCommandController : MonoBehaviour
 
     public void ButtonElevationDown()
     {
-        Debug.Log(input);
+        Debug.Log("Elevation: -300" + elevation_point);
         SendToSerialMonitor("Elevation: -300" + elevation_point);
     }
 
