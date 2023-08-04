@@ -199,7 +199,7 @@ public class MainSPO : SPO
                 }
                 rampRot.RotateLeftS();
                 autoInstructions.SetInstructionTarget();
-                serialCommandController.RotationCommandOut(-1);
+                serialCommandController.ButtonRotationLeft();
                 break;
             case 5:
                 //Todo
@@ -219,7 +219,7 @@ public class MainSPO : SPO
                 }
                 rampRot.RotateRightS();
                 autoInstructions.SetInstructionTarget();
-                serialCommandController.RotationCommandOut(1);
+                serialCommandController.ButtonRotationRight();
                 break;
             case 6:
                 //Todo
@@ -239,7 +239,7 @@ public class MainSPO : SPO
                 }
                 elevAdj.MoveUp();
                 autoInstructions.SetInstructionTarget();
-                serialCommandController.ElevationCommandOut(1);
+                serialCommandController.ButtonElevationUp();
                 break;
             case 7:
                 //Todo
@@ -259,7 +259,7 @@ public class MainSPO : SPO
                 }
                 elevAdj.MoveDown();
                 autoInstructions.SetInstructionTarget();
-                serialCommandController.ElevationCommandOut(-1);
+                serialCommandController.ButtonElevationDown();
                 break;
 
         }

@@ -1550,10 +1550,7 @@ MonoBehaviour:
   elevation_point: 
   rotation_value: 0
   elevation_value: 0
-  serialToGoU: 0
-  serialToGoD: 0
-  serialToGoL: 0
-  serialToGoR: 0
+  COMPort: 6
 --- !u!1 &603768849
 GameObject:
   m_ObjectHideFlags: 0
