@@ -90,7 +90,7 @@ public class SerialCommandController : MonoBehaviour
             _serial.Write("200"+output);
         }
 
-        
+    }    
 
     public void ElevationCommandOut(int percentage)
     {
