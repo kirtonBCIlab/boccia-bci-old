@@ -78,16 +78,43 @@ public class SerialCommandController : MonoBehaviour
 
     public String RotationCommandOut(int direction)
     {
-        // THIS IS AN EXAMPLE, CHANGE THE STRING TO BE THE RIGHT COMMAND FOR THE MCU
-        String output = (direction * rotation_value).ToString();
-        Debug.Log("Rotation: " + output);
-
+        String output = (rotation_value).ToString();
+        
+        if (direction < 0)
+        {
+            Debug.Log("Rotation: -200" + output);
+            _serial.Write("-200"+output);
+        }
+        else if (direction >0)
+        {
+            Debug.Log("Rotation: 200" + output);
+            _serial.Write("200"+output);
+        }
+        else
+        {
+        }
         return output;
     }
 
     public String ElevationCommandOut(int percentage)
-    { 
+    {
+        String output = (elevation_value).ToString();
+        if (percentage < 0)
+            {
+                Debug.Log("Elevation: -300" + output);
+                _serial.Write("-300"+output);
+            }
+        else if (percentage >0)
+            {
+                Debug.Log("Rotation: 300" + output);
+                _serial.Write("300"+output);
+            }
+        else
+            {
+            }
+        return output;
     }
+    
     
  
     public void ConnectToPort()
