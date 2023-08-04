@@ -20,6 +20,11 @@ public class SerialCommandController : MonoBehaviour
     public Text ConnectionText;
     private SerialPort _serial;
 
+    public UpButton Up;
+    public DownButton Down;
+    public SLeft Left;
+    public SRight Right;
+
     public String rotation_point;
     public String elevation_point;
 
@@ -48,6 +53,7 @@ public class SerialCommandController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
     // {
     //     while (Input.GetKeyDown(KeyCode.M))
     //         {
@@ -77,7 +83,7 @@ public class SerialCommandController : MonoBehaviour
     //         }
     //}
     }
-    
+
     public void RotationCommandOut(int direction)
     {
         String output = rotation_point;
@@ -112,6 +118,26 @@ public class SerialCommandController : MonoBehaviour
     }
     
     
+    public void ButtonRotationLeft(int direction)
+    {
+        Debug.Log("Rotation: -200" + rotation_point);
+    }
+
+    public void ButtonRotationRight(int direction)
+    {
+        Debug.Log("Rotation: -200" + rotation_point);
+    }
+
+    public void ButtonRotationUp(int direction)
+    {
+        Debug.Log("Rotation: -300" + elevation_point;
+    }
+
+    public void ButtonElevationDown(int percentage)
+    {
+        Debug.Log("Elevation: -300" + elevation_point);
+    }
+
     
  
     public void ConnectToPort()
