@@ -85,14 +85,12 @@ public class SerialCommandController : MonoBehaviour
             Debug.Log("Rotation: -200" + output);
             _serial.Write("-200"+output);
         }
-        else if (direction >0)
+        else
         {
             Debug.Log("Rotation: 200" + output);
             _serial.Write("200"+output);
         }
-        else
-        {
-        }
+
         return output;
     }
 
@@ -104,14 +102,12 @@ public class SerialCommandController : MonoBehaviour
                 Debug.Log("Elevation: -300" + output);
                 _serial.Write("-300"+output);
             }
-        else if (percentage >0)
+        else
             {
                 Debug.Log("Rotation: 300" + output);
                 _serial.Write("300"+output);
             }
-        else
-            {
-            }
+
         return output;
     }
     
