@@ -5565,7 +5565,7 @@ MonoBehaviour:
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
   networkController: {fileID: 0}
-  serialCommandController: {fileID: 514755707}
+  serialCommandController: {fileID: 0}
 --- !u!1 &1653223448
 GameObject:
   m_ObjectHideFlags: 0
@@ -7283,7 +7283,7 @@ MonoBehaviour:
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
   networkController: {fileID: 0}
-  serialCommandController: {fileID: 514755707}
+  serialCommandController: {fileID: 0}
 --- !u!1 &1840096033
 GameObject:
   m_ObjectHideFlags: 0
@@ -7730,7 +7730,7 @@ MonoBehaviour:
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
   networkController: {fileID: 0}
-  serialCommandController: {fileID: 514755707}
+  serialCommandController: {fileID: 0}
 --- !u!1 &1908999752
 GameObject:
   m_ObjectHideFlags: 0
