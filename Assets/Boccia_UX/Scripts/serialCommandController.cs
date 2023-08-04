@@ -52,25 +52,28 @@ public class SerialCommandController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    if (serialToGoU==true)
-    {
-        _serial.Write("Elevation: 300" + elevation_point);
-    }
+    // if (serialToGoU==true)
+    // {
+    //     _serial.Write("Elevation: 300" + elevation_point);
+    // }
 
-    else if (serialToGoD==true)
-    {
-        _serial.Write("Elevation: -300" + elevation_point);
-    }
+    // else if (serialToGoD==true)
+    // {
+    //     _serial.Write("Elevation: -300" + elevation_point);
+    // }
 
-    else if (serialToGoR==true)
-    {
-        _serial.Write("Rotation: 200" + rotation_point);
-    }
+    // else if (serialToGoR==true)
+    // {
+    //     _serial.Write("Rotation: 200" + rotation_point);
+    // }
 
-    else if (serialToGoL==true)
-    {
-        _serial.Write("Rotation: -200" + rotation_point);
-    }
+    // else if (serialToGoL==true)
+    // {
+    //     _serial.Write("Rotation: -200" + rotation_point);
+    // }
+
+
+    
     // {
     //     while (Input.GetKeyDown(KeyCode.M))
     //         {
