@@ -48,34 +48,36 @@ public class SerialCommandController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        while (Input.GetKeyDown(KeyCode.M))
-            {
+    // {
+    //     while (Input.GetKeyDown(KeyCode.M))
+    //         {
  
-                if (Main.myObjectId ==6)
-                {
-                    _serial.Write("300"+elevation_point);
-                    Debug.Log("300"+elevation_point);
-                }
-                else if (Main.myObjectId==7)
-                {
-                    _serial.Write("-300"+elevation_point);
-                    Debug.Log("300"+elevation_point);
-                }
+    //             if (Main.myObjectId ==6)
+    //             {
+    //                 _serial.Write("300"+elevation_point);
+    //                 Debug.Log("300"+elevation_point);
+    //             }
+    //             else if (Main.myObjectId==7)
+    //             {
+    //                 _serial.Write("-300"+elevation_point);
+    //                 Debug.Log("300"+elevation_point);
+    //             }
                 
-                else if (Main.myObjectId ==4)
-                {
-                    _serial.Write("-200"+rotation_point);
-                    Debug.Log("-200"+rotation_point);
-                }
+    //             else if (Main.myObjectId ==4)
+    //             {
+    //                 _serial.Write("-200"+rotation_point);
+    //                 Debug.Log("-200"+rotation_point);
+    //             }
                 
-                else if (Main.myObjectId ==5)
-                {
-                    _serial.Write("200"+rotation_point);
-                    Debug.Log("200"+rotation_point);
-                }
-            }
+    //             else if (Main.myObjectId ==5)
+    //             {
+    //                 _serial.Write("200"+rotation_point);
+    //                 Debug.Log("200"+rotation_point);
+    //             }
+    //         }
+    //}
     }
-
+    
     public void RotationCommandOut(int direction)
     {
         String output = rotation_point;
@@ -108,6 +110,7 @@ public class SerialCommandController : MonoBehaviour
                 _serial.Write("300"+output);
             }
     }
+    
     
     
  
