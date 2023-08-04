@@ -93,7 +93,7 @@ public class SerialCommandController : MonoBehaviour
 
     }
 
-    public String ElevationCommandOut(int percentage)
+    public void ElevationCommandOut(int percentage)
     {
         String output = elevation_point;
         
