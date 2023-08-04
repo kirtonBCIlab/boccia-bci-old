@@ -239,6 +239,7 @@ public class MainSPO : SPO
                 }
                 elevAdj.MoveUp();
                 autoInstructions.SetInstructionTarget();
+                serialCommandController.ElevationCommandOut(1);
                 break;
             case 7:
                 //Todo
@@ -258,6 +259,7 @@ public class MainSPO : SPO
                 }
                 elevAdj.MoveDown();
                 autoInstructions.SetInstructionTarget();
+                serialCommandController.ElevationCommandOut(-1);
                 break;
 
         }
