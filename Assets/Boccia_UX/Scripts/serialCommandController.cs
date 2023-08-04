@@ -26,6 +26,10 @@ public class SerialCommandController : MonoBehaviour
     public float rotation_value;
     public float elevation_value;
 
+    bool serialToGoU = false;
+    bool serialToGoD = false;
+    bool serialToGoL = false;
+    bool serialToGoR = false;
     
 
     // Start is called before the first frame update
@@ -48,7 +52,25 @@ public class SerialCommandController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    if (serialToGoU==true)
+    {
+        _serial.Write("Elevation: 300" + elevation_point);
+    }
 
+    else if (serialToGoD==true)
+    {
+        _serial.Write("Elevation: -300" + elevation_point);
+    }
+
+    else if (serialToGoR==true)
+    {
+        _serial.Write("Rotation: 200" + rotation_point);
+    }
+
+    else if (serialToGoL==true)
+    {
+        _serial.Write("Rotation: -200" + rotation_point);
+    }
     // {
     //     while (Input.GetKeyDown(KeyCode.M))
     //         {
@@ -113,28 +135,30 @@ public class SerialCommandController : MonoBehaviour
     }
     
     
-    public void ButtonRotationLeft()
+    public string ButtonRotationLeft()
     {
         Debug.Log("Rotation: -200" + rotation_point);
-        SendToSerialMonitor("Rotation: -200" + rotation_point);
+        bool serialToGoL = true;
     }
 
-    public void ButtonRotationRight()
+    public string ButtonRotationRight()
     {
         Debug.Log("Rotation: 200" + rotation_point);
-       SendToSerialMonitor("Rotation: 200" + rotation_point);
+        bool serialToGoR = true;
     }
 
-    public void ButtonElevationUp()
+    public string ButtonElevationUp()
     {
         Debug.Log("Elevation: 300" + elevation_point);
-        SendToSerialMonitor("Elevation: 300" + elevation_point);
+        bool serialToGoU = true;
     }
 
-    public void ButtonElevationDown()
+    public string ButtonElevationDown()
     {
         Debug.Log("Elevation: -300" + elevation_point);
-        SendToSerialMonitor("Elevation: -300" + elevation_point);
+        bool serialToGoD = true;
+        
+        return()
     }
 
     
