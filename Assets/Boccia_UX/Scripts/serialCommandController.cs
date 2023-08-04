@@ -116,25 +116,25 @@ public class SerialCommandController : MonoBehaviour
     public void ButtonRotationLeft()
     {
         Debug.Log("Rotation: -200" + rotation_point);
-        _serial.Write("Rotation: -200" + rotation_point)
+        _serial.Write("Rotation: -200" + rotation_point);
     }
 
     public void ButtonRotationRight()
     {
         Debug.Log("Rotation: 200" + rotation_point);
-        _serial.Write("Rotation: 200" + rotation_point)
+        _serial.Write("Rotation: 200" + rotation_point);
     }
 
     public void ButtonElevationUp()
     {
         Debug.Log("Elevation: 300" + elevation_point);
-        _serial.Write("Elevation: 300" + elevation_point)
+        _serial.Write("Elevation: 300" + elevation_point);
     }
 
     public void ButtonElevationDown()
     {
         Debug.Log("Elevation: -300" + elevation_point);
-        _serial.Write("Elevation: -300" + elevation_point)
+        _serial.Write("Elevation: -300" + elevation_point);
     }
 
     
