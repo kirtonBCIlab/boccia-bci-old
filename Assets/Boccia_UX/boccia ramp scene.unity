@@ -5126,7 +5126,7 @@ MonoBehaviour:
         m_CallState: 0
       - m_Target: {fileID: 514755707}
         m_TargetAssemblyTypeName: SerialCommandController, Assembly-CSharp
-        m_MethodName: CalibrationRamp
+        m_MethodName: CalibrationCommand
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
