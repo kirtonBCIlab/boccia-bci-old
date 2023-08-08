@@ -95,7 +95,7 @@ public class SerialCommandController : MonoBehaviour
         if (serialEnabled){_serial.Write(output.ToString());}
 
     }
-    }
+    
 
 
     public void ConnectToPort()
