@@ -71,8 +71,8 @@ public class RampRotation : MonoBehaviour
 
     public void CalibrateAngle()
     {
-        changeAngle(minRot+0.01);
-        changeAngle(maxRot-0.01);
+        changeAngle(minRot+0.01f);
+        changeAngle(maxRot-0.01f);
 
     }
 
