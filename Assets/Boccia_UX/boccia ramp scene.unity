@@ -454,7 +454,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
       - m_Target: {fileID: 1741339027}
         m_TargetAssemblyTypeName: SwitchfromMainCamera, Assembly-CSharp
         m_MethodName: TurnOffGameObject
@@ -466,7 +466,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
       - m_Target: {fileID: 1741339027}
         m_TargetAssemblyTypeName: SwitchfromMainCamera, Assembly-CSharp
         m_MethodName: TurnOffGameObject
@@ -478,7 +478,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
       - m_Target: {fileID: 1741339027}
         m_TargetAssemblyTypeName: SwitchfromMainCamera, Assembly-CSharp
         m_MethodName: TurnOnGameObject
@@ -486,6 +486,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 1721393113}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
+      - m_Target: {fileID: 514755707}
+        m_TargetAssemblyTypeName: SerialCommandController, Assembly-CSharp
+        m_MethodName: ResetCommand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
