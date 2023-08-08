@@ -97,6 +97,11 @@ public class SerialCommandController : MonoBehaviour
     }
     
 
+    //Calibration command
+    public void CalibrationRamp()
+    {
+        Rotation.CalibrateAngle();
+    }
 
     public void ConnectToPort()
     {
