@@ -50,7 +50,7 @@ public class SerialCommandController : MonoBehaviour
     {
     }
 
-    
+    // For general signalling to the serial monitor
     public void ButtonRotationLeft()
     {
         float output = -2000-rotation_value;
@@ -82,6 +82,21 @@ public class SerialCommandController : MonoBehaviour
     }
 
     
+
+     // Reset command for ramp on Unity and prompt to serial monitor for reset
+    public void ResetCommand()
+    {
+
+        Elevation.ResetHeight();
+        Rotation.ResetAngle();
+        
+        float output = 9700;
+        Debug.Log(output);
+        if (serialEnabled){_serial.Write(output.ToString());}
+
+    }
+    }
+
 
     public void ConnectToPort()
     {
