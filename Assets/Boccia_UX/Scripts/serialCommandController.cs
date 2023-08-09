@@ -15,7 +15,6 @@ public class SerialCommandController : MonoBehaviour
     public InclineAdjustment Incline; 
     public RampRotation Rotation; 
     public MainSPO Main;
-    public TMPro.TMP_Dropdown PortsDropDown;
     private List<string> _ports;
     public Text ConnectionText;
     private SerialPort _serial;
@@ -28,13 +27,12 @@ public class SerialCommandController : MonoBehaviour
 
     private bool serialEnabled = false; 
 
-    public int COMPort = 6;
+    public String  COMPort = "COM4"; 
 
     // Start is called before the first frame update
     void Start()
     {
-
-        //ConnectToPort();
+        ConnectToPort(COMPort);
         
         rotation_value = Rotation.rotInc;
         rotation_point = rotation_value.ToString();
@@ -48,6 +46,11 @@ public class SerialCommandController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_serial.IsOpen && _serial.BytesToRead > 0)
+        {
+            string data = _serial.ReadLine();
+            Debug.Log(data);
+        }
     }
 
     // For general signalling to the serial monitor
@@ -109,57 +112,60 @@ public class SerialCommandController : MonoBehaviour
         if (serialEnabled){_serial.Write(output.ToString());}
     }
 
-    public void ConnectToPort()
+    public void ConnectToPort(string COMPort)
     {
-    
-        // Get the port we want to connect to from the dropdown
-        string port = _ports[COMPort];
-
-        try
+        // string[] ports = SerialPort.GetPortNames();
+        // Debug.Log(ports);
+        try      
         {
-            // Attempt to create our serial port using 9600 as our baud rate which matches the baud rate we set in the Arduino Sketch we created earlier.
-            _serial = new SerialPort(port, 9600)
+            // Get the port we want to connect to from the dropdown
+            
+            _serial = new SerialPort(COMPort, 9600)
             {
                 Encoding = System.Text.Encoding.UTF8,
                 DtrEnable = true
             };
+            // Encoding = System.Text.Encoding.UTF8;
+            // DtrEnable = true;
 
-            // Open up our serial connection
             _serial.Open();
+            Debug.Log("Connected to port: " + COMPort);
+            
 
-            // ConnectionText.text = $"Connected to {port}";
-            // Debug.Log(ConnectionText.text);
-            Debug.Log("Connected to port: " + port);
+            // string dataToSend = "Hello";
+            // _serial.WriteLine(dataToSend);
+            
             serialEnabled = true;
         }
-        catch (Exception e)
+
+        catch (Exception ex)
         {
-            // ConnectionText.text = e.Message;
-            Debug.Log(e.Message);
+            Debug.Log(ex.Message);
             serialEnabled = false;
         }
     }
-
-    public void Disconnect()
-    {
-        if (_serial != null)
-        {
-            // Close the connection if it is open
-            if (_serial.IsOpen)
-            {
-                _serial.Close();
-            }
-
-            // Release any resources being used
-            _serial.Dispose();
-            _serial = null;
-
-            if (ConnectionText != null)
-            {
-                ConnectionText.text = "";
-            }
-            Debug.Log("Disconnected");
-        }
-    }
-
 }
+
+//     public void Disconnect()
+//     {
+//         if (_serial != null)
+//         {
+//             // Close the connection if it is open
+//             if (_serial.IsOpen)
+//             {
+//                 _serial.Close();
+//             }
+
+//             // Release any resources being used
+//             _serial.Dispose();
+//             _serial = null;
+
+//             if (ConnectionText != null)
+//             {
+//                 ConnectionText.text = "";
+//             }
+//             Debug.Log("Disconnected");
+//         }
+//     }
+
+// }
