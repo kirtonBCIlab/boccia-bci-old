@@ -493,7 +493,7 @@ MonoBehaviour:
         m_CallState: 0
       - m_Target: {fileID: 514755707}
         m_TargetAssemblyTypeName: SerialCommandController, Assembly-CSharp
-        m_MethodName: ResetCommand
+        m_MethodName: CalibrationCommand
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1561,6 +1561,8 @@ MonoBehaviour:
   elevation_point: 
   rotation_value: 0
   elevation_value: 0
+  output_calibration: 8700
+  output_reset: 8800
   COMPort: COM4
 --- !u!1 &603768849
 GameObject:
@@ -5123,7 +5125,7 @@ MonoBehaviour:
         m_CallState: 0
       - m_Target: {fileID: 514755707}
         m_TargetAssemblyTypeName: SerialCommandController, Assembly-CSharp
-        m_MethodName: CalibrationCommand
+        m_MethodName: ResetCommand
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

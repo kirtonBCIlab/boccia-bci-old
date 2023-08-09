@@ -74,14 +74,14 @@ public class SerialCommandController : MonoBehaviour
 
     public void ButtonElevationUp()
     {
-        float output = 3000+elevation_value;
+        float output = 4000+elevation_value;
         Debug.Log(output);
         if (serialEnabled){_serial.Write(output.ToString());}
     }
 
     public void ButtonElevationDown()
     {
-        float output = -3000 -  elevation_value;
+        float output = -4000 -  elevation_value;
         Debug.Log(output);
         if (serialEnabled){_serial.Write(output.ToString());}
     
