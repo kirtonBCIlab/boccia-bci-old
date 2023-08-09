@@ -25,6 +25,9 @@ public class SerialCommandController : MonoBehaviour
     public float rotation_value;
     public float elevation_value;
 
+    public int output_calibration = 8700;
+    public int output_reset = 8800;
+
     private bool serialEnabled = false; 
 
     public String  COMPort = "COM4"; 
@@ -93,9 +96,8 @@ public class SerialCommandController : MonoBehaviour
         Elevation.ResetHeight();
         Rotation.ResetAngle();
         
-        float output = 9700;
-        Debug.Log(output);
-        if (serialEnabled){_serial.Write(output.ToString());}
+        Debug.Log(output_reset);
+        if (serialEnabled){_serial.Write(output_reset.ToString());}
 
     }
     
@@ -107,9 +109,8 @@ public class SerialCommandController : MonoBehaviour
         Elevation.ResetHeight();
         Rotation.ResetAngle();
 
-        float output = 9800;
-        Debug.Log(output);
-        if (serialEnabled){_serial.Write(output.ToString());}
+        Debug.Log(output_calibration);
+        if (serialEnabled){_serial.Write(output_calibration.ToString());}
     }
 
     public void ConnectToPort(string COMPort)

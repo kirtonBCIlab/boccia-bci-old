@@ -701,9 +701,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Reset
-
-'
+  m_text: Calibration
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1558,13 +1556,12 @@ MonoBehaviour:
   Incline: {fileID: 0}
   Rotation: {fileID: 514755699}
   Main: {fileID: 0}
-  PortsDropDown: {fileID: 0}
   ConnectionText: {fileID: 0}
   rotation_point: 
   elevation_point: 
   rotation_value: 0
   elevation_value: 0
-  COMPort: 6
+  COMPort: COM4
 --- !u!1 &603768849
 GameObject:
   m_ObjectHideFlags: 0
@@ -7999,7 +7996,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Calibration
+  m_text: Reset
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
