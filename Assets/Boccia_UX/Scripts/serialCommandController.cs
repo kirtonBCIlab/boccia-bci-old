@@ -100,6 +100,10 @@ public class SerialCommandController : MonoBehaviour
     //Calibration command to firmware
     public void CalibrationCommand()
     {
+
+        Elevation.ResetHeight();
+        Rotation.ResetAngle();
+
         float output = 9800;
         Debug.Log(output);
         if (serialEnabled){_serial.Write(output.ToString());}
