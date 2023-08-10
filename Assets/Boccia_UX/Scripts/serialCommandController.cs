@@ -27,7 +27,7 @@ public class SerialCommandController : MonoBehaviour
 
     private bool serialEnabled = false; 
 
-    public String  COMPort = "COM4"; 
+    public String COMPort = "COM4"; 
 
     // Start is called before the first frame update
     void Start()
@@ -44,10 +44,14 @@ public class SerialCommandController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_serial.IsOpen && _serial.BytesToRead > 0)
+        if (serialEnabled)
         {
-            string data = _serial.ReadLine();
-            Debug.Log(data);
+            if (_serial.IsOpen && _serial.BytesToRead > 0)
+            {
+                string data = _serial.ReadLine();
+                Debug.Log(data);
+            }
+    
         }
     }
 
@@ -108,7 +112,7 @@ public class SerialCommandController : MonoBehaviour
         if (serialEnabled){_serial.Write(output_calibration.ToString());}
     }
 
-    public void ConnectToPort(string COMPort)
+    public void ConnectToPort()
     {
         // string[] ports = SerialPort.GetPortNames();
         // Debug.Log(ports);

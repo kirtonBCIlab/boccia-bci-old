@@ -1687,16 +1687,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f17a8898d639ae745a88431b3019ac83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Automated: {fileID: 0}
   Elevation: {fileID: 514755700}
   Incline: {fileID: 0}
   Rotation: {fileID: 514755699}
-  Main: {fileID: 0}
-  ConnectionText: {fileID: 0}
-  rotation_point: 
-  elevation_point: 
-  rotation_value: 0
-  elevation_value: 0
   output_calibration: 8700
   output_reset: 8800
   COMPort: COM4
@@ -1713,6 +1706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText: {fileID: 0}
+  serialController: {fileID: 0}
 --- !u!1 &603768849
 GameObject:
   m_ObjectHideFlags: 0
@@ -7135,6 +7129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText: {fileID: 148257669}
+  serialController: {fileID: 514755707}
 --- !u!1 &1804598370
 GameObject:
   m_ObjectHideFlags: 0
