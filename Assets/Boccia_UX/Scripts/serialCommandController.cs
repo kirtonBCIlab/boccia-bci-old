@@ -74,6 +74,14 @@ public class SerialCommandController : MonoBehaviour
     }
 
     
+    public void DropBall()
+    {
+        float output = -1070;
+        Debug.Log(output);
+        if (serialEnabled){_serial.Write(output.ToString());}
+    
+    }
+
 
      // Reset command for ramp on Unity and prompt to serial monitor for reset
     public void ResetCommand()
