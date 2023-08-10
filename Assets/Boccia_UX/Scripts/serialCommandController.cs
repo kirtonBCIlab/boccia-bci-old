@@ -9,7 +9,7 @@ using Debug = UnityEngine.Debug;
 
 public class SerialCommandController : MonoBehaviour
 {
-
+ 
     public ElevationAdjuster Elevation;
     public InclineAdjustment Incline; 
     public RampRotation Rotation; 
