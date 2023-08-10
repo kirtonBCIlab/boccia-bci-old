@@ -16,12 +16,6 @@ public class SerialCommandController : MonoBehaviour
     private List<string> _ports;
     private SerialPort _serial;
 
-    private String rotation_point;
-    private String elevation_point;
-
-    private float rotation_value;
-    private float elevation_value;
-
     public int output_calibration = 8700;
     public int output_reset = 8800;
 
@@ -32,13 +26,6 @@ public class SerialCommandController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
-        rotation_value = Rotation.rotInc;
-        rotation_point = rotation_value.ToString();
-    
-        //incline_point = Incline.currentAngle;    No call for incline in other modules
-    
-        elevation_value = 1000 * Elevation.heightInc;
-        elevation_point = elevation_value.ToString();
     }
 
     // Update is called once per frame
@@ -58,7 +45,7 @@ public class SerialCommandController : MonoBehaviour
     // For general signalling to the serial monitor
     public void ButtonRotationLeft()
     {
-        float output = -2000-rotation_value;
+        float output = -2000-Rotation.rotInc;
         Debug.Log(output);
         if (serialEnabled){_serial.Write(output.ToString());}
         
@@ -66,21 +53,21 @@ public class SerialCommandController : MonoBehaviour
 
     public void ButtonRotationRight()
     {
-        float output = 2000+rotation_value;
+        float output = 2000+Rotation.rotInc;
         Debug.Log(output);
         if (serialEnabled){_serial.Write(output.ToString());}
     }
 
     public void ButtonElevationUp()
     {
-        float output = 4000+elevation_value;
+        float output = 4000+(1000 * Elevation.heightInc);
         Debug.Log(output);
         if (serialEnabled){_serial.Write(output.ToString());}
     }
 
     public void ButtonElevationDown()
     {
-        float output = -4000 -  elevation_value;
+        float output = -4000 -  (1000 * Elevation.heightInc);
         Debug.Log(output);
         if (serialEnabled){_serial.Write(output.ToString());}
     
