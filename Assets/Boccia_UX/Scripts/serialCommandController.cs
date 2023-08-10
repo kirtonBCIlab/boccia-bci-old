@@ -10,20 +10,17 @@ using Debug = UnityEngine.Debug;
 public class SerialCommandController : MonoBehaviour
 {
 
-    public AutomatedSelectInstructions Automated;
     public ElevationAdjuster Elevation;
     public InclineAdjustment Incline; 
     public RampRotation Rotation; 
-    public MainSPO Main;
     private List<string> _ports;
-    public Text ConnectionText;
     private SerialPort _serial;
 
-    public String rotation_point;
-    public String elevation_point;
+    private String rotation_point;
+    private String elevation_point;
 
-    public float rotation_value;
-    public float elevation_value;
+    private float rotation_value;
+    private float elevation_value;
 
     public int output_calibration = 8700;
     public int output_reset = 8800;
@@ -34,9 +31,7 @@ public class SerialCommandController : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        ConnectToPort(COMPort);
-        
+    {   
         rotation_value = Rotation.rotInc;
         rotation_point = rotation_value.ToString();
     
@@ -126,9 +121,7 @@ public class SerialCommandController : MonoBehaviour
                 Encoding = System.Text.Encoding.UTF8,
                 DtrEnable = true
             };
-            // Encoding = System.Text.Encoding.UTF8;
-            // DtrEnable = true;
-
+    
             _serial.Open();
             Debug.Log("Connected to port: " + COMPort);
             
@@ -145,28 +138,25 @@ public class SerialCommandController : MonoBehaviour
             serialEnabled = false;
         }
     }
+
+
+    public void Disconnect()
+    {
+        if (_serial != null)
+        {
+            // Close the connection if it is open
+            if (_serial.IsOpen)
+            {
+                _serial.Close();
+            }
+
+            // Release any resources being used
+            _serial.Dispose();
+            _serial = null;
+
+            Debug.Log("Disconnected");
+            serialEnabled = false;
+        }
+    }
+
 }
-
-//     public void Disconnect()
-//     {
-//         if (_serial != null)
-//         {
-//             // Close the connection if it is open
-//             if (_serial.IsOpen)
-//             {
-//                 _serial.Close();
-//             }
-
-//             // Release any resources being used
-//             _serial.Dispose();
-//             _serial = null;
-
-//             if (ConnectionText != null)
-//             {
-//                 ConnectionText.text = "";
-//             }
-//             Debug.Log("Disconnected");
-//         }
-//     }
-
-// }

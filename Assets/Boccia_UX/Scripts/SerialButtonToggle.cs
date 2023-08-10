@@ -8,6 +8,7 @@ public class SerialButtonToggle : MonoBehaviour
 {
     // Start is called before the first frame update
     public TextMeshProUGUI buttonText;
+    private SerialCommandController serialController;
     private bool isOn = false;
 
 
@@ -32,11 +33,13 @@ public class SerialButtonToggle : MonoBehaviour
         if (isOn)
         {
             buttonText.text = "Serial Monitor: On";
+            serialController.ConnecttoPort();
             // You can perform other actions when the button is turned on
         }
         else
         {
             buttonText.text = "Serial Monitor: Off";
+            serialController.Disconnect();
             // You can perform other actions when the button is turned off
         }
     }
