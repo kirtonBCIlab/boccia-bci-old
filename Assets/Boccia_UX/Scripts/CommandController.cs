@@ -7,7 +7,7 @@ using System.IO.Ports;
 using System.Diagnostics;
 using Debug = UnityEngine.Debug;
 
-public class SerialCommandController : MonoBehaviour
+public class CommandController : MonoBehaviour
 {
  
     public ElevationAdjuster Elevation;
@@ -50,7 +50,7 @@ public class SerialCommandController : MonoBehaviour
         if (serialEnabled){_serial.Write(output.ToString());}
         
     }
-
+ 
     public void ButtonRotationRight()
     {
         float output = 2000+Rotation.rotInc;

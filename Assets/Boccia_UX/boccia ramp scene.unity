@@ -626,8 +626,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 0
-      - m_Target: {fileID: 514755707}
-        m_TargetAssemblyTypeName: SerialCommandController, Assembly-CSharp
+      - m_Target: {fileID: 514755709}
+        m_TargetAssemblyTypeName: CommandController, Assembly-CSharp
         m_MethodName: CalibrationCommand
         m_Mode: 1
         m_Arguments:
@@ -1466,8 +1466,8 @@ GameObject:
   - component: {fileID: 514755704}
   - component: {fileID: 514755705}
   - component: {fileID: 514755706}
-  - component: {fileID: 514755707}
   - component: {fileID: 514755708}
+  - component: {fileID: 514755709}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -1552,6 +1552,7 @@ MonoBehaviour:
   origHeight: {x: 0, y: 0, z: 0}
   maxHeight: 0.045
   minHeight: 0
+  percent: 10
 --- !u!114 &514755701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1675,24 +1676,6 @@ MonoBehaviour:
   StreamName: UnityEvents
   StreamType: LSL_Event_Strings
   StreamId: MyStreamID-Unity4321
---- !u!114 &514755707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 514755696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f17a8898d639ae745a88431b3019ac83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Elevation: {fileID: 514755700}
-  Incline: {fileID: 0}
-  Rotation: {fileID: 514755699}
-  output_calibration: 8700
-  output_reset: 8800
-  COMPort: COM4
 --- !u!114 &514755708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1706,7 +1689,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText: {fileID: 0}
-  serialController: {fileID: 514755707}
+  serialController: {fileID: 0}
+--- !u!114 &514755709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514755696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c2f8859ee6f168498709354f79230d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Elevation: {fileID: 0}
+  Incline: {fileID: 0}
+  Rotation: {fileID: 0}
+  output_calibration: 8700
+  output_reset: 8800
+  COMPort: COM4
 --- !u!1 &603768849
 GameObject:
   m_ObjectHideFlags: 0
@@ -2450,8 +2451,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 514755707}
-        m_TargetAssemblyTypeName: SerialCommandController, Assembly-CSharp
+      - m_Target: {fileID: 514755709}
+        m_TargetAssemblyTypeName: CommandController, Assembly-CSharp
         m_MethodName: ButtonRotationLeft
         m_Mode: 1
         m_Arguments:
@@ -2527,7 +2528,7 @@ MonoBehaviour:
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
   networkController: {fileID: 0}
-  serialCommandController: {fileID: 514755707}
+  serialCommandController: {fileID: 0}
 --- !u!1 &965194627
 GameObject:
   m_ObjectHideFlags: 0
@@ -2981,8 +2982,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 514755707}
-        m_TargetAssemblyTypeName: SerialCommandController, Assembly-CSharp
+      - m_Target: {fileID: 514755709}
+        m_TargetAssemblyTypeName: CommandController, Assembly-CSharp
         m_MethodName: ButtonElevationUp
         m_Mode: 1
         m_Arguments:
@@ -3058,7 +3059,7 @@ MonoBehaviour:
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
   networkController: {fileID: 0}
-  serialCommandController: {fileID: 514755707}
+  serialCommandController: {fileID: 0}
 --- !u!1 &1069331300
 GameObject:
   m_ObjectHideFlags: 0
@@ -3363,8 +3364,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 514755707}
-        m_TargetAssemblyTypeName: SerialCommandController, Assembly-CSharp
+      - m_Target: {fileID: 514755709}
+        m_TargetAssemblyTypeName: CommandController, Assembly-CSharp
         m_MethodName: ButtonElevationDown
         m_Mode: 1
         m_Arguments:
@@ -3440,7 +3441,7 @@ MonoBehaviour:
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
   networkController: {fileID: 0}
-  serialCommandController: {fileID: 514755707}
+  serialCommandController: {fileID: 0}
 --- !u!1 &1142486440
 GameObject:
   m_ObjectHideFlags: 0
@@ -5266,8 +5267,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 0
-      - m_Target: {fileID: 514755707}
-        m_TargetAssemblyTypeName: SerialCommandController, Assembly-CSharp
+      - m_Target: {fileID: 514755709}
+        m_TargetAssemblyTypeName: CommandController, Assembly-CSharp
         m_MethodName: ResetCommand
         m_Mode: 1
         m_Arguments:
@@ -6879,8 +6880,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 514755707}
-        m_TargetAssemblyTypeName: SerialCommandController, Assembly-CSharp
+      - m_Target: {fileID: 514755709}
+        m_TargetAssemblyTypeName: CommandController, Assembly-CSharp
         m_MethodName: ButtonRotationRight
         m_Mode: 1
         m_Arguments:
@@ -6956,7 +6957,7 @@ MonoBehaviour:
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
   networkController: {fileID: 0}
-  serialCommandController: {fileID: 514755707}
+  serialCommandController: {fileID: 0}
 --- !u!1 &1779152507
 GameObject:
   m_ObjectHideFlags: 0
@@ -7129,7 +7130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText: {fileID: 148257669}
-  serialController: {fileID: 514755707}
+  serialController: {fileID: 0}
 --- !u!1 &1804598370
 GameObject:
   m_ObjectHideFlags: 0
@@ -8019,9 +8020,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 514755707}
+      - m_Target: {fileID: 514755696}
         m_TargetAssemblyTypeName: SerialCommandController, Assembly-CSharp
-        m_MethodName: DropBall
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
