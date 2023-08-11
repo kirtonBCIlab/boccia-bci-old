@@ -7130,7 +7130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText: {fileID: 148257669}
-  serialController: {fileID: 0}
+  serialController: {fileID: 514755709}
 --- !u!1 &1804598370
 GameObject:
   m_ObjectHideFlags: 0
