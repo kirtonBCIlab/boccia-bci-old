@@ -113,6 +113,8 @@ public class ElevationAdjuster : MonoBehaviour
     public Vector3 origHeight;
     public float maxHeight = 0.045f;
     public float minHeight = 0;
+    public float percent = 10;
+
 
     // Start is called before the first frame update
     void Start()
@@ -123,6 +125,7 @@ public class ElevationAdjuster : MonoBehaviour
 
     public void MoveUp()
     {
+        float heightChange = (heightInc/10)*percent;
         targetHeight = targetHeight + Vector3.forward * heightInc;
         changeHeight(targetHeight.z);
         //changeHeight(heightInc);
@@ -130,10 +133,13 @@ public class ElevationAdjuster : MonoBehaviour
 
     public void MoveDown()
     {
+        float heightChange = (heightInc/10)*percent;
         targetHeight = targetHeight + Vector3.back * heightInc;
         changeHeight(targetHeight.z);
         //changeHeight(-heightInc);
     }
+
+
 
     public void changeHeight(float change)
     {
