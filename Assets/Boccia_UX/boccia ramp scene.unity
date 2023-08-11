@@ -1918,7 +1918,7 @@ MonoBehaviour:
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
   networkController: {fileID: 0}
-  serialCommandController: {fileID: 0}
+  CommandController: {fileID: 0}
 --- !u!1 &609098861
 GameObject:
   m_ObjectHideFlags: 0
@@ -2528,7 +2528,7 @@ MonoBehaviour:
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
   networkController: {fileID: 0}
-  serialCommandController: {fileID: 0}
+  CommandController: {fileID: 0}
 --- !u!1 &965194627
 GameObject:
   m_ObjectHideFlags: 0
@@ -3059,7 +3059,7 @@ MonoBehaviour:
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
   networkController: {fileID: 0}
-  serialCommandController: {fileID: 0}
+  CommandController: {fileID: 0}
 --- !u!1 &1069331300
 GameObject:
   m_ObjectHideFlags: 0
@@ -3441,7 +3441,7 @@ MonoBehaviour:
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
   networkController: {fileID: 0}
-  serialCommandController: {fileID: 0}
+  CommandController: {fileID: 0}
 --- !u!1 &1142486440
 GameObject:
   m_ObjectHideFlags: 0
@@ -5771,7 +5771,7 @@ MonoBehaviour:
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
   networkController: {fileID: 0}
-  serialCommandController: {fileID: 0}
+  CommandController: {fileID: 0}
 --- !u!1 &1653223448
 GameObject:
   m_ObjectHideFlags: 0
@@ -6957,7 +6957,7 @@ MonoBehaviour:
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
   networkController: {fileID: 0}
-  serialCommandController: {fileID: 0}
+  CommandController: {fileID: 0}
 --- !u!1 &1779152507
 GameObject:
   m_ObjectHideFlags: 0
@@ -7427,7 +7427,7 @@ MonoBehaviour:
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
   networkController: {fileID: 0}
-  serialCommandController: {fileID: 0}
+  CommandController: {fileID: 0}
 --- !u!1 &1837847127
 GameObject:
   m_ObjectHideFlags: 0
@@ -7638,7 +7638,7 @@ MonoBehaviour:
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
   networkController: {fileID: 0}
-  serialCommandController: {fileID: 0}
+  CommandController: {fileID: 0}
 --- !u!1 &1840096033
 GameObject:
   m_ObjectHideFlags: 0
@@ -8020,9 +8020,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 514755696}
-        m_TargetAssemblyTypeName: SerialCommandController, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 514755709}
+        m_TargetAssemblyTypeName: CommandController, Assembly-CSharp
+        m_MethodName: DropBall
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8097,7 +8097,7 @@ MonoBehaviour:
   autoInstructions: {fileID: 0}
   restTime: {fileID: 0}
   networkController: {fileID: 0}
-  serialCommandController: {fileID: 0}
+  CommandController: {fileID: 0}
 --- !u!1 &1908999752
 GameObject:
   m_ObjectHideFlags: 0
