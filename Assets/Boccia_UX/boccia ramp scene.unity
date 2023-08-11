@@ -507,7 +507,7 @@ GameObject:
   - component: {fileID: 205974787}
   - component: {fileID: 205974786}
   m_Layer: 5
-  m_Name: SSVEP Training
+  m_Name: Calibration Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1704,7 +1704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Elevation: {fileID: 514755700}
   Incline: {fileID: 0}
-  Rotation: {fileID: 0}
+  Rotation: {fileID: 514755699}
   output_calibration: 8700
   output_reset: 8800
   COMPort: COM4
@@ -5148,7 +5148,7 @@ GameObject:
   - component: {fileID: 1570250170}
   - component: {fileID: 1570250169}
   m_Layer: 5
-  m_Name: P300Training
+  m_Name: Reset Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
