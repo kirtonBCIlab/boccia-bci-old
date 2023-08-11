@@ -36,7 +36,7 @@ public class MainSPO : SPO
     private NetworkController networkController;
 
     [SerializeField]
-    private SerialCommandController serialCommandController;
+    private CommandController CommandController;
 
     private BallReset ballReset;
 
@@ -199,7 +199,7 @@ public class MainSPO : SPO
                 }
                 rampRot.RotateLeftS();
                 autoInstructions.SetInstructionTarget();
-                serialCommandController.ButtonRotationLeft();
+                CommandController.ButtonRotationLeft();
                 break;
             case 5:
                 //Todo
@@ -219,7 +219,7 @@ public class MainSPO : SPO
                 }
                 rampRot.RotateRightS();
                 autoInstructions.SetInstructionTarget();
-                serialCommandController.ButtonRotationRight();
+                CommandController.ButtonRotationRight();
                 break;
             case 6:
                 //Todo
@@ -239,7 +239,7 @@ public class MainSPO : SPO
                 }
                 elevAdj.MoveUp();
                 autoInstructions.SetInstructionTarget();
-                serialCommandController.ButtonElevationUp();
+                CommandController.ButtonElevationUp();
                 break;
             case 7:
                 //Todo
@@ -259,7 +259,7 @@ public class MainSPO : SPO
                 }
                 elevAdj.MoveDown();
                 autoInstructions.SetInstructionTarget();
-                serialCommandController.ButtonElevationDown();
+                CommandController.ButtonElevationDown();
                 break;
 
         }

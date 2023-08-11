@@ -8,7 +8,7 @@ public class SerialButtonToggle : MonoBehaviour
 {
     // Start is called before the first frame update
     public TextMeshProUGUI buttonText;
-    public SerialCommandController serialController;
+    public CommandController serialController;
     private bool isOn = false;
 
 
