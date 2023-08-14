@@ -48,7 +48,6 @@ public class CommandController : MonoBehaviour
         float output = -2000-Rotation.rotInc;
         Debug.Log(output);
         if (serialEnabled){_serial.Write(output.ToString());}
-        
     }
  
     public void ButtonRotationRight()

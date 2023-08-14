@@ -160,6 +160,7 @@ public class MainSPO : SPO
                     Debug.Log("Cleaning the selection targets...");                    
                     autoInstructions.needToCleanList = true;
                     autoInstructions.CleanUpInstructionTargets();
+                    
                 }
                 else
                 {
@@ -168,6 +169,7 @@ public class MainSPO : SPO
                 }
                 ballReset.GetBallDropPosition();
                 barController.DropButtonPressed();
+                CommandController.DropBall();
 
                 if (autoInstructions.GetNumSelecitonTargetsLeft() == 0)
                 {

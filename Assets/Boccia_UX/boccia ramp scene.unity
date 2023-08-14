@@ -2439,9 +2439,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 514755699}
-        m_TargetAssemblyTypeName: RampRotation, Assembly-CSharp
-        m_MethodName: RotateLeftS
+      - m_Target: {fileID: 514755709}
+        m_TargetAssemblyTypeName: CommandController, Assembly-CSharp
+        m_MethodName: ButtonRotationLeft
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2451,9 +2451,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 514755709}
-        m_TargetAssemblyTypeName: CommandController, Assembly-CSharp
-        m_MethodName: ButtonRotationLeft
+      - m_Target: {fileID: 1347411744}
+        m_TargetAssemblyTypeName: Controller, Assembly-CSharp
+        m_MethodName: StartStopStimulus
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2525,10 +2525,10 @@ MonoBehaviour:
   barController: {fileID: 609098862}
   elevAdj: {fileID: 514755700}
   rampRot: {fileID: 514755699}
-  autoInstructions: {fileID: 0}
-  restTime: {fileID: 0}
-  networkController: {fileID: 0}
-  CommandController: {fileID: 0}
+  autoInstructions: {fileID: 514755705}
+  restTime: {fileID: 514755704}
+  networkController: {fileID: 514755702}
+  CommandController: {fileID: 514755709}
 --- !u!1 &965194627
 GameObject:
   m_ObjectHideFlags: 0
@@ -3056,10 +3056,10 @@ MonoBehaviour:
   barController: {fileID: 609098862}
   elevAdj: {fileID: 514755700}
   rampRot: {fileID: 514755699}
-  autoInstructions: {fileID: 0}
-  restTime: {fileID: 0}
-  networkController: {fileID: 0}
-  CommandController: {fileID: 0}
+  autoInstructions: {fileID: 514755705}
+  restTime: {fileID: 514755704}
+  networkController: {fileID: 514755702}
+  CommandController: {fileID: 514755709}
 --- !u!1 &1069331300
 GameObject:
   m_ObjectHideFlags: 0
@@ -3438,10 +3438,10 @@ MonoBehaviour:
   barController: {fileID: 609098862}
   elevAdj: {fileID: 514755700}
   rampRot: {fileID: 514755699}
-  autoInstructions: {fileID: 0}
-  restTime: {fileID: 0}
-  networkController: {fileID: 0}
-  CommandController: {fileID: 0}
+  autoInstructions: {fileID: 514755705}
+  restTime: {fileID: 514755704}
+  networkController: {fileID: 514755702}
+  CommandController: {fileID: 514755709}
 --- !u!1 &1142486440
 GameObject:
   m_ObjectHideFlags: 0
@@ -6945,7 +6945,7 @@ MonoBehaviour:
   onColour: {r: 0, g: 0, b: 0, a: 0}
   offColour: {r: 0, g: 0, b: 0, a: 0}
   includeMe: 1
-  myIndex: 0
+  myIndex: 1
   hasImageChild: 0
   newOnColor: {r: 1, g: 0, b: 0, a: 1}
   newOffColor: {r: 1, g: 1, b: 1, a: 1}
@@ -6954,10 +6954,10 @@ MonoBehaviour:
   barController: {fileID: 609098862}
   elevAdj: {fileID: 514755700}
   rampRot: {fileID: 514755699}
-  autoInstructions: {fileID: 0}
-  restTime: {fileID: 0}
-  networkController: {fileID: 0}
-  CommandController: {fileID: 0}
+  autoInstructions: {fileID: 514755705}
+  restTime: {fileID: 514755704}
+  networkController: {fileID: 514755702}
+  CommandController: {fileID: 514755709}
 --- !u!1 &1779152507
 GameObject:
   m_ObjectHideFlags: 0
