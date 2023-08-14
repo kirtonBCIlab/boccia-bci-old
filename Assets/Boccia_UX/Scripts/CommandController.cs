@@ -8,17 +8,16 @@ using System.Diagnostics;
 using Debug = UnityEngine.Debug;
 
 public class CommandController : MonoBehaviour
-{
- 
+{   
     public ElevationAdjuster Elevation;
     public InclineAdjustment Incline; 
-    public RampRotation Rotation; 
-    private List<string> _ports;
-    private SerialPort _serial;
-
+    public RampRotation Rotation;
     public int output_calibration = 8700;
     public int output_reset = 8800;
+    public int release_command = -1070;
 
+    private List<string> _ports;
+    private SerialPort _serial;
     private bool serialEnabled = false; 
 
     public String COMPort = "COM4"; 
@@ -46,7 +45,7 @@ public class CommandController : MonoBehaviour
     public void ButtonRotationLeft()
     {
         float output = -2000-Rotation.rotInc;
-        Debug.Log(output);
+        Debug.Log("Serial command: " + output);
         if (serialEnabled){_serial.Write(output.ToString());}
         
     }
@@ -54,21 +53,21 @@ public class CommandController : MonoBehaviour
     public void ButtonRotationRight()
     {
         float output = 2000+Rotation.rotInc;
-        Debug.Log(output);
+        Debug.Log("Serial command: " + output);
         if (serialEnabled){_serial.Write(output.ToString());}
     }
 
     public void ButtonElevationUp()
     {
         float output = 4000+Elevation.percent;
-        Debug.Log(output);
+        Debug.Log("Serial command: " + output);
         if (serialEnabled){_serial.Write(output.ToString());}
     }
 
     public void ButtonElevationDown()
     {
         float output = -4000 -  Elevation.percent;
-        Debug.Log(output);
+        Debug.Log("Serial command: " + output);
         if (serialEnabled){_serial.Write(output.ToString());}
     
     }
@@ -76,8 +75,8 @@ public class CommandController : MonoBehaviour
     
     public void DropBall()
     {
-        float output = -1070;
-        Debug.Log(output);
+        float output = (float)release_command;
+        Debug.Log("Serial command: " + output);
         if (serialEnabled){_serial.Write(output.ToString());}
     
     }
