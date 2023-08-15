@@ -8094,10 +8094,10 @@ MonoBehaviour:
   barController: {fileID: 609098862}
   elevAdj: {fileID: 514755700}
   rampRot: {fileID: 514755699}
-  autoInstructions: {fileID: 0}
-  restTime: {fileID: 0}
-  networkController: {fileID: 0}
-  CommandController: {fileID: 0}
+  autoInstructions: {fileID: 514755705}
+  restTime: {fileID: 514755704}
+  networkController: {fileID: 514755702}
+  CommandController: {fileID: 514755709}
 --- !u!1 &1908999752
 GameObject:
   m_ObjectHideFlags: 0
