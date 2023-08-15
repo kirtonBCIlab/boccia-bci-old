@@ -235,15 +235,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4280385885900106466, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
       propertyPath: onTime
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4280385885900106466, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
-      propertyPath: offTime
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4280385885900106466, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
+      propertyPath: offTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280385885900106466, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4280385885900106466, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
       propertyPath: checkerboard
@@ -251,11 +251,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4280385885900106466, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
       propertyPath: numTrainingSelections
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4280385885900106467, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4280385885900106467, guid: 7b05171d4afef204b8054af1c0847232, type: 3}
       propertyPath: listExists
@@ -1688,8 +1688,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e223f4b4158c3fa4b86018b2f307436f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonText: {fileID: 0}
-  serialController: {fileID: 0}
+  buttonText: {fileID: 148257669}
+  serialController: {fileID: 514755709}
+  button: {fileID: 1801073363}
 --- !u!114 &514755709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1707,7 +1708,7 @@ MonoBehaviour:
   Rotation: {fileID: 514755699}
   output_calibration: 8700
   output_reset: 8800
-  COMPort: COM4
+  COMPort: COM3
 --- !u!1 &603768849
 GameObject:
   m_ObjectHideFlags: 0
@@ -7006,7 +7007,6 @@ GameObject:
   - component: {fileID: 1801073365}
   - component: {fileID: 1801073364}
   - component: {fileID: 1801073363}
-  - component: {fileID: 1801073366}
   m_Layer: 5
   m_Name: SerialButtonToggle
   m_TagString: Untagged
@@ -7117,20 +7117,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1801073361}
   m_CullTransparentMesh: 1
---- !u!114 &1801073366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1801073361}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e223f4b4158c3fa4b86018b2f307436f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonText: {fileID: 148257669}
-  serialController: {fileID: 514755709}
 --- !u!1 &1804598370
 GameObject:
   m_ObjectHideFlags: 0

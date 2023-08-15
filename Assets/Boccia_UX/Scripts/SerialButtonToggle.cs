@@ -9,13 +9,14 @@ public class SerialButtonToggle : MonoBehaviour
     // Start is called before the first frame update
     public TextMeshProUGUI buttonText;
     public CommandController serialController;
+    public Button button;
     private bool isOn = false;
 
 
     void Start()
     {
 
-        Button button = this.gameObject.GetComponent<Button>();
+        // Button button = this.gameObject.GetComponent<Button>();
         button.onClick.AddListener(ToggleButton);
     
     }
