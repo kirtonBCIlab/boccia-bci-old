@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,7 @@ public class MainSPO : SPO
     public Color newOffColor;
 
     [SerializeField]
-    private int myObjectId;
+    public int myObjectId;
     private string myMessage;
 
     [SerializeField]
@@ -34,8 +35,10 @@ public class MainSPO : SPO
     [SerializeField]
     private NetworkController networkController;
 
-    private BallReset ballReset;
+    [SerializeField]
+    private CommandController CommandController;
 
+    private BallReset ballReset;
 
     // Start is called before the first frame update
     void Start()
@@ -157,6 +160,7 @@ public class MainSPO : SPO
                     Debug.Log("Cleaning the selection targets...");                    
                     autoInstructions.needToCleanList = true;
                     autoInstructions.CleanUpInstructionTargets();
+                    
                 }
                 else
                 {
@@ -165,6 +169,7 @@ public class MainSPO : SPO
                 }
                 ballReset.GetBallDropPosition();
                 barController.DropButtonPressed();
+                CommandController.DropBall();
 
                 if (autoInstructions.GetNumSelecitonTargetsLeft() == 0)
                 {
@@ -196,6 +201,7 @@ public class MainSPO : SPO
                 }
                 rampRot.RotateLeftS();
                 autoInstructions.SetInstructionTarget();
+                CommandController.ButtonRotationLeft();
                 break;
             case 5:
                 //Todo
@@ -215,6 +221,7 @@ public class MainSPO : SPO
                 }
                 rampRot.RotateRightS();
                 autoInstructions.SetInstructionTarget();
+                CommandController.ButtonRotationRight();
                 break;
             case 6:
                 //Todo
@@ -234,6 +241,7 @@ public class MainSPO : SPO
                 }
                 elevAdj.MoveUp();
                 autoInstructions.SetInstructionTarget();
+                CommandController.ButtonElevationUp();
                 break;
             case 7:
                 //Todo
@@ -253,6 +261,7 @@ public class MainSPO : SPO
                 }
                 elevAdj.MoveDown();
                 autoInstructions.SetInstructionTarget();
+                CommandController.ButtonElevationDown();
                 break;
 
         }
