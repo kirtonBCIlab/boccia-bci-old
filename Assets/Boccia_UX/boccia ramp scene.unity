@@ -1468,6 +1468,7 @@ GameObject:
   - component: {fileID: 514755706}
   - component: {fileID: 514755708}
   - component: {fileID: 514755709}
+  - component: {fileID: 514755710}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -1525,9 +1526,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainShaft: {fileID: 2016671996303512379}
-  rotInc: 20
-  maxRot: 125
-  minRot: 62.5
+  rotInc: 10
+  maxRot: 130
+  minRot: 60
   rotSpeed: 10
   targetAngle: 90
   currentAngle: 0
@@ -1709,6 +1710,21 @@ MonoBehaviour:
   output_calibration: 8700
   output_reset: 8800
   COMPort: COM3
+--- !u!114 &514755710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514755696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6bff6ae315f98c4a8a2da124ddb0c62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainDisplay: {fileID: 2045741973}
+  DropButton: {fileID: 1865728569}
+  waitTime: 5
 --- !u!1 &603768849
 GameObject:
   m_ObjectHideFlags: 0
