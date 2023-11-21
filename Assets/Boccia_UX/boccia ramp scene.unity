@@ -2440,9 +2440,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 514755709}
-        m_TargetAssemblyTypeName: CommandController, Assembly-CSharp
-        m_MethodName: ButtonRotationLeft
+      - m_Target: {fileID: 514755699}
+        m_TargetAssemblyTypeName: RampRotation, Assembly-CSharp
+        m_MethodName: RotateLeftS
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2452,9 +2452,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1347411744}
-        m_TargetAssemblyTypeName: Controller, Assembly-CSharp
-        m_MethodName: StartStopStimulus
+      - m_Target: {fileID: 514755709}
+        m_TargetAssemblyTypeName: CommandController, Assembly-CSharp
+        m_MethodName: ButtonRotationLeft
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
