@@ -16,16 +16,21 @@ public class CommandController : MonoBehaviour
     private List<string> _ports;
     private SerialPort _serial;
 
-    public int output_calibration = 8700;
-    public int output_reset = 8800;
+    [SerializeField]
+    private string output_calibration;
+
+    [SerializeField]
+    private string output_reset;
 
     private bool serialEnabled = false; 
 
-    public String COMPort = "COM4"; 
+    public String COMPort = "COM7"; 
 
     // Start is called before the first frame update
     void Start()
-    {   
+    {
+        // output_calibration = "da100>ec1";
+        // output_reset = "ea50";           
     }
 
     // Update is called once per frame
@@ -45,40 +50,28 @@ public class CommandController : MonoBehaviour
     // For general signalling to the serial monitor
     public void ButtonRotationLeft()
     {
-        float output = -2000-Rotation.rotInc;
-        Debug.Log(output);
-        if (serialEnabled){_serial.Write(output.ToString());}
+        if (serialEnabled){_serial.Write("rr" + -1*Rotation.rotInc);}
     }
  
     public void ButtonRotationRight()
     {
-        float output = 2000+Rotation.rotInc;
-        Debug.Log(output);
-        if (serialEnabled){_serial.Write(output.ToString());}
+        if (serialEnabled){_serial.Write("rr" + Rotation.rotInc);}
     }
 
     public void ButtonElevationUp()
     {
-        float output = 4000+Elevation.percent;
-        Debug.Log(output);
-        if (serialEnabled){_serial.Write(output.ToString());}
+        if (serialEnabled){_serial.Write("er" + Elevation.percent);}
     }
 
     public void ButtonElevationDown()
     {
-        float output = -4000 -  Elevation.percent;
-        Debug.Log(output);
-        if (serialEnabled){_serial.Write(output.ToString());}
-    
+        if (serialEnabled){_serial.Write("er" + -1*Elevation.percent);}
     }
 
     
     public void DropBall()
     {
-        float output = -1070;
-        Debug.Log(output);
-        if (serialEnabled){_serial.Write(output.ToString());}
-    
+        if (serialEnabled){_serial.Write("dd-70");}
     }
 
 
@@ -99,11 +92,10 @@ public class CommandController : MonoBehaviour
     public void CalibrationCommand()
     {
 
-        Elevation.ResetHeight();
-        Rotation.ResetAngle();
-
-        Debug.Log(output_calibration);
-        if (serialEnabled){_serial.Write(output_calibration.ToString());}
+        // Elevation.ResetHeight();
+        // Rotation.ResetAngle();
+        Debug.Log("Calibration " + output_calibration);
+        if (serialEnabled) { _serial.Write(output_calibration); }
     }
 
     public void ConnectToPort()

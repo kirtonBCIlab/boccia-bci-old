@@ -1707,9 +1707,9 @@ MonoBehaviour:
   Elevation: {fileID: 514755700}
   Incline: {fileID: 0}
   Rotation: {fileID: 514755699}
-  output_calibration: 8700
-  output_reset: 8800
-  COMPort: COM3
+  output_calibration: da100>ec1>ea50
+  output_reset: ea50
+  COMPort: COM7
 --- !u!114 &514755710
 MonoBehaviour:
   m_ObjectHideFlags: 0
